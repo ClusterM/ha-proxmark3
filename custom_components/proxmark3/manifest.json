@@ -1,0 +1,13 @@
+{
+  "domain": "proxmark3",
+  "name": "Proxmark3",
+  "codeowners": ["@ClusterM"],
+  "config_flow": true,
+  "documentation": "https://github.com/ClusterM/ha-proxmark3",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/ClusterM/ha-proxmark3/issues",
+  "loggers": ["proxmark3py"],
+  "requirements": ["pyserial>=3.5", "proxmark3py>=0.0.4"],
+  "version": "0.1.0"
+}
