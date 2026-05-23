@@ -6,15 +6,15 @@
         "description": "La porta USB viene rilevata automaticamente. L'UID viene sempre letto.",
         "data": {
           "read_ntag": "Leggi NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Leggi NDEF su Classic (lento)",
-          "read_raw_blocks": "Leggi blocchi grezzi su Classic",
+          "read_ntag_classic": "Leggi NDEF su MIFARE Classic (lento)",
+          "read_raw_blocks": "Leggi blocchi grezzi su MIFARE Classic",
           "poll_interval": "Intervallo di polling (secondi)",
           "reconnect_interval": "Intervallo di riconnessione (secondi)"
         }
       },
       "blocks": {
         "title": "Blocchi grezzi",
-        "description": "Seleziona i blocchi del settore 0 Classic (chiavi nella schermata successiva).",
+        "description": "Seleziona i blocchi del settore 0 MIFARE Classic (chiavi nella schermata successiva).",
         "data": {
           "block_0": "Leggi blocco 0",
           "block_1": "Leggi blocco 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Chiavi Classic",
+        "title": "Chiavi MIFARE Classic",
         "description": "Le chiavi vengono provate in ordine finché la lettura del blocco riesce.",
         "data": {
           "key_ff": "Chiave ffffffffffff (predefinita di fabbrica)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Opzioni Proxmark3",
-        "description": "L'UID viene sempre letto. Abilita solo ciò che ti serve — NDEF Classic e blocchi grezzi sono lenti.",
+        "description": "L'UID viene sempre letto. Abilita solo ciò che ti serve — NDEF MIFARE Classic e blocchi grezzi sono lenti.",
         "data": {
           "read_ntag": "Leggi NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Leggi NDEF su Classic (lento)",
-          "read_raw_blocks": "Leggi blocchi grezzi su Classic",
+          "read_ntag_classic": "Leggi NDEF su MIFARE Classic (lento)",
+          "read_raw_blocks": "Leggi blocchi grezzi su MIFARE Classic",
           "poll_interval": "Intervallo di polling (secondi)",
           "reconnect_interval": "Intervallo di riconnessione (secondi)"
         }
       },
       "blocks": {
         "title": "Blocchi grezzi",
-        "description": "Seleziona i blocchi del settore 0 Classic (chiavi nella schermata successiva).",
+        "description": "Seleziona i blocchi del settore 0 MIFARE Classic (chiavi nella schermata successiva).",
         "data": {
           "block_0": "Leggi blocco 0",
           "block_1": "Leggi blocco 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Chiavi Classic",
+        "title": "Chiavi MIFARE Classic",
         "description": "Le chiavi vengono provate in ordine finché la lettura del blocco riesce.",
         "data": {
           "key_ff": "Chiave ffffffffffff (predefinita di fabbrica)",

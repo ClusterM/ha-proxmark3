@@ -6,15 +6,15 @@
         "description": "USB-porten upptäcks automatiskt. UID läses alltid.",
         "data": {
           "read_ntag": "Läs NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Läs NDEF på Classic (långsamt)",
-          "read_raw_blocks": "Läs råblock på Classic",
+          "read_ntag_classic": "Läs NDEF på MIFARE Classic (långsamt)",
+          "read_raw_blocks": "Läs råblock på MIFARE Classic",
           "poll_interval": "Avfrågningsintervall (sekunder)",
           "reconnect_interval": "Återanslutningsintervall (sekunder)"
         }
       },
       "blocks": {
         "title": "Råblock",
-        "description": "Välj Classic sektor 0-block att läsa (nycklar på nästa skärm).",
+        "description": "Välj MIFARE Classic sektor 0-block att läsa (nycklar på nästa skärm).",
         "data": {
           "block_0": "Läs block 0",
           "block_1": "Läs block 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic-nycklar",
+        "title": "MIFARE Classic-nycklar",
         "description": "Nycklar provas i ordning tills blockläsning lyckas.",
         "data": {
           "key_ff": "Nyckel ffffffffffff (fabriksstandard)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3-alternativ",
-        "description": "UID läses alltid. Aktivera bara det du behöver — Classic NDEF och råblock är långsamma.",
+        "description": "UID läses alltid. Aktivera bara det du behöver — MIFARE Classic NDEF och råblock är långsamma.",
         "data": {
           "read_ntag": "Läs NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Läs NDEF på Classic (långsamt)",
-          "read_raw_blocks": "Läs råblock på Classic",
+          "read_ntag_classic": "Läs NDEF på MIFARE Classic (långsamt)",
+          "read_raw_blocks": "Läs råblock på MIFARE Classic",
           "poll_interval": "Avfrågningsintervall (sekunder)",
           "reconnect_interval": "Återanslutningsintervall (sekunder)"
         }
       },
       "blocks": {
         "title": "Råblock",
-        "description": "Välj Classic sektor 0-block att läsa (nycklar på nästa skärm).",
+        "description": "Välj MIFARE Classic sektor 0-block att läsa (nycklar på nästa skärm).",
         "data": {
           "block_0": "Läs block 0",
           "block_1": "Läs block 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic-nycklar",
+        "title": "MIFARE Classic-nycklar",
         "description": "Nycklar provas i ordning tills blockläsning lyckas.",
         "data": {
           "key_ff": "Nyckel ffffffffffff (fabriksstandard)",

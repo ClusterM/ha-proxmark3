@@ -6,15 +6,15 @@
         "description": "USB prievadas aptinkamas automatiškai. UID visada skaitomas.",
         "data": {
           "read_ntag": "Skaityti NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Skaityti NDEF iš Classic (lėta)",
-          "read_raw_blocks": "Skaityti neapdorotus blokus iš Classic",
+          "read_ntag_classic": "Skaityti NDEF iš MIFARE Classic (lėta)",
+          "read_raw_blocks": "Skaityti neapdorotus blokus iš MIFARE Classic",
           "poll_interval": "Apklausos intervalas (sek.)",
           "reconnect_interval": "Pakartotinio ryšio intervalas (sek.)"
         }
       },
       "blocks": {
         "title": "Neapdoroti blokai",
-        "description": "Pasirinkite Classic sektoriaus 0 blokus skaitymui (rakto poreikį nustatysite kitame ekrane).",
+        "description": "Pasirinkite MIFARE Classic sektoriaus 0 blokus skaitymui (rakto poreikį nustatysite kitame ekrane).",
         "data": {
           "block_0": "Skaityti bloką 0",
           "block_1": "Skaityti bloką 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic raktai",
+        "title": "MIFARE Classic raktai",
         "description": "Raktai bandomi iš eilės, kol sėkmingai perskaitomas blokas.",
         "data": {
           "key_ff": "Raktas ffffffffffff (gamyklinis)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 parinktys",
-        "description": "UID visada skaitomas. Įjunkite tik tai, ko reikia — Classic NDEF ir neapdoroti blokai lėti.",
+        "description": "UID visada skaitomas. Įjunkite tik tai, ko reikia — MIFARE Classic NDEF ir neapdoroti blokai lėti.",
         "data": {
           "read_ntag": "Skaityti NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Skaityti NDEF iš Classic (lėta)",
-          "read_raw_blocks": "Skaityti neapdorotus blokus iš Classic",
+          "read_ntag_classic": "Skaityti NDEF iš MIFARE Classic (lėta)",
+          "read_raw_blocks": "Skaityti neapdorotus blokus iš MIFARE Classic",
           "poll_interval": "Apklausos intervalas (sek.)",
           "reconnect_interval": "Pakartotinio ryšio intervalas (sek.)"
         }
       },
       "blocks": {
         "title": "Neapdoroti blokai",
-        "description": "Pasirinkite Classic sektoriaus 0 blokus skaitymui (rakto poreikį nustatysite kitame ekrane).",
+        "description": "Pasirinkite MIFARE Classic sektoriaus 0 blokus skaitymui (rakto poreikį nustatysite kitame ekrane).",
         "data": {
           "block_0": "Skaityti bloką 0",
           "block_1": "Skaityti bloką 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic raktai",
+        "title": "MIFARE Classic raktai",
         "description": "Raktai bandomi iš eilės, kol sėkmingai perskaitomas blokas.",
         "data": {
           "key_ff": "Raktas ffffffffffff (gamyklinis)",

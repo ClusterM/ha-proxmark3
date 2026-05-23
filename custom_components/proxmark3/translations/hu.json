@@ -6,15 +6,15 @@
         "description": "Az USB-port automatikusan felismerhető. Az UID mindig olvasásra kerül.",
         "data": {
           "read_ntag": "NDEF olvasása (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF olvasása Classic-on (lassú)",
-          "read_raw_blocks": "Nyers blokkok olvasása Classic-on",
+          "read_ntag_classic": "NDEF olvasása MIFARE Classic-on (lassú)",
+          "read_raw_blocks": "Nyers blokkok olvasása MIFARE Classic-on",
           "poll_interval": "Lekérdezési intervallum (másodperc)",
           "reconnect_interval": "Újracsatlakozási intervallum (másodperc)"
         }
       },
       "blocks": {
         "title": "Nyers blokkok",
-        "description": "Classic 0. szektor blokkjainak kiválasztása (kulcsok a következő képernyőn).",
+        "description": "MIFARE Classic 0. szektor blokkjainak kiválasztása (kulcsok a következő képernyőn).",
         "data": {
           "block_0": "0. blokk olvasása",
           "block_1": "1. blokk olvasása",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic kulcsok",
+        "title": "MIFARE Classic kulcsok",
         "description": "A kulcsokat sorrendben próbálja, amíg a blokk olvasása sikerül.",
         "data": {
           "key_ff": "Kulcs ffffffffffff (gyári alapértelmezett)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 beállítások",
-        "description": "Az UID mindig olvasásra kerül. Csak a szükségeset engedélyezze — a Classic NDEF és nyers blokkok lassúak.",
+        "description": "Az UID mindig olvasásra kerül. Csak a szükségeset engedélyezze — a MIFARE Classic NDEF és nyers blokkok lassúak.",
         "data": {
           "read_ntag": "NDEF olvasása (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF olvasása Classic-on (lassú)",
-          "read_raw_blocks": "Nyers blokkok olvasása Classic-on",
+          "read_ntag_classic": "NDEF olvasása MIFARE Classic-on (lassú)",
+          "read_raw_blocks": "Nyers blokkok olvasása MIFARE Classic-on",
           "poll_interval": "Lekérdezési intervallum (másodperc)",
           "reconnect_interval": "Újracsatlakozási intervallum (másodperc)"
         }
       },
       "blocks": {
         "title": "Nyers blokkok",
-        "description": "Classic 0. szektor blokkjainak kiválasztása (kulcsok a következő képernyőn).",
+        "description": "MIFARE Classic 0. szektor blokkjainak kiválasztása (kulcsok a következő képernyőn).",
         "data": {
           "block_0": "0. blokk olvasása",
           "block_1": "1. blokk olvasása",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic kulcsok",
+        "title": "MIFARE Classic kulcsok",
         "description": "A kulcsokat sorrendben próbálja, amíg a blokk olvasása sikerül.",
         "data": {
           "key_ff": "Kulcs ffffffffffff (gyári alapértelmezett)",

@@ -6,15 +6,15 @@
         "description": "USB पोर्ट स्वचालित रूप से पहचाना जाता है। UID हमेशा पढ़ा जाता है।",
         "data": {
           "read_ntag": "NDEF पढ़ें (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic पर NDEF पढ़ें (धीमा)",
-          "read_raw_blocks": "Classic पर कच्चे ब्लॉक पढ़ें",
+          "read_ntag_classic": "MIFARE Classic पर NDEF पढ़ें (धीमा)",
+          "read_raw_blocks": "MIFARE Classic पर कच्चे ब्लॉक पढ़ें",
           "poll_interval": "पोल अंतराल (सेकंड)",
           "reconnect_interval": "पुन: कनेक्ट अंतराल (सेकंड)"
         }
       },
       "blocks": {
         "title": "कच्चे ब्लॉक",
-        "description": "Classic सेक्टर 0 ब्लॉक चुनें (अगली स्क्रीन पर कुंजी)।",
+        "description": "MIFARE Classic सेक्टर 0 ब्लॉक चुनें (अगली स्क्रीन पर कुंजी)।",
         "data": {
           "block_0": "ब्लॉक 0 पढ़ें",
           "block_1": "ब्लॉक 1 पढ़ें",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic कुंजी",
+        "title": "MIFARE Classic कुंजी",
         "description": "ब्लॉक पढ़ना सफल होने तक कुंजियाँ क्रम से आज़माई जाती हैं।",
         "data": {
           "key_ff": "कुंजी ffffffffffff (फ़ैक्टरी डिफ़ॉल्ट)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 विकल्प",
-        "description": "UID हमेशा पढ़ा जाता है। केवल जरूरी सक्षम करें — Classic NDEF और कच्चे ब्लॉक धीमे हैं।",
+        "description": "UID हमेशा पढ़ा जाता है। केवल जरूरी सक्षम करें — MIFARE Classic NDEF और कच्चे ब्लॉक धीमे हैं।",
         "data": {
           "read_ntag": "NDEF पढ़ें (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic पर NDEF पढ़ें (धीमा)",
-          "read_raw_blocks": "Classic पर कच्चे ब्लॉक पढ़ें",
+          "read_ntag_classic": "MIFARE Classic पर NDEF पढ़ें (धीमा)",
+          "read_raw_blocks": "MIFARE Classic पर कच्चे ब्लॉक पढ़ें",
           "poll_interval": "पोल अंतराल (सेकंड)",
           "reconnect_interval": "पुन: कनेक्ट अंतराल (सेकंड)"
         }
       },
       "blocks": {
         "title": "कच्चे ब्लॉक",
-        "description": "Classic सेक्टर 0 ब्लॉक चुनें (अगली स्क्रीन पर कुंजी)।",
+        "description": "MIFARE Classic सेक्टर 0 ब्लॉक चुनें (अगली स्क्रीन पर कुंजी)।",
         "data": {
           "block_0": "ब्लॉक 0 पढ़ें",
           "block_1": "ब्लॉक 1 पढ़ें",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic कुंजी",
+        "title": "MIFARE Classic कुंजी",
         "description": "ब्लॉक पढ़ना सफल होने तक कुंजियाँ क्रम से आज़माई जाती हैं।",
         "data": {
           "key_ff": "कुंजी ffffffffffff (फ़ैक्टरी डिफ़ॉल्ट)",

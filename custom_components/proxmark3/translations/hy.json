@@ -6,15 +6,15 @@
         "description": "USB պորտը հայտնաբերվում է ավտոմատ։ UID-ը միշտ կարդացվում է։",
         "data": {
           "read_ntag": "Կարդալ NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Կարդալ NDEF Classic-ում (դանդաղ)",
-          "read_raw_blocks": "Կարդալ հում բլոկները Classic-ում",
+          "read_ntag_classic": "Կարդալ NDEF MIFARE Classic-ում (դանդաղ)",
+          "read_raw_blocks": "Կարդալ հում բլոկները MIFARE Classic-ում",
           "poll_interval": "Հարցման ինտերվալ (վայրկյան)",
           "reconnect_interval": "Կրկին միացման ինտերվալ (վայրկյան)"
         }
       },
       "blocks": {
         "title": "Հում բլոկներ",
-        "description": "Ընտրեք Classic 0 սեկտորի բլոկները (բանալիները հաջորդ էկրանում)։",
+        "description": "Ընտրեք MIFARE Classic 0 սեկտորի բլոկները (բանալիները հաջորդ էկրանում)։",
         "data": {
           "block_0": "Կարդալ բլոկ 0",
           "block_1": "Կարդալ բլոկ 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic բանալիներ",
+        "title": "MIFARE Classic բանալիներ",
         "description": "Բանալիները փորձվում են հերթով, մինչև բլոկի կարդալը հաջողվի։",
         "data": {
           "key_ff": "Բանալի ffffffffffff (գործարանային)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 կարգավորումներ",
-        "description": "UID-ը միշտ կարդացվում է։ Միացրեք միայն անհրաժեշտը — Classic NDEF-ը և հում բլոկները դանդաղ են։",
+        "description": "UID-ը միշտ կարդացվում է։ Միացրեք միայն անհրաժեշտը — MIFARE Classic NDEF-ը և հում բլոկները դանդաղ են։",
         "data": {
           "read_ntag": "Կարդալ NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Կարդալ NDEF Classic-ում (դանդաղ)",
-          "read_raw_blocks": "Կարդալ հում բլոկները Classic-ում",
+          "read_ntag_classic": "Կարդալ NDEF MIFARE Classic-ում (դանդաղ)",
+          "read_raw_blocks": "Կարդալ հում բլոկները MIFARE Classic-ում",
           "poll_interval": "Հարցման ինտերվալ (վայրկյան)",
           "reconnect_interval": "Կրկին միացման ինտերվալ (վայրկյան)"
         }
       },
       "blocks": {
         "title": "Հում բլոկներ",
-        "description": "Ընտրեք Classic 0 սեկտորի բլոկները (բանալիները հաջորդ էկրանում)։",
+        "description": "Ընտրեք MIFARE Classic 0 սեկտորի բլոկները (բանալիները հաջորդ էկրանում)։",
         "data": {
           "block_0": "Կարդալ բլոկ 0",
           "block_1": "Կարդալ բլոկ 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic բանալիներ",
+        "title": "MIFARE Classic բանալիներ",
         "description": "Բանալիները փորձվում են հերթով, մինչև բլոկի կարդալը հաջողվի։",
         "data": {
           "key_ff": "Բանալի ffffffffffff (գործարանային)",

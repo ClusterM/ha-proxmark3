@@ -6,15 +6,15 @@
         "description": "Η θύρα USB εντοπίζεται αυτόματα. Το UID διαβάζεται πάντα.",
         "data": {
           "read_ntag": "Ανάγνωση NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Ανάγνωση NDEF σε Classic (αργά)",
-          "read_raw_blocks": "Ανάγνωση ακατέργαστων blocks σε Classic",
+          "read_ntag_classic": "Ανάγνωση NDEF σε MIFARE Classic (αργά)",
+          "read_raw_blocks": "Ανάγνωση ακατέργαστων blocks σε MIFARE Classic",
           "poll_interval": "Διάστημα polling (δευτερόλεπτα)",
           "reconnect_interval": "Διάστημα επανασύνδεσης (δευτερόλεπτα)"
         }
       },
       "blocks": {
         "title": "Ακατέργαστα blocks",
-        "description": "Επιλέξτε blocks τομέα 0 Classic (κλειδιά στην επόμενη οθόνη).",
+        "description": "Επιλέξτε blocks τομέα 0 MIFARE Classic (κλειδιά στην επόμενη οθόνη).",
         "data": {
           "block_0": "Ανάγνωση block 0",
           "block_1": "Ανάγνωση block 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Κλειδιά Classic",
+        "title": "Κλειδιά MIFARE Classic",
         "description": "Τα κλειδιά δοκιμάζονται με τη σειρά μέχρι να πετύχει η ανάγνωση.",
         "data": {
           "key_ff": "Κλειδί ffffffffffff (εργοστασιακό)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Επιλογές Proxmark3",
-        "description": "Το UID διαβάζεται πάντα. Ενεργοποιήστε μόνο ό,τι χρειάζεστε — Classic NDEF και ακατέργαστα blocks είναι αργά.",
+        "description": "Το UID διαβάζεται πάντα. Ενεργοποιήστε μόνο ό,τι χρειάζεστε — MIFARE Classic NDEF και ακατέργαστα blocks είναι αργά.",
         "data": {
           "read_ntag": "Ανάγνωση NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Ανάγνωση NDEF σε Classic (αργά)",
-          "read_raw_blocks": "Ανάγνωση ακατέργαστων blocks σε Classic",
+          "read_ntag_classic": "Ανάγνωση NDEF σε MIFARE Classic (αργά)",
+          "read_raw_blocks": "Ανάγνωση ακατέργαστων blocks σε MIFARE Classic",
           "poll_interval": "Διάστημα polling (δευτερόλεπτα)",
           "reconnect_interval": "Διάστημα επανασύνδεσης (δευτερόλεπτα)"
         }
       },
       "blocks": {
         "title": "Ακατέργαστα blocks",
-        "description": "Επιλέξτε blocks τομέα 0 Classic (κλειδιά στην επόμενη οθόνη).",
+        "description": "Επιλέξτε blocks τομέα 0 MIFARE Classic (κλειδιά στην επόμενη οθόνη).",
         "data": {
           "block_0": "Ανάγνωση block 0",
           "block_1": "Ανάγνωση block 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Κλειδιά Classic",
+        "title": "Κλειδιά MIFARE Classic",
         "description": "Τα κλειδιά δοκιμάζονται με τη σειρά μέχρι να πετύχει η ανάγνωση.",
         "data": {
           "key_ff": "Κλειδί ffffffffffff (εργοστασιακό)",

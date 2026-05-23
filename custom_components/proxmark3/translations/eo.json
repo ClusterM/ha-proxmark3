@@ -6,15 +6,15 @@
         "description": "USB-pordo estas aŭtomate detektita. UID ĉiam legiĝas.",
         "data": {
           "read_ntag": "Legi NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Legi NDEF sur Classic (malrapide)",
-          "read_raw_blocks": "Legi krudajn blokojn sur Classic",
+          "read_ntag_classic": "Legi NDEF sur MIFARE Classic (malrapide)",
+          "read_raw_blocks": "Legi krudajn blokojn sur MIFARE Classic",
           "poll_interval": "Enketintervalo (sekundoj)",
           "reconnect_interval": "Rekonektintervalo (sekundoj)"
         }
       },
       "blocks": {
         "title": "Krudaj blokoj",
-        "description": "Elektu Classic-sektoron 0-blokojn (ŝlosiloj je la sekva ekrano).",
+        "description": "Elektu MIFARE Classic-sektoron 0-blokojn (ŝlosiloj je la sekva ekrano).",
         "data": {
           "block_0": "Legi blokon 0",
           "block_1": "Legi blokon 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic-ŝlosiloj",
+        "title": "MIFARE Classic-ŝlosiloj",
         "description": "Ŝlosiloj proviĝas laŭvice ĝis bloklego sukcesas.",
         "data": {
           "key_ff": "Ŝlosilo ffffffffffff (fabrika defaŭlto)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3-opcioj",
-        "description": "UID ĉiam legiĝas. Ŝaltu nur kion vi bezonas — Classic NDEF kaj krudaj blokoj estas malrapidaj.",
+        "description": "UID ĉiam legiĝas. Ŝaltu nur kion vi bezonas — MIFARE Classic NDEF kaj krudaj blokoj estas malrapidaj.",
         "data": {
           "read_ntag": "Legi NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Legi NDEF sur Classic (malrapide)",
-          "read_raw_blocks": "Legi krudajn blokojn sur Classic",
+          "read_ntag_classic": "Legi NDEF sur MIFARE Classic (malrapide)",
+          "read_raw_blocks": "Legi krudajn blokojn sur MIFARE Classic",
           "poll_interval": "Enketintervalo (sekundoj)",
           "reconnect_interval": "Rekonektintervalo (sekundoj)"
         }
       },
       "blocks": {
         "title": "Krudaj blokoj",
-        "description": "Elektu Classic-sektoron 0-blokojn (ŝlosiloj je la sekva ekrano).",
+        "description": "Elektu MIFARE Classic-sektoron 0-blokojn (ŝlosiloj je la sekva ekrano).",
         "data": {
           "block_0": "Legi blokon 0",
           "block_1": "Legi blokon 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic-ŝlosiloj",
+        "title": "MIFARE Classic-ŝlosiloj",
         "description": "Ŝlosiloj proviĝas laŭvice ĝis bloklego sukcesas.",
         "data": {
           "key_ff": "Ŝlosilo ffffffffffff (fabrika defaŭlto)",

@@ -6,15 +6,15 @@
         "description": "درگاه USB به‌طور خودکار شناسایی می‌شود. UID همیشه خوانده می‌شود.",
         "data": {
           "read_ntag": "خواندن NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "خواندن NDEF روی Classic (کند)",
-          "read_raw_blocks": "خواندن بلوک‌های خام روی Classic",
+          "read_ntag_classic": "خواندن NDEF روی MIFARE Classic (کند)",
+          "read_raw_blocks": "خواندن بلوک‌های خام روی MIFARE Classic",
           "poll_interval": "فاصله نظرسنجی (ثانیه)",
           "reconnect_interval": "فاصله اتصال مجدد (ثانیه)"
         }
       },
       "blocks": {
         "title": "بلوک‌های خام",
-        "description": "بلوک‌های بخش ۰ Classic را انتخاب کنید (کلیدها در صفحه بعد).",
+        "description": "بلوک‌های بخش ۰ MIFARE Classic را انتخاب کنید (کلیدها در صفحه بعد).",
         "data": {
           "block_0": "خواندن بلوک 0",
           "block_1": "خواندن بلوک 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "کلیدهای Classic",
+        "title": "کلیدهای MIFARE Classic",
         "description": "کلیدها به ترتیب امتحان می‌شوند تا خواندن بلوک موفق شود.",
         "data": {
           "key_ff": "کلید ffffffffffff (پیش‌فرض کارخانه)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "گزینه‌های Proxmark3",
-        "description": "UID همیشه خوانده می‌شود. فقط موارد لازم را فعال کنید — NDEF Classic و بلوک‌های خام کند هستند.",
+        "description": "UID همیشه خوانده می‌شود. فقط موارد لازم را فعال کنید — NDEF MIFARE Classic و بلوک‌های خام کند هستند.",
         "data": {
           "read_ntag": "خواندن NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "خواندن NDEF روی Classic (کند)",
-          "read_raw_blocks": "خواندن بلوک‌های خام روی Classic",
+          "read_ntag_classic": "خواندن NDEF روی MIFARE Classic (کند)",
+          "read_raw_blocks": "خواندن بلوک‌های خام روی MIFARE Classic",
           "poll_interval": "فاصله نظرسنجی (ثانیه)",
           "reconnect_interval": "فاصله اتصال مجدد (ثانیه)"
         }
       },
       "blocks": {
         "title": "بلوک‌های خام",
-        "description": "بلوک‌های بخش ۰ Classic را انتخاب کنید (کلیدها در صفحه بعد).",
+        "description": "بلوک‌های بخش ۰ MIFARE Classic را انتخاب کنید (کلیدها در صفحه بعد).",
         "data": {
           "block_0": "خواندن بلوک 0",
           "block_1": "خواندن بلوک 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "کلیدهای Classic",
+        "title": "کلیدهای MIFARE Classic",
         "description": "کلیدها به ترتیب امتحان می‌شوند تا خواندن بلوک موفق شود.",
         "data": {
           "key_ff": "کلید ffffffffffff (پیش‌فرض کارخانه)",

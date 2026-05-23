@@ -6,15 +6,15 @@
         "description": "USB পোর্ট স্বয়ংক্রিয়ভাবে শনাক্ত হয়। UID সবসময় পড়া হয়।",
         "data": {
           "read_ntag": "NDEF পড়ুন (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic-এ NDEF পড়ুন (ধীর)",
-          "read_raw_blocks": "Classic-এ কাঁচা ব্লক পড়ুন",
+          "read_ntag_classic": "MIFARE Classic-এ NDEF পড়ুন (ধীর)",
+          "read_raw_blocks": "MIFARE Classic-এ কাঁচা ব্লক পড়ুন",
           "poll_interval": "পোল ব্যবধান (সেকেন্ড)",
           "reconnect_interval": "পুনঃসংযোগ ব্যবধান (সেকেন্ড)"
         }
       },
       "blocks": {
         "title": "কাঁচা ব্লক",
-        "description": "Classic সেক্টর ০-এর ব্লক বেছে নিন (পরের স্ক্রিনে কী লাগবে)।",
+        "description": "MIFARE Classic সেক্টর ০-এর ব্লক বেছে নিন (পরের স্ক্রিনে কী লাগবে)।",
         "data": {
           "block_0": "ব্লক 0 পড়ুন",
           "block_1": "ব্লক 1 পড়ুন",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic কী",
+        "title": "MIFARE Classic কী",
         "description": "ব্লক পড়া সফল না হওয়া পর্যন্ত কীগুলো ক্রমানুসারে চেষ্টা করা হয়।",
         "data": {
           "key_ff": "কী ffffffffffff (ফ্যাক্টরি ডিফল্ট)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 অপশন",
-        "description": "UID সবসময় পড়া হয়। শুধু প্রয়োজনীয়টি চালু করুন — Classic NDEF ও কাঁচা ব্লক ধীর।",
+        "description": "UID সবসময় পড়া হয়। শুধু প্রয়োজনীয়টি চালু করুন — MIFARE Classic NDEF ও কাঁচা ব্লক ধীর।",
         "data": {
           "read_ntag": "NDEF পড়ুন (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic-এ NDEF পড়ুন (ধীর)",
-          "read_raw_blocks": "Classic-এ কাঁচা ব্লক পড়ুন",
+          "read_ntag_classic": "MIFARE Classic-এ NDEF পড়ুন (ধীর)",
+          "read_raw_blocks": "MIFARE Classic-এ কাঁচা ব্লক পড়ুন",
           "poll_interval": "পোল ব্যবধান (সেকেন্ড)",
           "reconnect_interval": "পুনঃসংযোগ ব্যবধান (সেকেন্ড)"
         }
       },
       "blocks": {
         "title": "কাঁচা ব্লক",
-        "description": "Classic সেক্টর ০-এর ব্লক বেছে নিন (পরের স্ক্রিনে কী লাগবে)।",
+        "description": "MIFARE Classic সেক্টর ০-এর ব্লক বেছে নিন (পরের স্ক্রিনে কী লাগবে)।",
         "data": {
           "block_0": "ব্লক 0 পড়ুন",
           "block_1": "ব্লক 1 পড়ুন",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic কী",
+        "title": "MIFARE Classic কী",
         "description": "ব্লক পড়া সফল না হওয়া পর্যন্ত কীগুলো ক্রমানুসারে চেষ্টা করা হয়।",
         "data": {
           "key_ff": "কী ffffffffffff (ফ্যাক্টরি ডিফল্ট)",

@@ -6,15 +6,15 @@
         "description": "USB-порт определяется автоматически. UID читается всегда.",
         "data": {
           "read_ntag": "Читать NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Читать NDEF у Classic (медленно)",
-          "read_raw_blocks": "Читать сырые блоки у Classic",
+          "read_ntag_classic": "Читать NDEF у MIFARE Classic (медленно)",
+          "read_raw_blocks": "Читать сырые блоки у MIFARE Classic",
           "poll_interval": "Интервал опроса (сек)",
           "reconnect_interval": "Интервал переподключения (сек)"
         }
       },
       "blocks": {
         "title": "Сырые блоки",
-        "description": "Блоки сектора 0 Classic (на следующем экране — ключи).",
+        "description": "Блоки сектора 0 MIFARE Classic (на следующем экране — ключи).",
         "data": {
           "block_0": "Читать блок 0",
           "block_1": "Читать блок 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Ключи Classic",
+        "title": "Ключи MIFARE Classic",
         "description": "Ключи проверяются по порядку, пока чтение блока не удастся.",
         "data": {
           "key_ff": "Ключ ffffffffffff (заводской)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Параметры Proxmark3",
-        "description": "UID читается всегда. Включайте только нужное — NDEF и сырые блоки Classic замедляют опрос.",
+        "description": "UID читается всегда. Включайте только нужное — NDEF и сырые блоки MIFARE Classic замедляют опрос.",
         "data": {
           "read_ntag": "Читать NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Читать NDEF у Classic (медленно)",
-          "read_raw_blocks": "Читать сырые блоки у Classic",
+          "read_ntag_classic": "Читать NDEF у MIFARE Classic (медленно)",
+          "read_raw_blocks": "Читать сырые блоки у MIFARE Classic",
           "poll_interval": "Интервал опроса (сек)",
           "reconnect_interval": "Интервал переподключения (сек)"
         }
       },
       "blocks": {
         "title": "Сырые блоки",
-        "description": "Блоки сектора 0 Classic (на следующем экране — ключи).",
+        "description": "Блоки сектора 0 MIFARE Classic (на следующем экране — ключи).",
         "data": {
           "block_0": "Читать блок 0",
           "block_1": "Читать блок 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Ключи Classic",
+        "title": "Ключи MIFARE Classic",
         "description": "Ключи проверяются по порядку, пока чтение блока не удастся.",
         "data": {
           "key_ff": "Ключ ffffffffffff (заводской)",

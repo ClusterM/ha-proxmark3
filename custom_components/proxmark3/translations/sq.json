@@ -6,15 +6,15 @@
         "description": "Porta USB zbulohet automatikisht. UID lexohet gjithmonë.",
         "data": {
           "read_ntag": "Lexo NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lexo NDEF në Classic (ngadalë)",
-          "read_raw_blocks": "Lexo blloqe të papërpunuara në Classic",
+          "read_ntag_classic": "Lexo NDEF në MIFARE Classic (ngadalë)",
+          "read_raw_blocks": "Lexo blloqe të papërpunuara në MIFARE Classic",
           "poll_interval": "Interval pyetjesh (sekonda)",
           "reconnect_interval": "Interval rilidhjeje (sekonda)"
         }
       },
       "blocks": {
         "title": "Blloqe të papërpunuara",
-        "description": "Zgjidhni blloqet e sektorit 0 Classic për lexim (çelësat në ekranin tjetër).",
+        "description": "Zgjidhni blloqet e sektorit 0 MIFARE Classic për lexim (çelësat në ekranin tjetër).",
         "data": {
           "block_0": "Lexo bllokun 0",
           "block_1": "Lexo bllokun 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Çelësat Classic",
+        "title": "Çelësat MIFARE Classic",
         "description": "Çelësat provohen me radhë derisa leximi i një blloku të ketë sukses.",
         "data": {
           "key_ff": "Çelësi ffffffffffff (fabrikë)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Opsione Proxmark3",
-        "description": "UID lexohet gjithmonë. Aktivizo vetëm çfarë të duhet — NDEF në Classic dhe blloqet e papërpunuara janë të ngadalta.",
+        "description": "UID lexohet gjithmonë. Aktivizo vetëm çfarë të duhet — NDEF në MIFARE Classic dhe blloqet e papërpunuara janë të ngadalta.",
         "data": {
           "read_ntag": "Lexo NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lexo NDEF në Classic (ngadalë)",
-          "read_raw_blocks": "Lexo blloqe të papërpunuara në Classic",
+          "read_ntag_classic": "Lexo NDEF në MIFARE Classic (ngadalë)",
+          "read_raw_blocks": "Lexo blloqe të papërpunuara në MIFARE Classic",
           "poll_interval": "Interval pyetjesh (sekonda)",
           "reconnect_interval": "Interval rilidhjeje (sekonda)"
         }
       },
       "blocks": {
         "title": "Blloqe të papërpunuara",
-        "description": "Zgjidhni blloqet e sektorit 0 Classic për lexim (çelësat në ekranin tjetër).",
+        "description": "Zgjidhni blloqet e sektorit 0 MIFARE Classic për lexim (çelësat në ekranin tjetër).",
         "data": {
           "block_0": "Lexo bllokun 0",
           "block_1": "Lexo bllokun 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Çelësat Classic",
+        "title": "Çelësat MIFARE Classic",
         "description": "Çelësat provohen me radhë derisa leximi i një blloku të ketë sukses.",
         "data": {
           "key_ff": "Çelësi ffffffffffff (fabrikë)",

@@ -6,15 +6,15 @@
         "description": "USB-port tuvastatakse automaatselt. UID loetakse alati.",
         "data": {
           "read_ntag": "Loe NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Loe NDEF Classicul (aeglane)",
-          "read_raw_blocks": "Loe toorblokke Classicul",
+          "read_ntag_classic": "Loe NDEF MIFARE Classicul (aeglane)",
+          "read_raw_blocks": "Loe toorblokke MIFARE Classicul",
           "poll_interval": "Küsitluse intervall (sekundid)",
           "reconnect_interval": "Taasühenduse intervall (sekundid)"
         }
       },
       "blocks": {
         "title": "Toorblokid",
-        "description": "Vali Classic sektori 0 blokid (võtmed järgmisel ekraanil).",
+        "description": "Vali MIFARE Classic sektori 0 blokid (võtmed järgmisel ekraanil).",
         "data": {
           "block_0": "Loe blokk 0",
           "block_1": "Loe blokk 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic võtmed",
+        "title": "MIFARE Classic võtmed",
         "description": "Võtmeid proovitakse järjekorras, kuni bloki lugemine õnnestub.",
         "data": {
           "key_ff": "Võti ffffffffffff (tehase vaikimisi)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 valikud",
-        "description": "UID loetakse alati. Luba ainult vajalik — Classic NDEF ja toorblokid on aeglased.",
+        "description": "UID loetakse alati. Luba ainult vajalik — MIFARE Classic NDEF ja toorblokid on aeglased.",
         "data": {
           "read_ntag": "Loe NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Loe NDEF Classicul (aeglane)",
-          "read_raw_blocks": "Loe toorblokke Classicul",
+          "read_ntag_classic": "Loe NDEF MIFARE Classicul (aeglane)",
+          "read_raw_blocks": "Loe toorblokke MIFARE Classicul",
           "poll_interval": "Küsitluse intervall (sekundid)",
           "reconnect_interval": "Taasühenduse intervall (sekundid)"
         }
       },
       "blocks": {
         "title": "Toorblokid",
-        "description": "Vali Classic sektori 0 blokid (võtmed järgmisel ekraanil).",
+        "description": "Vali MIFARE Classic sektori 0 blokid (võtmed järgmisel ekraanil).",
         "data": {
           "block_0": "Loe blokk 0",
           "block_1": "Loe blokk 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic võtmed",
+        "title": "MIFARE Classic võtmed",
         "description": "Võtmeid proovitakse järjekorras, kuni bloki lugemine õnnestub.",
         "data": {
           "key_ff": "Võti ffffffffffff (tehase vaikimisi)",

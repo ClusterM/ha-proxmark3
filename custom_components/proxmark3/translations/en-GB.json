@@ -6,15 +6,15 @@
         "description": "USB port is detected automatically. UID is always read.",
         "data": {
           "read_ntag": "Read NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Read NDEF on Classic (slow)",
-          "read_raw_blocks": "Read raw blocks on Classic",
+          "read_ntag_classic": "Read NDEF on MIFARE Classic (slow)",
+          "read_raw_blocks": "Read raw blocks on MIFARE Classic",
           "poll_interval": "Poll interval (seconds)",
           "reconnect_interval": "Reconnect interval (seconds)"
         }
       },
       "blocks": {
         "title": "Raw blocks",
-        "description": "Select Classic sector 0 blocks to read (requires keys on the next screen).",
+        "description": "Select MIFARE Classic sector 0 blocks to read (requires keys on the next screen).",
         "data": {
           "block_0": "Read block 0",
           "block_1": "Read block 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic keys",
+        "title": "MIFARE Classic keys",
         "description": "Keys are tried in order until a block read succeeds.",
         "data": {
           "key_ff": "Key ffffffffffff (factory default)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 options",
-        "description": "UID is always read. Enable only what you need — Classic NDEF and raw blocks are slow.",
+        "description": "UID is always read. Enable only what you need — MIFARE Classic NDEF and raw blocks are slow.",
         "data": {
           "read_ntag": "Read NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Read NDEF on Classic (slow)",
-          "read_raw_blocks": "Read raw blocks on Classic",
+          "read_ntag_classic": "Read NDEF on MIFARE Classic (slow)",
+          "read_raw_blocks": "Read raw blocks on MIFARE Classic",
           "poll_interval": "Poll interval (seconds)",
           "reconnect_interval": "Reconnect interval (seconds)"
         }
       },
       "blocks": {
         "title": "Raw blocks",
-        "description": "Select Classic sector 0 blocks to read (requires keys on the next screen).",
+        "description": "Select MIFARE Classic sector 0 blocks to read (requires keys on the next screen).",
         "data": {
           "block_0": "Read block 0",
           "block_1": "Read block 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic keys",
+        "title": "MIFARE Classic keys",
         "description": "Keys are tried in order until a block read succeeds.",
         "data": {
           "key_ff": "Key ffffffffffff (factory default)",

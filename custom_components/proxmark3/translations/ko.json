@@ -6,15 +6,15 @@
         "description": "USB 포트가 자동으로 감지됩니다. UID는 항상 읽습니다.",
         "data": {
           "read_ntag": "NDEF 읽기 (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic에서 NDEF 읽기 (느림)",
-          "read_raw_blocks": "Classic에서 원시 블록 읽기",
+          "read_ntag_classic": "MIFARE Classic에서 NDEF 읽기 (느림)",
+          "read_raw_blocks": "MIFARE Classic에서 원시 블록 읽기",
           "poll_interval": "폴링 간격(초)",
           "reconnect_interval": "재연결 간격(초)"
         }
       },
       "blocks": {
         "title": "원시 블록",
-        "description": "읽을 Classic 섹터 0 블록을 선택합니다(다음 화면에서 키가 필요합니다).",
+        "description": "읽을 MIFARE Classic 섹터 0 블록을 선택합니다(다음 화면에서 키가 필요합니다).",
         "data": {
           "block_0": "블록 0 읽기",
           "block_1": "블록 1 읽기",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic 키",
+        "title": "MIFARE Classic 키",
         "description": "블록 읽기가 성공할 때까지 키를 순서대로 시도합니다.",
         "data": {
           "key_ff": "키 ffffffffffff (공장 기본값)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 옵션",
-        "description": "UID는 항상 읽습니다. 필요한 항목만 켜세요 — Classic NDEF와 원시 블록은 느립니다.",
+        "description": "UID는 항상 읽습니다. 필요한 항목만 켜세요 — MIFARE Classic NDEF와 원시 블록은 느립니다.",
         "data": {
           "read_ntag": "NDEF 읽기 (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic에서 NDEF 읽기 (느림)",
-          "read_raw_blocks": "Classic에서 원시 블록 읽기",
+          "read_ntag_classic": "MIFARE Classic에서 NDEF 읽기 (느림)",
+          "read_raw_blocks": "MIFARE Classic에서 원시 블록 읽기",
           "poll_interval": "폴링 간격(초)",
           "reconnect_interval": "재연결 간격(초)"
         }
       },
       "blocks": {
         "title": "원시 블록",
-        "description": "읽을 Classic 섹터 0 블록을 선택합니다(다음 화면에서 키가 필요합니다).",
+        "description": "읽을 MIFARE Classic 섹터 0 블록을 선택합니다(다음 화면에서 키가 필요합니다).",
         "data": {
           "block_0": "블록 0 읽기",
           "block_1": "블록 1 읽기",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic 키",
+        "title": "MIFARE Classic 키",
         "description": "블록 읽기가 성공할 때까지 키를 순서대로 시도합니다.",
         "data": {
           "key_ff": "키 ffffffffffff (공장 기본값)",

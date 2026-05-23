@@ -6,15 +6,15 @@
         "description": "Canfod porth USB yn awtomatig. Darllenir UID bob amser.",
         "data": {
           "read_ntag": "Darllen NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Darllen NDEF ar Classic (araf)",
-          "read_raw_blocks": "Darllen blociau crai ar Classic",
+          "read_ntag_classic": "Darllen NDEF ar MIFARE Classic (araf)",
+          "read_raw_blocks": "Darllen blociau crai ar MIFARE Classic",
           "poll_interval": "Cyfnod polio (eiliadau)",
           "reconnect_interval": "Cyfnod ailgysylltu (eiliadau)"
         }
       },
       "blocks": {
         "title": "Blociau crai",
-        "description": "Dewiswch flociau sector 0 Classic (allweddi ar y sgrin nesaf).",
+        "description": "Dewiswch flociau sector 0 MIFARE Classic (allweddi ar y sgrin nesaf).",
         "data": {
           "block_0": "Darllen bloc 0",
           "block_1": "Darllen bloc 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Allweddi Classic",
+        "title": "Allweddi MIFARE Classic",
         "description": "Ceisir allweddi mewn trefn nes bod darllen bloc yn llwyddiannus.",
         "data": {
           "key_ff": "Allwedd ffffffffffff (rhagosodiad ffatri)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Opsiynau Proxmark3",
-        "description": "Darllenir UID bob amser. Galluogwch dim ond yr hyn sydd ei angen — NDEF Classic a blociau crai yn araf.",
+        "description": "Darllenir UID bob amser. Galluogwch dim ond yr hyn sydd ei angen — NDEF MIFARE Classic a blociau crai yn araf.",
         "data": {
           "read_ntag": "Darllen NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Darllen NDEF ar Classic (araf)",
-          "read_raw_blocks": "Darllen blociau crai ar Classic",
+          "read_ntag_classic": "Darllen NDEF ar MIFARE Classic (araf)",
+          "read_raw_blocks": "Darllen blociau crai ar MIFARE Classic",
           "poll_interval": "Cyfnod polio (eiliadau)",
           "reconnect_interval": "Cyfnod ailgysylltu (eiliadau)"
         }
       },
       "blocks": {
         "title": "Blociau crai",
-        "description": "Dewiswch flociau sector 0 Classic (allweddi ar y sgrin nesaf).",
+        "description": "Dewiswch flociau sector 0 MIFARE Classic (allweddi ar y sgrin nesaf).",
         "data": {
           "block_0": "Darllen bloc 0",
           "block_1": "Darllen bloc 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Allweddi Classic",
+        "title": "Allweddi MIFARE Classic",
         "description": "Ceisir allweddi mewn trefn nes bod darllen bloc yn llwyddiannus.",
         "data": {
           "key_ff": "Allwedd ffffffffffff (rhagosodiad ffatri)",

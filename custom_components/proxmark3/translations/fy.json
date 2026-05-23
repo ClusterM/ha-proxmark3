@@ -6,15 +6,15 @@
         "description": "USB-poort wurdt automatysk ûntdutsen. UID wurdt altyd lêzen.",
         "data": {
           "read_ntag": "Lês NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lês NDEF op Classic (tydlik)",
-          "read_raw_blocks": "Lês rwe blokken op Classic",
+          "read_ntag_classic": "Lês NDEF op MIFARE Classic (tydlik)",
+          "read_raw_blocks": "Lês rwe blokken op MIFARE Classic",
           "poll_interval": "Poll-ynteval (sekonden)",
           "reconnect_interval": "Opnij ferbinen-ynteval (sekonden)"
         }
       },
       "blocks": {
         "title": "Rwe blokken",
-        "description": "Selektearje Classic sektor 0-blokken (kaaien op it folgjende skerm).",
+        "description": "Selektearje MIFARE Classic sektor 0-blokken (kaaien op it folgjende skerm).",
         "data": {
           "block_0": "Lês blok 0",
           "block_1": "Lês blok 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic-kaaien",
+        "title": "MIFARE Classic-kaaien",
         "description": "Kaaien wurde op folchoard besocht oant bloklêzen slagget.",
         "data": {
           "key_ff": "Kaai ffffffffffff (fabrieksstandert)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3-opsjes",
-        "description": "UID wurdt altyd lêzen. Skeakel allinnich yn wat jo nedich hawwe — Classic NDEF en rwe blokken binne tydlik.",
+        "description": "UID wurdt altyd lêzen. Skeakel allinnich yn wat jo nedich hawwe — MIFARE Classic NDEF en rwe blokken binne tydlik.",
         "data": {
           "read_ntag": "Lês NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lês NDEF op Classic (tydlik)",
-          "read_raw_blocks": "Lês rwe blokken op Classic",
+          "read_ntag_classic": "Lês NDEF op MIFARE Classic (tydlik)",
+          "read_raw_blocks": "Lês rwe blokken op MIFARE Classic",
           "poll_interval": "Poll-ynteval (sekonden)",
           "reconnect_interval": "Opnij ferbinen-ynteval (sekonden)"
         }
       },
       "blocks": {
         "title": "Rwe blokken",
-        "description": "Selektearje Classic sektor 0-blokken (kaaien op it folgjende skerm).",
+        "description": "Selektearje MIFARE Classic sektor 0-blokken (kaaien op it folgjende skerm).",
         "data": {
           "block_0": "Lês blok 0",
           "block_1": "Lês blok 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic-kaaien",
+        "title": "MIFARE Classic-kaaien",
         "description": "Kaaien wurde op folchoard besocht oant bloklêzen slagget.",
         "data": {
           "key_ff": "Kaai ffffffffffff (fabrieksstandert)",

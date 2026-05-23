@@ -6,15 +6,15 @@
         "description": "USB-poort word outomaties opgespoor. UID word altyd gelees.",
         "data": {
           "read_ntag": "Lees NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lees NDEF op Classic (stadig)",
-          "read_raw_blocks": "Lees rou blokke op Classic",
+          "read_ntag_classic": "Lees NDEF op MIFARE Classic (stadig)",
+          "read_raw_blocks": "Lees rou blokke op MIFARE Classic",
           "poll_interval": "Poll-interval (sekondes)",
           "reconnect_interval": "Herverbind-interval (sekondes)"
         }
       },
       "blocks": {
         "title": "Rou blokke",
-        "description": "Kies Classic sektor 0-blokke om te lees (sleutels op die volgende skerm).",
+        "description": "Kies MIFARE Classic sektor 0-blokke om te lees (sleutels op die volgende skerm).",
         "data": {
           "block_0": "Lees blok 0",
           "block_1": "Lees blok 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic-sleutels",
+        "title": "MIFARE Classic-sleutels",
         "description": "Sleutels word in volgorde probeer totdat 'n blok suksesvol gelees word.",
         "data": {
           "key_ff": "Sleutel ffffffffffff (fabriekstandaard)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3-opsies",
-        "description": "UID word altyd gelees. Skakel net aan wat jy nodig het — Classic NDEF en rou blokke is stadig.",
+        "description": "UID word altyd gelees. Skakel net aan wat jy nodig het — MIFARE Classic NDEF en rou blokke is stadig.",
         "data": {
           "read_ntag": "Lees NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lees NDEF op Classic (stadig)",
-          "read_raw_blocks": "Lees rou blokke op Classic",
+          "read_ntag_classic": "Lees NDEF op MIFARE Classic (stadig)",
+          "read_raw_blocks": "Lees rou blokke op MIFARE Classic",
           "poll_interval": "Poll-interval (sekondes)",
           "reconnect_interval": "Herverbind-interval (sekondes)"
         }
       },
       "blocks": {
         "title": "Rou blokke",
-        "description": "Kies Classic sektor 0-blokke om te lees (sleutels op die volgende skerm).",
+        "description": "Kies MIFARE Classic sektor 0-blokke om te lees (sleutels op die volgende skerm).",
         "data": {
           "block_0": "Lees blok 0",
           "block_1": "Lees blok 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic-sleutels",
+        "title": "MIFARE Classic-sleutels",
         "description": "Sleutels word in volgorde probeer totdat 'n blok suksesvol gelees word.",
         "data": {
           "key_ff": "Sleutel ffffffffffff (fabriekstandaard)",

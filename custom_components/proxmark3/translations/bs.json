@@ -6,15 +6,15 @@
         "description": "USB port se automatski otkriva. UID se uvijek čita.",
         "data": {
           "read_ntag": "Čitaj NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Čitaj NDEF na Classic (sporo)",
-          "read_raw_blocks": "Čitaj sirove blokove na Classic",
+          "read_ntag_classic": "Čitaj NDEF na MIFARE Classic (sporo)",
+          "read_raw_blocks": "Čitaj sirove blokove na MIFARE Classic",
           "poll_interval": "Interval opiranja (sekunde)",
           "reconnect_interval": "Interval ponovnog povezivanja (sekunde)"
         }
       },
       "blocks": {
         "title": "Sirovi blokovi",
-        "description": "Odaberite blokove sektora 0 Classic (ključevi na sljedećem ekranu).",
+        "description": "Odaberite blokove sektora 0 MIFARE Classic (ključevi na sljedećem ekranu).",
         "data": {
           "block_0": "Čitaj blok 0",
           "block_1": "Čitaj blok 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic ključevi",
+        "title": "MIFARE Classic ključevi",
         "description": "Ključevi se pokušavaju redom dok čitanje bloka ne uspije.",
         "data": {
           "key_ff": "Ključ ffffffffffff (fabrički)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 opcije",
-        "description": "UID se uvijek čita. Uključite samo što vam treba — Classic NDEF i sirovi blokovi su spori.",
+        "description": "UID se uvijek čita. Uključite samo što vam treba — MIFARE Classic NDEF i sirovi blokovi su spori.",
         "data": {
           "read_ntag": "Čitaj NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Čitaj NDEF na Classic (sporo)",
-          "read_raw_blocks": "Čitaj sirove blokove na Classic",
+          "read_ntag_classic": "Čitaj NDEF na MIFARE Classic (sporo)",
+          "read_raw_blocks": "Čitaj sirove blokove na MIFARE Classic",
           "poll_interval": "Interval opiranja (sekunde)",
           "reconnect_interval": "Interval ponovnog povezivanja (sekunde)"
         }
       },
       "blocks": {
         "title": "Sirovi blokovi",
-        "description": "Odaberite blokove sektora 0 Classic (ključevi na sljedećem ekranu).",
+        "description": "Odaberite blokove sektora 0 MIFARE Classic (ključevi na sljedećem ekranu).",
         "data": {
           "block_0": "Čitaj blok 0",
           "block_1": "Čitaj blok 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic ključevi",
+        "title": "MIFARE Classic ključevi",
         "description": "Ključevi se pokušavaju redom dok čitanje bloka ne uspije.",
         "data": {
           "key_ff": "Ključ ffffffffffff (fabrički)",

@@ -6,15 +6,15 @@
         "description": "พอร์ต USB ตรวจพบอัตโนมัติ อ่าน UID เสมอ",
         "data": {
           "read_ntag": "อ่าน NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "อ่าน NDEF บน Classic (ช้า)",
-          "read_raw_blocks": "อ่านบล็อกดิบบน Classic",
+          "read_ntag_classic": "อ่าน NDEF บน MIFARE Classic (ช้า)",
+          "read_raw_blocks": "อ่านบล็อกดิบบน MIFARE Classic",
           "poll_interval": "ช่วงเวลาโพล (วินาที)",
           "reconnect_interval": "ช่วงเวลาเชื่อมต่อใหม่ (วินาที)"
         }
       },
       "blocks": {
         "title": "บล็อกดิบ",
-        "description": "เลือกบล็อกเซกเตอร์ 0 ของ Classic ที่จะอ่าน (ต้องมีคีย์ในหน้าถัดไป)",
+        "description": "เลือกบล็อกเซกเตอร์ 0 ของ MIFARE Classic ที่จะอ่าน (ต้องมีคีย์ในหน้าถัดไป)",
         "data": {
           "block_0": "อ่านบล็อก 0",
           "block_1": "อ่านบล็อก 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "คีย์ Classic",
+        "title": "คีย์ MIFARE Classic",
         "description": "ลองคีย์ตามลำดับจนกว่าจะอ่านบล็อกสำเร็จ",
         "data": {
           "key_ff": "คีย์ ffffffffffff (ค่าเริ่มต้นจากโรงงาน)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "ตัวเลือก Proxmark3",
-        "description": "อ่าน UID เสมอ เปิดเฉพาะที่ต้องการ — Classic NDEF และบล็อกดิบใช้เวลานาน",
+        "description": "อ่าน UID เสมอ เปิดเฉพาะที่ต้องการ — MIFARE Classic NDEF และบล็อกดิบใช้เวลานาน",
         "data": {
           "read_ntag": "อ่าน NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "อ่าน NDEF บน Classic (ช้า)",
-          "read_raw_blocks": "อ่านบล็อกดิบบน Classic",
+          "read_ntag_classic": "อ่าน NDEF บน MIFARE Classic (ช้า)",
+          "read_raw_blocks": "อ่านบล็อกดิบบน MIFARE Classic",
           "poll_interval": "ช่วงเวลาโพล (วินาที)",
           "reconnect_interval": "ช่วงเวลาเชื่อมต่อใหม่ (วินาที)"
         }
       },
       "blocks": {
         "title": "บล็อกดิบ",
-        "description": "เลือกบล็อกเซกเตอร์ 0 ของ Classic ที่จะอ่าน (ต้องมีคีย์ในหน้าถัดไป)",
+        "description": "เลือกบล็อกเซกเตอร์ 0 ของ MIFARE Classic ที่จะอ่าน (ต้องมีคีย์ในหน้าถัดไป)",
         "data": {
           "block_0": "อ่านบล็อก 0",
           "block_1": "อ่านบล็อก 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "คีย์ Classic",
+        "title": "คีย์ MIFARE Classic",
         "description": "ลองคีย์ตามลำดับจนกว่าจะอ่านบล็อกสำเร็จ",
         "data": {
           "key_ff": "คีย์ ffffffffffff (ค่าเริ่มต้นจากโรงงาน)",

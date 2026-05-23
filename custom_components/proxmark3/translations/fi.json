@@ -6,15 +6,15 @@
         "description": "USB-portti tunnistetaan automaattisesti. UID luetaan aina.",
         "data": {
           "read_ntag": "Lue NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lue NDEF Classicilla (hidas)",
-          "read_raw_blocks": "Lue raakalohkot Classicilla",
+          "read_ntag_classic": "Lue NDEF MIFARE Classicilla (hidas)",
+          "read_raw_blocks": "Lue raakalohkot MIFARE Classicilla",
           "poll_interval": "Kyselyväli (sekuntia)",
           "reconnect_interval": "Uudelleenyhdistysväli (sekuntia)"
         }
       },
       "blocks": {
         "title": "Raakalohkot",
-        "description": "Valitse Classic sektorin 0 lohkot (avaimet seuraavalla näytöllä).",
+        "description": "Valitse MIFARE Classic sektorin 0 lohkot (avaimet seuraavalla näytöllä).",
         "data": {
           "block_0": "Lue lohko 0",
           "block_1": "Lue lohko 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic-avaimet",
+        "title": "MIFARE Classic-avaimet",
         "description": "Avaimia yritetään järjestyksessä, kunnes lohkon luku onnistuu.",
         "data": {
           "key_ff": "Avain ffffffffffff (tehdasasetus)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3-asetukset",
-        "description": "UID luetaan aina. Ota käyttöön vain tarvitsemasi — Classic NDEF ja raakalohkot ovat hitaita.",
+        "description": "UID luetaan aina. Ota käyttöön vain tarvitsemasi — MIFARE Classic NDEF ja raakalohkot ovat hitaita.",
         "data": {
           "read_ntag": "Lue NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lue NDEF Classicilla (hidas)",
-          "read_raw_blocks": "Lue raakalohkot Classicilla",
+          "read_ntag_classic": "Lue NDEF MIFARE Classicilla (hidas)",
+          "read_raw_blocks": "Lue raakalohkot MIFARE Classicilla",
           "poll_interval": "Kyselyväli (sekuntia)",
           "reconnect_interval": "Uudelleenyhdistysväli (sekuntia)"
         }
       },
       "blocks": {
         "title": "Raakalohkot",
-        "description": "Valitse Classic sektorin 0 lohkot (avaimet seuraavalla näytöllä).",
+        "description": "Valitse MIFARE Classic sektorin 0 lohkot (avaimet seuraavalla näytöllä).",
         "data": {
           "block_0": "Lue lohko 0",
           "block_1": "Lue lohko 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic-avaimet",
+        "title": "MIFARE Classic-avaimet",
         "description": "Avaimia yritetään järjestyksessä, kunnes lohkon luku onnistuu.",
         "data": {
           "key_ff": "Avain ffffffffffff (tehdasasetus)",

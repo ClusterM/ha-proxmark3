@@ -6,15 +6,15 @@
         "description": "USB-порт визначається автоматично. UID завжди зчитується.",
         "data": {
           "read_ntag": "Читати NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Читати NDEF у Classic (повільно)",
-          "read_raw_blocks": "Читати сирі блоки у Classic",
+          "read_ntag_classic": "Читати NDEF у MIFARE Classic (повільно)",
+          "read_raw_blocks": "Читати сирі блоки у MIFARE Classic",
           "poll_interval": "Інтервал опитування (сек)",
           "reconnect_interval": "Інтервал перепідключення (сек)"
         }
       },
       "blocks": {
         "title": "Сирі блоки",
-        "description": "Виберіть блоки сектора 0 Classic для зчитування (ключі на наступному екрані).",
+        "description": "Виберіть блоки сектора 0 MIFARE Classic для зчитування (ключі на наступному екрані).",
         "data": {
           "block_0": "Читати блок 0",
           "block_1": "Читати блок 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Ключі Classic",
+        "title": "Ключі MIFARE Classic",
         "description": "Ключі перебираються по черзі, доки читання блоку не вдасться.",
         "data": {
           "key_ff": "Ключ ffffffffffff (заводський)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Параметри Proxmark3",
-        "description": "UID завжди зчитується. Увімкніть лише потрібне — NDEF і сирі блоки Classic сповільнюють опитування.",
+        "description": "UID завжди зчитується. Увімкніть лише потрібне — NDEF і сирі блоки MIFARE Classic сповільнюють опитування.",
         "data": {
           "read_ntag": "Читати NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Читати NDEF у Classic (повільно)",
-          "read_raw_blocks": "Читати сирі блоки у Classic",
+          "read_ntag_classic": "Читати NDEF у MIFARE Classic (повільно)",
+          "read_raw_blocks": "Читати сирі блоки у MIFARE Classic",
           "poll_interval": "Інтервал опитування (сек)",
           "reconnect_interval": "Інтервал перепідключення (сек)"
         }
       },
       "blocks": {
         "title": "Сирі блоки",
-        "description": "Виберіть блоки сектора 0 Classic для зчитування (ключі на наступному екрані).",
+        "description": "Виберіть блоки сектора 0 MIFARE Classic для зчитування (ключі на наступному екрані).",
         "data": {
           "block_0": "Читати блок 0",
           "block_1": "Читати блок 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Ключі Classic",
+        "title": "Ключі MIFARE Classic",
         "description": "Ключі перебираються по черзі, доки читання блоку не вдасться.",
         "data": {
           "key_ff": "Ключ ffffffffffff (заводський)",

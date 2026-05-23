@@ -6,7 +6,7 @@ Home Assistant custom integration for [Proxmark3](https://github.com/RfidResearc
 
 - Single Proxmark3 via USB serial (auto-detect)
 - Configurable MIFARE Classic keys and blocks to read
-- NDEF decoding (Ultralight/NTAG and optional Classic) into a JSON `ntag` attribute
+- NDEF decoding (Ultralight/NTAG and optional MIFARE Classic) into a JSON `ntag` attribute
 - Device info (MCU, firmware, memory) cached while offline
 - Automatic reconnect when the device is unplugged
 - Options flow to tune keys, blocks, and poll intervals without re-adding the integration
@@ -31,9 +31,9 @@ Copy `custom_components/proxmark3` into your Home Assistant `config/custom_compo
 
 Setup is a short wizard (USB port is auto-detected):
 
-1. **Reading** — NDEF options, raw Classic blocks toggle, poll intervals
-2. **Raw blocks** (only if enabled) — blocks 0–3 of Classic sector 0
-3. **Classic keys** (only if raw blocks enabled) — Key A presets for block reads
+1. **Reading** — NDEF options, raw MIFARE Classic blocks toggle, poll intervals
+2. **Raw blocks** (only if enabled) — blocks 0–3 of MIFARE Classic sector 0
+3. **MIFARE Classic keys** (only if raw blocks enabled) — Key A presets for block reads
 
 Use **Options** later to change the same settings.
 
@@ -42,19 +42,19 @@ Use **Options** later to change the same settings.
 | Option | Tag types | Speed |
 |--------|-----------|-------|
 | Read NDEF (Ultralight / NTAG) | Type 2 tags | Fast |
-| Read NDEF on Classic (slow) | Phone-formatted Classic MAD/NDEF | Slow (several sector reads) |
-| Read raw blocks on Classic | Classic sector 0 blocks | Depends on enabled blocks + keys |
+| Read NDEF on MIFARE Classic (slow) | Phone-formatted MIFARE Classic MAD/NDEF | Slow (several sector reads) |
+| Read raw blocks on MIFARE Classic | MIFARE Classic sector 0 blocks | Depends on enabled blocks + keys |
 
 More enabled options increase read time on each new tag presentation.
 
 ### NDEF
 
 - **Ultralight / NTAG:** enable **Read NDEF** — no keys required.
-- **Classic (phone NDEF):** enable **Read NDEF on Classic (slow)** separately. Uses MAD key (`a0a1a2a3a4a5`) and NDEF sector keys automatically (same as `hf mf ndefread`).
+- **MIFARE Classic (phone NDEF):** enable **Read NDEF on MIFARE Classic (slow)** separately. Uses MAD key (`a0a1a2a3a4a5`) and NDEF sector keys automatically (same as `hf mf ndefread`).
 
 #### Writing NDEF (phone is easiest)
 
-For **Ultralight / NTAG** and **Classic tags formatted as NDEF**, writing on a phone is usually the simplest option — no Proxmark3 required for programming.
+For **Ultralight / NTAG** and **MIFARE Classic tags formatted as NDEF**, writing on a phone is usually the simplest option — no Proxmark3 required for programming.
 
 1. Install a free NFC app, e.g. **[NFC Tools](https://www.wakdev.com/en/apps/nfc-tools.html)** (Android / iOS).
 2. Choose **Write** → add a record:
@@ -62,9 +62,9 @@ For **Ultralight / NTAG** and **Classic tags formatted as NDEF**, writing on a p
    - **Text** — plain text with language code
    - **Custom** — other NDEF types supported by the app
 3. Hold the tag to the phone and write.
-4. In Home Assistant, enable **Read NDEF** (and **Read NDEF on Classic** for Classic tags), then verify the `ntag` attribute on `sensor.proxmark3_nfc_tag`.
+4. In Home Assistant, enable **Read NDEF** (and **Read NDEF on MIFARE Classic** for MIFARE Classic tags), then verify the `ntag` attribute on `sensor.proxmark3_nfc_tag`.
 
-NFC Tools (and similar apps) produce standard NDEF that this integration parses into JSON. Classic tags are written as MAD/NDEF automatically by the phone OS or app.
+NFC Tools (and similar apps) produce standard NDEF that this integration parses into JSON. MIFARE Classic tags are written as MAD/NDEF automatically by the phone OS or app.
 
 **Example `ntag` values** (attribute is a JSON **string** containing an array):
 
@@ -80,7 +80,7 @@ Multiple records in one tag appear as several objects in the array.
 
 ### Keys
 
-Keys appear on **screen 3** only when **Read raw blocks on Classic** is enabled.
+Keys appear on **screen 3** only when **Read raw blocks on MIFARE Classic** is enabled.
 
 The integration reads **MIFARE Classic** blocks with **Key A**, trying keys **in the order** they appear in settings. It stops at the first key that works.
 
@@ -99,11 +99,11 @@ The integration reads **MIFARE Classic** blocks with **Key A**, trying keys **in
 - Put the most likely key first (order in the UI = try order).
 - Custom key is useful when you already know the sector key from `hf mf chk` / `hf mf autopwn` in the PM3 client.
 
-Keys are **not** used for UID detection, Ultralight/NTAG NDEF, or Classic NDEF (those paths use built-in MAD/NDEF keys).
+Keys are **not** used for UID detection, Ultralight/NTAG NDEF, or MIFARE Classic NDEF (those paths use built-in MAD/NDEF keys).
 
-### Raw blocks (Classic, 0–3)
+### Raw blocks (MIFARE Classic, 0–3)
 
-Enable **Read raw blocks on Classic** on screen 1, then pick blocks on screen 2.
+Enable **Read raw blocks on MIFARE Classic** on screen 1, then pick blocks on screen 2.
 
 The integration reads **blocks 0–3** (sector 0 on MIFARE Classic 1K). Block reading is **optional** — leave the toggle off for fastest UID-only polling.
 
@@ -124,15 +124,15 @@ The integration reads **blocks 0–3** (sector 0 on MIFARE Classic 1K). Block re
 
 | Tag type | Raw blocks 0–3 | NDEF |
 |----------|----------------|------|
-| MIFARE Classic 1K / 4K / Mini | Yes — with keys | Optional (**Classic NDEF**, slow) |
-| MIFARE Ultralight / NTAG | No (Classic-only toggle) | Optional (**Read NDEF**, fast) |
+| MIFARE Classic 1K / 4K / Mini | Yes — with keys | Optional (**MIFARE Classic NDEF**, slow) |
+| MIFARE Ultralight / NTAG | No (MIFARE Classic-only toggle) | Optional (**Read NDEF**, fast) |
 | MIFARE DESFire, Java cards, random ISO14443-A | **No** | **No** |
 
 Disable unused blocks to speed up polling (each block is a separate read).
 
 **Block 0** on MIFARE Classic holds manufacturer bytes and UID-related data (often only part of the block is writable). Writing garbage there can corrupt the tag identity or make it unreadable. On Ultralight/NTAG, page 0 is similarly reserved (UID, lock bits). Treat block/page 0 as **read-only** unless you know exactly what you are changing.
 
-**Block 3** on Classic is the sector trailer (keys and access bits) — see warnings in the writing section below.
+**Block 3** on MIFARE Classic is the sector trailer (keys and access bits) — see warnings in the writing section below.
 
 ### Intervals
 
@@ -149,15 +149,15 @@ Disable unused blocks to speed up polling (each block is a separate read).
 | `unknown` / empty | No tag present |
 | unavailable | Proxmark3 disconnected (device info still cached on the device page) |
 
-**Attributes:** `tag_type`, `block_0` … `block_3` (when raw Classic blocks are enabled), `ntag` (JSON array of decoded NDEF records), plus cached `bootrom`, `compiler`, `fpga`, `memory` when known.
+**Attributes:** `tag_type`, `block_0` … `block_3` (when raw MIFARE Classic blocks are enabled), `ntag` (JSON array of decoded NDEF records), plus cached `bootrom`, `compiler`, `fpga`, `memory` when known.
 
-`ntag` is filled when **Read NDEF** and/or **Read NDEF on Classic** matches the detected tag type.
+`ntag` is filled when **Read NDEF** and/or **Read NDEF on MIFARE Classic** matches the detected tag type.
 
 Default entity id is usually `sensor.proxmark3_nfc_tag` (depends on your device name).
 
 ## Writing raw blocks (Proxmark3 client)
 
-Use the Iceman **client** (`pm3` / `proxmark3`) when you need **raw hex bytes** in Classic blocks — not for everyday NDEF (use a phone; see above). Stop Home Assistant polling or unload the integration while writing, so nothing else holds the serial port.
+Use the Iceman **client** (`pm3` / `proxmark3`) when you need **raw hex bytes** in MIFARE Classic blocks — not for everyday NDEF (use a phone; see above). Stop Home Assistant polling or unload the integration while writing, so nothing else holds the serial port.
 
 **Read block 1 (verify):**
 
@@ -183,15 +183,15 @@ hf mf wrbl --blk 1 -k FFFFFFFFFFFF -d 4841FFFFFFFFFFFFFFFFFFFFFFFFFFFF
 hf mf wrbl --blk 4 -d 0102030405060708090a0b0c0d0e0f
 ```
 
-Do **not** write **block 0** or **block 3** on Classic unless you understand the data layout. Block 0 carries manufacturer/UID-related data; block 3 is the sector trailer (keys and access conditions). A bad write to either can brick the tag or the whole sector. On Ultralight/NTAG, avoid writing pages 0–2 for the same reason — use page 4+ for user data, or prefer **NDEF via NFC Tools** instead of raw page writes.
+Do **not** write **block 0** or **block 3** on MIFARE Classic unless you understand the data layout. Block 0 carries manufacturer/UID-related data; block 3 is the sector trailer (keys and access conditions). A bad write to either can brick the tag or the whole sector. On Ultralight/NTAG, avoid writing pages 0–2 for the same reason — use page 4+ for user data, or prefer **NDEF via NFC Tools** instead of raw page writes.
 
 ## Example automations
 
 Adjust `entity_id` / `notify.*` to match your setup.
 
-### UID and Classic block 1
+### UID and MIFARE Classic block 1
 
-Notify when a tag is placed on the reader (UID + block 1). Requires **Read raw blocks on Classic** and block 1 enabled.
+Notify when a tag is placed on the reader (UID + block 1). Requires **Read raw blocks on MIFARE Classic** and block 1 enabled.
 
 ```yaml
 alias: NFC Tag (UID + block)
@@ -222,7 +222,7 @@ To react only to a specific payload in block 1, add a template condition on `sta
 
 ### NDEF (URL or text from `ntag` JSON)
 
-Requires **Read NDEF** and/or **Read NDEF on Classic**. The `ntag` attribute is a JSON string; parse it with the `from_json` filter.
+Requires **Read NDEF** and/or **Read NDEF on MIFARE Classic**. The `ntag` attribute is a JSON string; parse it with the `from_json` filter.
 
 **Open a URL from the first NDEF record** (e.g. tag written with NFC Tools → URL record):
 

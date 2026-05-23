@@ -6,15 +6,15 @@
         "description": "USBポートは自動検出されます。UIDは常に読み取られます。",
         "data": {
           "read_ntag": "NDEFを読み取る (Ultralight / NTAG)",
-          "read_ntag_classic": "ClassicでNDEFを読み取る (低速)",
-          "read_raw_blocks": "Classicで生ブロックを読み取る",
+          "read_ntag_classic": "MIFARE ClassicでNDEFを読み取る (低速)",
+          "read_raw_blocks": "MIFARE Classicで生ブロックを読み取る",
           "poll_interval": "ポーリング間隔 (秒)",
           "reconnect_interval": "再接続間隔 (秒)"
         }
       },
       "blocks": {
         "title": "生ブロック",
-        "description": "Classicセクター0のブロックを選択 (次の画面でキー設定)。",
+        "description": "MIFARE Classicセクター0のブロックを選択 (次の画面でキー設定)。",
         "data": {
           "block_0": "ブロック 0 を読み取る",
           "block_1": "ブロック 1 を読み取る",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classicキー",
+        "title": "MIFARE Classicキー",
         "description": "ブロック読み取りが成功するまでキーを順に試します。",
         "data": {
           "key_ff": "キー ffffffffffff (工場出荷時)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3オプション",
-        "description": "UIDは常に読み取られます。必要なものだけ有効にしてください — Classic NDEFと生ブロックは低速です。",
+        "description": "UIDは常に読み取られます。必要なものだけ有効にしてください — MIFARE Classic NDEFと生ブロックは低速です。",
         "data": {
           "read_ntag": "NDEFを読み取る (Ultralight / NTAG)",
-          "read_ntag_classic": "ClassicでNDEFを読み取る (低速)",
-          "read_raw_blocks": "Classicで生ブロックを読み取る",
+          "read_ntag_classic": "MIFARE ClassicでNDEFを読み取る (低速)",
+          "read_raw_blocks": "MIFARE Classicで生ブロックを読み取る",
           "poll_interval": "ポーリング間隔 (秒)",
           "reconnect_interval": "再接続間隔 (秒)"
         }
       },
       "blocks": {
         "title": "生ブロック",
-        "description": "Classicセクター0のブロックを選択 (次の画面でキー設定)。",
+        "description": "MIFARE Classicセクター0のブロックを選択 (次の画面でキー設定)。",
         "data": {
           "block_0": "ブロック 0 を読み取る",
           "block_1": "ブロック 1 を読み取る",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classicキー",
+        "title": "MIFARE Classicキー",
         "description": "ブロック読み取りが成功するまでキーを順に試します。",
         "data": {
           "key_ff": "キー ffffffffffff (工場出荷時)",

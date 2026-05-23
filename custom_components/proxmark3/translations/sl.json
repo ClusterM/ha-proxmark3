@@ -6,15 +6,15 @@
         "description": "USB vrata se zaznajo samodejno. UID se vedno prebere.",
         "data": {
           "read_ntag": "Preberi NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Preberi NDEF na Classic (počasi)",
-          "read_raw_blocks": "Preberi surove bloke na Classic",
+          "read_ntag_classic": "Preberi NDEF na MIFARE Classic (počasi)",
+          "read_raw_blocks": "Preberi surove bloke na MIFARE Classic",
           "poll_interval": "Interval poizvedbe (sekunde)",
           "reconnect_interval": "Interval ponovne povezave (sekunde)"
         }
       },
       "blocks": {
         "title": "Surovi bloki",
-        "description": "Izberite bloke sektorja 0 Classic za branje (ključi na naslednjem zaslonu).",
+        "description": "Izberite bloke sektorja 0 MIFARE Classic za branje (ključi na naslednjem zaslonu).",
         "data": {
           "block_0": "Preberi blok 0",
           "block_1": "Preberi blok 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic ključi",
+        "title": "MIFARE Classic ključi",
         "description": "Ključi se poskušajo zaporedoma, dokler branje bloka ne uspe.",
         "data": {
           "key_ff": "Ključ ffffffffffff (tovarniški)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Možnosti Proxmark3",
-        "description": "UID se vedno prebere. Vklopite le potrebno — Classic NDEF in surovi bloki so počasni.",
+        "description": "UID se vedno prebere. Vklopite le potrebno — MIFARE Classic NDEF in surovi bloki so počasni.",
         "data": {
           "read_ntag": "Preberi NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Preberi NDEF na Classic (počasi)",
-          "read_raw_blocks": "Preberi surove bloke na Classic",
+          "read_ntag_classic": "Preberi NDEF na MIFARE Classic (počasi)",
+          "read_raw_blocks": "Preberi surove bloke na MIFARE Classic",
           "poll_interval": "Interval poizvedbe (sekunde)",
           "reconnect_interval": "Interval ponovne povezave (sekunde)"
         }
       },
       "blocks": {
         "title": "Surovi bloki",
-        "description": "Izberite bloke sektorja 0 Classic za branje (ključi na naslednjem zaslonu).",
+        "description": "Izberite bloke sektorja 0 MIFARE Classic za branje (ključi na naslednjem zaslonu).",
         "data": {
           "block_0": "Preberi blok 0",
           "block_1": "Preberi blok 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic ključi",
+        "title": "MIFARE Classic ključi",
         "description": "Ključi se poskušajo zaporedoma, dokler branje bloka ne uspe.",
         "data": {
           "key_ff": "Ključ ffffffffffff (tovarniški)",

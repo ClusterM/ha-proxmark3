@@ -6,15 +6,15 @@
         "description": "USB port sa zisťuje automaticky. UID sa vždy číta.",
         "data": {
           "read_ntag": "Čítať NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Čítať NDEF na Classic (pomaly)",
-          "read_raw_blocks": "Čítať surové bloky na Classic",
+          "read_ntag_classic": "Čítať NDEF na MIFARE Classic (pomaly)",
+          "read_raw_blocks": "Čítať surové bloky na MIFARE Classic",
           "poll_interval": "Interval dopytovania (sekundy)",
           "reconnect_interval": "Interval opätovného pripojenia (sekundy)"
         }
       },
       "blocks": {
         "title": "Surové bloky",
-        "description": "Vyberte bloky sektora 0 Classic na čítanie (kľúče na ďalšej obrazovke).",
+        "description": "Vyberte bloky sektora 0 MIFARE Classic na čítanie (kľúče na ďalšej obrazovke).",
         "data": {
           "block_0": "Čítať blok 0",
           "block_1": "Čítať blok 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic kľúče",
+        "title": "MIFARE Classic kľúče",
         "description": "Kľúče sa skúšajú v poradí, kým neprebehne úspešné čítanie bloku.",
         "data": {
           "key_ff": "Kľúč ffffffffffff (továrenský)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Možnosti Proxmark3",
-        "description": "UID sa vždy číta. Zapnite len to, čo potrebujete — Classic NDEF a surové bloky sú pomalé.",
+        "description": "UID sa vždy číta. Zapnite len to, čo potrebujete — MIFARE Classic NDEF a surové bloky sú pomalé.",
         "data": {
           "read_ntag": "Čítať NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Čítať NDEF na Classic (pomaly)",
-          "read_raw_blocks": "Čítať surové bloky na Classic",
+          "read_ntag_classic": "Čítať NDEF na MIFARE Classic (pomaly)",
+          "read_raw_blocks": "Čítať surové bloky na MIFARE Classic",
           "poll_interval": "Interval dopytovania (sekundy)",
           "reconnect_interval": "Interval opätovného pripojenia (sekundy)"
         }
       },
       "blocks": {
         "title": "Surové bloky",
-        "description": "Vyberte bloky sektora 0 Classic na čítanie (kľúče na ďalšej obrazovke).",
+        "description": "Vyberte bloky sektora 0 MIFARE Classic na čítanie (kľúče na ďalšej obrazovke).",
         "data": {
           "block_0": "Čítať blok 0",
           "block_1": "Čítať blok 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic kľúče",
+        "title": "MIFARE Classic kľúče",
         "description": "Kľúče sa skúšajú v poradí, kým neprebehne úspešné čítanie bloku.",
         "data": {
           "key_ff": "Kľúč ffffffffffff (továrenský)",

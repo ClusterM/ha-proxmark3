@@ -6,15 +6,15 @@
         "description": "USB-portur greinist sjálfkrafa. UID er alltaf lesið.",
         "data": {
           "read_ntag": "Lesa NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lesa NDEF á Classic (hægt)",
-          "read_raw_blocks": "Lesa hráblokkir á Classic",
+          "read_ntag_classic": "Lesa NDEF á MIFARE Classic (hægt)",
+          "read_raw_blocks": "Lesa hráblokkir á MIFARE Classic",
           "poll_interval": "Könnunarbil (sekúndur)",
           "reconnect_interval": "Endurtengingarbil (sekúndur)"
         }
       },
       "blocks": {
         "title": "Hráblokkir",
-        "description": "Veldu Classic geir 0 blokkir (lyklar á næsta skjá).",
+        "description": "Veldu MIFARE Classic geir 0 blokkir (lyklar á næsta skjá).",
         "data": {
           "block_0": "Lesa blokk 0",
           "block_1": "Lesa blokk 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic lyklar",
+        "title": "MIFARE Classic lyklar",
         "description": "Lyklar eru reynir í röð þar til blokk lest heppnast.",
         "data": {
           "key_ff": "Lykill ffffffffffff (verksmiðjustilling)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 valkostir",
-        "description": "UID er alltaf lesið. Virkjaðu aðeins það sem þú þarft — Classic NDEF og hráblokkir eru hægar.",
+        "description": "UID er alltaf lesið. Virkjaðu aðeins það sem þú þarft — MIFARE Classic NDEF og hráblokkir eru hægar.",
         "data": {
           "read_ntag": "Lesa NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lesa NDEF á Classic (hægt)",
-          "read_raw_blocks": "Lesa hráblokkir á Classic",
+          "read_ntag_classic": "Lesa NDEF á MIFARE Classic (hægt)",
+          "read_raw_blocks": "Lesa hráblokkir á MIFARE Classic",
           "poll_interval": "Könnunarbil (sekúndur)",
           "reconnect_interval": "Endurtengingarbil (sekúndur)"
         }
       },
       "blocks": {
         "title": "Hráblokkir",
-        "description": "Veldu Classic geir 0 blokkir (lyklar á næsta skjá).",
+        "description": "Veldu MIFARE Classic geir 0 blokkir (lyklar á næsta skjá).",
         "data": {
           "block_0": "Lesa blokk 0",
           "block_1": "Lesa blokk 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic lyklar",
+        "title": "MIFARE Classic lyklar",
         "description": "Lyklar eru reynir í röð þar til blokk lest heppnast.",
         "data": {
           "key_ff": "Lykill ffffffffffff (verksmiðjustilling)",

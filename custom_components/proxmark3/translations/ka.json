@@ -6,15 +6,15 @@
         "description": "USB პორტი ავტომატურად გამოიცნობა. UID ყოველთვის იკითხება.",
         "data": {
           "read_ntag": "NDEF-ის წაკითხვა (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF-ის წაკითხვა Classic-ზე (ნელი)",
-          "read_raw_blocks": "ნედლი ბლოკების წაკითხვა Classic-ზე",
+          "read_ntag_classic": "NDEF-ის წაკითხვა MIFARE Classic-ზე (ნელი)",
+          "read_raw_blocks": "ნედლი ბლოკების წაკითხვა MIFARE Classic-ზე",
           "poll_interval": "გამოკითხვის ინტერვალი (წამი)",
           "reconnect_interval": "ხელახალი დაკავშირების ინტერვალი (წამი)"
         }
       },
       "blocks": {
         "title": "ნედლი ბლოკები",
-        "description": "აირჩიეთ Classic სექტორი 0 ბლოკები (გასაღებები შემდეგ ეკრანზე).",
+        "description": "აირჩიეთ MIFARE Classic სექტორი 0 ბლოკები (გასაღებები შემდეგ ეკრანზე).",
         "data": {
           "block_0": "ბლოკის 0 წაკითხვა",
           "block_1": "ბლოკის 1 წაკითხვა",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic გასაღებები",
+        "title": "MIFARE Classic გასაღებები",
         "description": "გასაღებები თანმიმდევრობით იცდება, სანამ ბლოკის წაკითხვა არ მოხდება.",
         "data": {
           "key_ff": "გასაღები ffffffffffff (ქარხნული)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 პარამეტრები",
-        "description": "UID ყოველთვის იკითხება. ჩართეთ მხოლოდ საჭირო — Classic NDEF და ნედლი ბლოკები ნელია.",
+        "description": "UID ყოველთვის იკითხება. ჩართეთ მხოლოდ საჭირო — MIFARE Classic NDEF და ნედლი ბლოკები ნელია.",
         "data": {
           "read_ntag": "NDEF-ის წაკითხვა (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF-ის წაკითხვა Classic-ზე (ნელი)",
-          "read_raw_blocks": "ნედლი ბლოკების წაკითხვა Classic-ზე",
+          "read_ntag_classic": "NDEF-ის წაკითხვა MIFARE Classic-ზე (ნელი)",
+          "read_raw_blocks": "ნედლი ბლოკების წაკითხვა MIFARE Classic-ზე",
           "poll_interval": "გამოკითხვის ინტერვალი (წამი)",
           "reconnect_interval": "ხელახალი დაკავშირების ინტერვალი (წამი)"
         }
       },
       "blocks": {
         "title": "ნედლი ბლოკები",
-        "description": "აირჩიეთ Classic სექტორი 0 ბლოკები (გასაღებები შემდეგ ეკრანზე).",
+        "description": "აირჩიეთ MIFARE Classic სექტორი 0 ბლოკები (გასაღებები შემდეგ ეკრანზე).",
         "data": {
           "block_0": "ბლოკის 0 წაკითხვა",
           "block_1": "ბლოკის 1 წაკითხვა",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic გასაღებები",
+        "title": "MIFARE Classic გასაღებები",
         "description": "გასაღებები თანმიმდევრობით იცდება, სანამ ბლოკის წაკითხვა არ მოხდება.",
         "data": {
           "key_ff": "გასაღები ffffffffffff (ქარხნული)",

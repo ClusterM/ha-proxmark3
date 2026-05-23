@@ -6,15 +6,15 @@
         "description": "Port USB jest wykrywany automatycznie. UID jest zawsze odczytywany.",
         "data": {
           "read_ntag": "Odczytaj NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Odczytaj NDEF z Classic (wolno)",
-          "read_raw_blocks": "Odczytaj surowe bloki z Classic",
+          "read_ntag_classic": "Odczytaj NDEF z MIFARE Classic (wolno)",
+          "read_raw_blocks": "Odczytaj surowe bloki z MIFARE Classic",
           "poll_interval": "Interwał odpytywania (sekundy)",
           "reconnect_interval": "Interwał ponownego połączenia (sekundy)"
         }
       },
       "blocks": {
         "title": "Surowe bloki",
-        "description": "Wybierz bloki sektora 0 Classic do odczytu (klucze na następnym ekranie).",
+        "description": "Wybierz bloki sektora 0 MIFARE Classic do odczytu (klucze na następnym ekranie).",
         "data": {
           "block_0": "Odczytaj blok 0",
           "block_1": "Odczytaj blok 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Klucze Classic",
+        "title": "Klucze MIFARE Classic",
         "description": "Klucze są próbowane po kolei, aż uda się odczytać blok.",
         "data": {
           "key_ff": "Klucz ffffffffffff (fabryczny)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Opcje Proxmark3",
-        "description": "UID jest zawsze odczytywany. Włącz tylko to, czego potrzebujesz — NDEF Classic i surowe bloki są wolne.",
+        "description": "UID jest zawsze odczytywany. Włącz tylko to, czego potrzebujesz — NDEF MIFARE Classic i surowe bloki są wolne.",
         "data": {
           "read_ntag": "Odczytaj NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Odczytaj NDEF z Classic (wolno)",
-          "read_raw_blocks": "Odczytaj surowe bloki z Classic",
+          "read_ntag_classic": "Odczytaj NDEF z MIFARE Classic (wolno)",
+          "read_raw_blocks": "Odczytaj surowe bloki z MIFARE Classic",
           "poll_interval": "Interwał odpytywania (sekundy)",
           "reconnect_interval": "Interwał ponownego połączenia (sekundy)"
         }
       },
       "blocks": {
         "title": "Surowe bloki",
-        "description": "Wybierz bloki sektora 0 Classic do odczytu (klucze na następnym ekranie).",
+        "description": "Wybierz bloki sektora 0 MIFARE Classic do odczytu (klucze na następnym ekranie).",
         "data": {
           "block_0": "Odczytaj blok 0",
           "block_1": "Odczytaj blok 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Klucze Classic",
+        "title": "Klucze MIFARE Classic",
         "description": "Klucze są próbowane po kolei, aż uda się odczytać blok.",
         "data": {
           "key_ff": "Klucz ffffffffffff (fabryczny)",

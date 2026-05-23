@@ -6,15 +6,15 @@
         "description": "De USB-Port gëtt automatesch entdeckt. Den UID ass ëmmer gelies.",
         "data": {
           "read_ntag": "NDEF liesen (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF um Classic liesen (lues)",
-          "read_raw_blocks": "Rohbléck um Classic liesen",
+          "read_ntag_classic": "NDEF um MIFARE Classic liesen (lues)",
+          "read_raw_blocks": "Rohbléck um MIFARE Classic liesen",
           "poll_interval": "Ofaaf-Intervall (Sekonnen)",
           "reconnect_interval": "Reconnexion-Intervall (Sekonnen)"
         }
       },
       "blocks": {
         "title": "Rohbléck",
-        "description": "Classic Sektor 0 Blécker zum Liesen auswielen (nennt Schlësselen op nächstem Bildschierm).",
+        "description": "MIFARE Classic Sektor 0 Blécker zum Liesen auswielen (nennt Schlësselen op nächstem Bildschierm).",
         "data": {
           "block_0": "Bloc 0 liesen",
           "block_1": "Bloc 1 liesen",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic Schlëssel",
+        "title": "MIFARE Classic Schlëssel",
         "description": "Schlëssel ginn a Reiefolleg probéiert bis ee Blécke liesen erfollegräich ass.",
         "data": {
           "key_ff": "Schlëssel ffffffffffff (Fabrik-Standard)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 Optiounen",
-        "description": "Den UID ass ëmmer gelies. Aktivéiert nëmmen wat Dir braucht — Classic NDEF an Rohbléck sinn lues.",
+        "description": "Den UID ass ëmmer gelies. Aktivéiert nëmmen wat Dir braucht — MIFARE Classic NDEF an Rohbléck sinn lues.",
         "data": {
           "read_ntag": "NDEF liesen (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF um Classic liesen (lues)",
-          "read_raw_blocks": "Rohbléck um Classic liesen",
+          "read_ntag_classic": "NDEF um MIFARE Classic liesen (lues)",
+          "read_raw_blocks": "Rohbléck um MIFARE Classic liesen",
           "poll_interval": "Ofaaf-Intervall (Sekonnen)",
           "reconnect_interval": "Reconnexion-Intervall (Sekonnen)"
         }
       },
       "blocks": {
         "title": "Rohbléck",
-        "description": "Classic Sektor 0 Blécker zum Liesen auswielen (nennt Schlësselen op nächstem Bildschierm).",
+        "description": "MIFARE Classic Sektor 0 Blécker zum Liesen auswielen (nennt Schlësselen op nächstem Bildschierm).",
         "data": {
           "block_0": "Bloc 0 liesen",
           "block_1": "Bloc 1 liesen",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic Schlëssel",
+        "title": "MIFARE Classic Schlëssel",
         "description": "Schlëssel ginn a Reiefolleg probéiert bis ee Blécke liesen erfollegräich ass.",
         "data": {
           "key_ff": "Schlëssel ffffffffffff (Fabrik-Standard)",

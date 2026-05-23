@@ -6,15 +6,15 @@
         "description": "Portul USB este detectat automat. UID este mereu citit.",
         "data": {
           "read_ntag": "Citește NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Citește NDEF pe Classic (lent)",
-          "read_raw_blocks": "Citește blocuri brute pe Classic",
+          "read_ntag_classic": "Citește NDEF pe MIFARE Classic (lent)",
+          "read_raw_blocks": "Citește blocuri brute pe MIFARE Classic",
           "poll_interval": "Interval de interogare (secunde)",
           "reconnect_interval": "Interval de reconectare (secunde)"
         }
       },
       "blocks": {
         "title": "Blocuri brute",
-        "description": "Selectează blocurile sectorului 0 Classic de citit (chei pe ecranul următor).",
+        "description": "Selectează blocurile sectorului 0 MIFARE Classic de citit (chei pe ecranul următor).",
         "data": {
           "block_0": "Citește blocul 0",
           "block_1": "Citește blocul 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Chei Classic",
+        "title": "Chei MIFARE Classic",
         "description": "Cheile sunt încercate în ordine până reușește citirea unui bloc.",
         "data": {
           "key_ff": "Cheie ffffffffffff (implicit din fabrică)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Opțiuni Proxmark3",
-        "description": "UID este mereu citit. Activați doar ce aveți nevoie — NDEF Classic și blocurile brute sunt lente.",
+        "description": "UID este mereu citit. Activați doar ce aveți nevoie — NDEF MIFARE Classic și blocurile brute sunt lente.",
         "data": {
           "read_ntag": "Citește NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Citește NDEF pe Classic (lent)",
-          "read_raw_blocks": "Citește blocuri brute pe Classic",
+          "read_ntag_classic": "Citește NDEF pe MIFARE Classic (lent)",
+          "read_raw_blocks": "Citește blocuri brute pe MIFARE Classic",
           "poll_interval": "Interval de interogare (secunde)",
           "reconnect_interval": "Interval de reconectare (secunde)"
         }
       },
       "blocks": {
         "title": "Blocuri brute",
-        "description": "Selectează blocurile sectorului 0 Classic de citit (chei pe ecranul următor).",
+        "description": "Selectează blocurile sectorului 0 MIFARE Classic de citit (chei pe ecranul următor).",
         "data": {
           "block_0": "Citește blocul 0",
           "block_1": "Citește blocul 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Chei Classic",
+        "title": "Chei MIFARE Classic",
         "description": "Cheile sunt încercate în ordine până reușește citirea unui bloc.",
         "data": {
           "key_ff": "Cheie ffffffffffff (implicit din fabrică)",

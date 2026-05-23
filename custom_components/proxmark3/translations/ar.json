@@ -6,15 +6,15 @@
         "description": "يتم اكتشاف منفذ USB تلقائياً. يُقرأ UID دائماً.",
         "data": {
           "read_ntag": "قراءة NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "قراءة NDEF على Classic (بطيء)",
-          "read_raw_blocks": "قراءة الكتل الخام على Classic",
+          "read_ntag_classic": "قراءة NDEF على MIFARE Classic (بطيء)",
+          "read_raw_blocks": "قراءة الكتل الخام على MIFARE Classic",
           "poll_interval": "فترة الاستطلاع (ثوانٍ)",
           "reconnect_interval": "فترة إعادة الاتصال (ثوانٍ)"
         }
       },
       "blocks": {
         "title": "كتل خام",
-        "description": "اختر كتل القطاع 0 من Classic للقراءة (يتطلب مفاتيح في الشاشة التالية).",
+        "description": "اختر كتل القطاع 0 من MIFARE Classic للقراءة (يتطلب مفاتيح في الشاشة التالية).",
         "data": {
           "block_0": "قراءة الكتلة 0",
           "block_1": "قراءة الكتلة 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "مفاتيح Classic",
+        "title": "مفاتيح MIFARE Classic",
         "description": "تُجرَّب المفاتيح بالترتيب حتى ينجح قراءة الكتلة.",
         "data": {
           "key_ff": "مفتاح ffffffffffff (افتراضي المصنع)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "خيارات Proxmark3",
-        "description": "يُقرأ UID دائماً. فعّل ما تحتاجه فقط — NDEF على Classic والكتل الخام بطيئة.",
+        "description": "يُقرأ UID دائماً. فعّل ما تحتاجه فقط — NDEF على MIFARE Classic والكتل الخام بطيئة.",
         "data": {
           "read_ntag": "قراءة NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "قراءة NDEF على Classic (بطيء)",
-          "read_raw_blocks": "قراءة الكتل الخام على Classic",
+          "read_ntag_classic": "قراءة NDEF على MIFARE Classic (بطيء)",
+          "read_raw_blocks": "قراءة الكتل الخام على MIFARE Classic",
           "poll_interval": "فترة الاستطلاع (ثوانٍ)",
           "reconnect_interval": "فترة إعادة الاتصال (ثوانٍ)"
         }
       },
       "blocks": {
         "title": "كتل خام",
-        "description": "اختر كتل القطاع 0 من Classic للقراءة (يتطلب مفاتيح في الشاشة التالية).",
+        "description": "اختر كتل القطاع 0 من MIFARE Classic للقراءة (يتطلب مفاتيح في الشاشة التالية).",
         "data": {
           "block_0": "قراءة الكتلة 0",
           "block_1": "قراءة الكتلة 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "مفاتيح Classic",
+        "title": "مفاتيح MIFARE Classic",
         "description": "تُجرَّب المفاتيح بالترتيب حتى ينجح قراءة الكتلة.",
         "data": {
           "key_ff": "مفتاح ffffffffffff (افتراضي المصنع)",

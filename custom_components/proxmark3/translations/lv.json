@@ -6,15 +6,15 @@
         "description": "USB ports tiek atrasts automātiski. UID vienmēr tiek lasīts.",
         "data": {
           "read_ntag": "Lasīt NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lasīt NDEF uz Classic (lēni)",
-          "read_raw_blocks": "Lasīt neapstrādātus blokus uz Classic",
+          "read_ntag_classic": "Lasīt NDEF uz MIFARE Classic (lēni)",
+          "read_raw_blocks": "Lasīt neapstrādātus blokus uz MIFARE Classic",
           "poll_interval": "Aptaujas intervāls (sekundes)",
           "reconnect_interval": "Atkārtotas savienošanas intervāls (sekundes)"
         }
       },
       "blocks": {
         "title": "Neapstrādātie bloki",
-        "description": "Izvēlieties Classic 0. sektora blokus lasīšanai (nākamajā ekrānā būs nepieciešamas atslēgas).",
+        "description": "Izvēlieties MIFARE Classic 0. sektora blokus lasīšanai (nākamajā ekrānā būs nepieciešamas atslēgas).",
         "data": {
           "block_0": "Lasīt bloku 0",
           "block_1": "Lasīt bloku 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic atslēgas",
+        "title": "MIFARE Classic atslēgas",
         "description": "Atslēgas tiek mēģinātas secīgi līdz bloklasīšanai izdodas.",
         "data": {
           "key_ff": "Atslēga ffffffffffff (rūpnīcas noklusējums)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 opcijas",
-        "description": "UID vienmēr tiek lasīts. Ieslēdziet tikai nepieciešamo — Classic NDEF un neapstrādātie bloki ir lēni.",
+        "description": "UID vienmēr tiek lasīts. Ieslēdziet tikai nepieciešamo — MIFARE Classic NDEF un neapstrādātie bloki ir lēni.",
         "data": {
           "read_ntag": "Lasīt NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Lasīt NDEF uz Classic (lēni)",
-          "read_raw_blocks": "Lasīt neapstrādātus blokus uz Classic",
+          "read_ntag_classic": "Lasīt NDEF uz MIFARE Classic (lēni)",
+          "read_raw_blocks": "Lasīt neapstrādātus blokus uz MIFARE Classic",
           "poll_interval": "Aptaujas intervāls (sekundes)",
           "reconnect_interval": "Atkārtotas savienošanas intervāls (sekundes)"
         }
       },
       "blocks": {
         "title": "Neapstrādātie bloki",
-        "description": "Izvēlieties Classic 0. sektora blokus lasīšanai (nākamajā ekrānā būs nepieciešamas atslēgas).",
+        "description": "Izvēlieties MIFARE Classic 0. sektora blokus lasīšanai (nākamajā ekrānā būs nepieciešamas atslēgas).",
         "data": {
           "block_0": "Lasīt bloku 0",
           "block_1": "Lasīt bloku 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic atslēgas",
+        "title": "MIFARE Classic atslēgas",
         "description": "Atslēgas tiek mēģinātas secīgi līdz bloklasīšanai izdodas.",
         "data": {
           "key_ff": "Atslēga ffffffffffff (rūpnīcas noklusējums)",

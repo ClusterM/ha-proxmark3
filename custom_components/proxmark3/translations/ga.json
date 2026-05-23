@@ -6,15 +6,15 @@
         "description": "Braithítear port USB go huathoibríoch. Léitear UID i gcónaí.",
         "data": {
           "read_ntag": "Léigh NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Léigh NDEF ar Classic (mall)",
-          "read_raw_blocks": "Léigh bloic amh ar Classic",
+          "read_ntag_classic": "Léigh NDEF ar MIFARE Classic (mall)",
+          "read_raw_blocks": "Léigh bloic amh ar MIFARE Classic",
           "poll_interval": "Eatramh vótaála (soicindí)",
           "reconnect_interval": "Eatramh athcheangail (soicindí)"
         }
       },
       "blocks": {
         "title": "Bloic amh",
-        "description": "Roghnaigh bloic earnála 0 Classic (eochracha ar an scáileán seo chugainn).",
+        "description": "Roghnaigh bloic earnála 0 MIFARE Classic (eochracha ar an scáileán seo chugainn).",
         "data": {
           "block_0": "Léigh bloc 0",
           "block_1": "Léigh bloc 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Eochracha Classic",
+        "title": "Eochracha MIFARE Classic",
         "description": "Déantar iarracht ar eochracha in ord go n-éireoidh le léamh bloc.",
         "data": {
           "key_ff": "Eochair ffffffffffff (réamhshocrú monarchan)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Roghanna Proxmark3",
-        "description": "Léitear UID i gcónaí. Cumasaigh an méid atá uait — tá NDEF Classic agus bloic amh mall.",
+        "description": "Léitear UID i gcónaí. Cumasaigh an méid atá uait — tá NDEF MIFARE Classic agus bloic amh mall.",
         "data": {
           "read_ntag": "Léigh NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Léigh NDEF ar Classic (mall)",
-          "read_raw_blocks": "Léigh bloic amh ar Classic",
+          "read_ntag_classic": "Léigh NDEF ar MIFARE Classic (mall)",
+          "read_raw_blocks": "Léigh bloic amh ar MIFARE Classic",
           "poll_interval": "Eatramh vótaála (soicindí)",
           "reconnect_interval": "Eatramh athcheangail (soicindí)"
         }
       },
       "blocks": {
         "title": "Bloic amh",
-        "description": "Roghnaigh bloic earnála 0 Classic (eochracha ar an scáileán seo chugainn).",
+        "description": "Roghnaigh bloic earnála 0 MIFARE Classic (eochracha ar an scáileán seo chugainn).",
         "data": {
           "block_0": "Léigh bloc 0",
           "block_1": "Léigh bloc 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Eochracha Classic",
+        "title": "Eochracha MIFARE Classic",
         "description": "Déantar iarracht ar eochracha in ord go n-éireoidh le léamh bloc.",
         "data": {
           "key_ff": "Eochair ffffffffffff (réamhshocrú monarchan)",

@@ -6,15 +6,15 @@
         "description": "O porto USB detéctase automaticamente. O UID lése sempre.",
         "data": {
           "read_ntag": "Ler NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Ler NDEF en Classic (lento)",
-          "read_raw_blocks": "Ler bloques en bruto en Classic",
+          "read_ntag_classic": "Ler NDEF en MIFARE Classic (lento)",
+          "read_raw_blocks": "Ler bloques en bruto en MIFARE Classic",
           "poll_interval": "Intervalo de sondeo (segundos)",
           "reconnect_interval": "Intervalo de reconexión (segundos)"
         }
       },
       "blocks": {
         "title": "Bloques en bruto",
-        "description": "Selecciona bloques do sector 0 Classic (chaves na pantalla seguinte).",
+        "description": "Selecciona bloques do sector 0 MIFARE Classic (chaves na pantalla seguinte).",
         "data": {
           "block_0": "Ler bloque 0",
           "block_1": "Ler bloque 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Chaves Classic",
+        "title": "Chaves MIFARE Classic",
         "description": "Próbanse as chaves en orde ata que a lectura do bloque teña éxito.",
         "data": {
           "key_ff": "Chave ffffffffffff (predeterminada de fábrica)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Opcións de Proxmark3",
-        "description": "O UID lése sempre. Activa só o que necesites — NDEF Classic e bloques en bruto son lentos.",
+        "description": "O UID lése sempre. Activa só o que necesites — NDEF MIFARE Classic e bloques en bruto son lentos.",
         "data": {
           "read_ntag": "Ler NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Ler NDEF en Classic (lento)",
-          "read_raw_blocks": "Ler bloques en bruto en Classic",
+          "read_ntag_classic": "Ler NDEF en MIFARE Classic (lento)",
+          "read_raw_blocks": "Ler bloques en bruto en MIFARE Classic",
           "poll_interval": "Intervalo de sondeo (segundos)",
           "reconnect_interval": "Intervalo de reconexión (segundos)"
         }
       },
       "blocks": {
         "title": "Bloques en bruto",
-        "description": "Selecciona bloques do sector 0 Classic (chaves na pantalla seguinte).",
+        "description": "Selecciona bloques do sector 0 MIFARE Classic (chaves na pantalla seguinte).",
         "data": {
           "block_0": "Ler bloque 0",
           "block_1": "Ler bloque 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Chaves Classic",
+        "title": "Chaves MIFARE Classic",
         "description": "Próbanse as chaves en orde ata que a lectura do bloque teña éxito.",
         "data": {
           "key_ff": "Chave ffffffffffff (predeterminada de fábrica)",

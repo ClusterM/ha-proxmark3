@@ -6,15 +6,15 @@
         "description": "USB портот се открива автоматски. UID секогаш се чита.",
         "data": {
           "read_ntag": "Читај NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Читај NDEF на Classic (бавно)",
-          "read_raw_blocks": "Читај сири блокови на Classic",
+          "read_ntag_classic": "Читај NDEF на MIFARE Classic (бавно)",
+          "read_raw_blocks": "Читај сири блокови на MIFARE Classic",
           "poll_interval": "Интервал на анкета (секунди)",
           "reconnect_interval": "Интервал за повторно поврзување (секунди)"
         }
       },
       "blocks": {
         "title": "Сири блокови",
-        "description": "Избери блокови од сектор 0 на Classic за читање (клучеви на следниот екран).",
+        "description": "Избери блокови од сектор 0 на MIFARE Classic за читање (клучеви на следниот екран).",
         "data": {
           "block_0": "Читај блок 0",
           "block_1": "Читај блок 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic клучеви",
+        "title": "MIFARE Classic клучеви",
         "description": "Клучевите се пробуваат по ред се додека не успее читањето на блок.",
         "data": {
           "key_ff": "Клуч ffffffffffff (фабрички)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 опции",
-        "description": "UID секогаш се чита. Вклучете само потребно — Classic NDEF и сири блокови се бавни.",
+        "description": "UID секогаш се чита. Вклучете само потребно — MIFARE Classic NDEF и сири блокови се бавни.",
         "data": {
           "read_ntag": "Читај NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Читај NDEF на Classic (бавно)",
-          "read_raw_blocks": "Читај сири блокови на Classic",
+          "read_ntag_classic": "Читај NDEF на MIFARE Classic (бавно)",
+          "read_raw_blocks": "Читај сири блокови на MIFARE Classic",
           "poll_interval": "Интервал на анкета (секунди)",
           "reconnect_interval": "Интервал за повторно поврзување (секунди)"
         }
       },
       "blocks": {
         "title": "Сири блокови",
-        "description": "Избери блокови од сектор 0 на Classic за читање (клучеви на следниот екран).",
+        "description": "Избери блокови од сектор 0 на MIFARE Classic за читање (клучеви на следниот екран).",
         "data": {
           "block_0": "Читај блок 0",
           "block_1": "Читај блок 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic клучеви",
+        "title": "MIFARE Classic клучеви",
         "description": "Клучевите се пробуваат по ред се додека не успее читањето на блок.",
         "data": {
           "key_ff": "Клуч ffffffffffff (фабрички)",

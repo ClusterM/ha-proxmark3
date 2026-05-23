@@ -6,15 +6,15 @@
         "description": "USB پورٹ خودکار پتہ چل جاتا ہے۔ UID ہمیشہ پڑھا جاتا ہے۔",
         "data": {
           "read_ntag": "NDEF پڑھیں (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic پر NDEF پڑھیں (آہستہ)",
-          "read_raw_blocks": "Classic پر خام بلاکس پڑھیں",
+          "read_ntag_classic": "MIFARE Classic پر NDEF پڑھیں (آہستہ)",
+          "read_raw_blocks": "MIFARE Classic پر خام بلاکس پڑھیں",
           "poll_interval": "پول وقفہ (سیکنڈ)",
           "reconnect_interval": "دوبارہ ربط وقفہ (سیکنڈ)"
         }
       },
       "blocks": {
         "title": "خام بلاکس",
-        "description": "پڑھنے کے لیے Classic سیکٹر 0 کے بلاکس منتخب کریں (اگلے اسکرین پر کیز درکار)۔",
+        "description": "پڑھنے کے لیے MIFARE Classic سیکٹر 0 کے بلاکس منتخب کریں (اگلے اسکرین پر کیز درکار)۔",
         "data": {
           "block_0": "بلاک 0 پڑھیں",
           "block_1": "بلاک 1 پڑھیں",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic کیز",
+        "title": "MIFARE Classic کیز",
         "description": "جب تک بلاک ریڈ کامیاب نہ ہو کیز ترتیب سے آزمائی جاتی ہیں۔",
         "data": {
           "key_ff": "کلید ffffffffffff (فیکٹری ڈیفالٹ)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 اختیارات",
-        "description": "UID ہمیشہ پڑھا جاتا ہے۔ صرف وہی فعال کریں جس کی ضورت ہے — Classic NDEF اور خام بلاکس آہستہ ہیں۔",
+        "description": "UID ہمیشہ پڑھا جاتا ہے۔ صرف وہی فعال کریں جس کی ضورت ہے — MIFARE Classic NDEF اور خام بلاکس آہستہ ہیں۔",
         "data": {
           "read_ntag": "NDEF پڑھیں (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic پر NDEF پڑھیں (آہستہ)",
-          "read_raw_blocks": "Classic پر خام بلاکس پڑھیں",
+          "read_ntag_classic": "MIFARE Classic پر NDEF پڑھیں (آہستہ)",
+          "read_raw_blocks": "MIFARE Classic پر خام بلاکس پڑھیں",
           "poll_interval": "پول وقفہ (سیکنڈ)",
           "reconnect_interval": "دوبارہ ربط وقفہ (سیکنڈ)"
         }
       },
       "blocks": {
         "title": "خام بلاکس",
-        "description": "پڑھنے کے لیے Classic سیکٹر 0 کے بلاکس منتخب کریں (اگلے اسکرین پر کیز درکار)۔",
+        "description": "پڑھنے کے لیے MIFARE Classic سیکٹر 0 کے بلاکس منتخب کریں (اگلے اسکرین پر کیز درکار)۔",
         "data": {
           "block_0": "بلاک 0 پڑھیں",
           "block_1": "بلاک 1 پڑھیں",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic کیز",
+        "title": "MIFARE Classic کیز",
         "description": "جب تک بلاک ریڈ کامیاب نہ ہو کیز ترتیب سے آزمائی جاتی ہیں۔",
         "data": {
           "key_ff": "کلید ffffffffffff (فیکٹری ڈیفالٹ)",

@@ -6,15 +6,15 @@
         "description": "USB-Port wird automatisch erkannt. UID wird immer gläse.",
         "data": {
           "read_ntag": "NDEF läse (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF uf Classic läse (langsam)",
-          "read_raw_blocks": "Rohblöck uf Classic läse",
+          "read_ntag_classic": "NDEF uf MIFARE Classic läse (langsam)",
+          "read_raw_blocks": "Rohblöck uf MIFARE Classic läse",
           "poll_interval": "Abfragintervall (Sekunde)",
           "reconnect_interval": "Wieder verbindigs-Intervall (Sekunde)"
         }
       },
       "blocks": {
         "title": "Rohblöck",
-        "description": "Classic Sektor-0-Blöck uswähle (Schlüssel uf em nächschte Bildschirm).",
+        "description": "MIFARE Classic Sektor-0-Blöck uswähle (Schlüssel uf em nächschte Bildschirm).",
         "data": {
           "block_0": "Block 0 läse",
           "block_1": "Block 1 läse",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic-Schlüssel",
+        "title": "MIFARE Classic-Schlüssel",
         "description": "Schlüssel werded der Reihe nach probiert, bis Blockläse klappt.",
         "data": {
           "key_ff": "Schlüssel ffffffffffff (Werkseinstellig)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3-Optione",
-        "description": "UID wird immer gläse. Aktivier nur was du bruchsch — Classic NDEF und Rohblöck sind langsam.",
+        "description": "UID wird immer gläse. Aktivier nur was du bruchsch — MIFARE Classic NDEF und Rohblöck sind langsam.",
         "data": {
           "read_ntag": "NDEF läse (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF uf Classic läse (langsam)",
-          "read_raw_blocks": "Rohblöck uf Classic läse",
+          "read_ntag_classic": "NDEF uf MIFARE Classic läse (langsam)",
+          "read_raw_blocks": "Rohblöck uf MIFARE Classic läse",
           "poll_interval": "Abfragintervall (Sekunde)",
           "reconnect_interval": "Wieder verbindigs-Intervall (Sekunde)"
         }
       },
       "blocks": {
         "title": "Rohblöck",
-        "description": "Classic Sektor-0-Blöck uswähle (Schlüssel uf em nächschte Bildschirm).",
+        "description": "MIFARE Classic Sektor-0-Blöck uswähle (Schlüssel uf em nächschte Bildschirm).",
         "data": {
           "block_0": "Block 0 läse",
           "block_1": "Block 1 läse",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic-Schlüssel",
+        "title": "MIFARE Classic-Schlüssel",
         "description": "Schlüssel werded der Reihe nach probiert, bis Blockläse klappt.",
         "data": {
           "key_ff": "Schlüssel ffffffffffff (Werkseinstellig)",

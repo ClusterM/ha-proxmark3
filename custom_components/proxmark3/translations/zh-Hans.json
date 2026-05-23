@@ -6,15 +6,15 @@
         "description": "USB 端口自动检测。UID 始终读取。",
         "data": {
           "read_ntag": "读取 NDEF（Ultralight / NTAG）",
-          "read_ntag_classic": "在 Classic 上读取 NDEF（较慢）",
-          "read_raw_blocks": "在 Classic 上读取原始块",
+          "read_ntag_classic": "在 MIFARE Classic 上读取 NDEF（较慢）",
+          "read_raw_blocks": "在 MIFARE Classic 上读取原始块",
           "poll_interval": "轮询间隔（秒）",
           "reconnect_interval": "重连间隔（秒）"
         }
       },
       "blocks": {
         "title": "原始块",
-        "description": "选择要读取的 Classic 扇区 0 块（下一屏需要密钥）。",
+        "description": "选择要读取的 MIFARE Classic 扇区 0 块（下一屏需要密钥）。",
         "data": {
           "block_0": "读取块 0",
           "block_1": "读取块 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic 密钥",
+        "title": "MIFARE Classic 密钥",
         "description": "按顺序尝试密钥，直到块读取成功。",
         "data": {
           "key_ff": "密钥 ffffffffffff (出厂默认)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 选项",
-        "description": "UID 始终读取。仅启用所需功能 — Classic NDEF 和原始块较慢。",
+        "description": "UID 始终读取。仅启用所需功能 — MIFARE Classic NDEF 和原始块较慢。",
         "data": {
           "read_ntag": "读取 NDEF（Ultralight / NTAG）",
-          "read_ntag_classic": "在 Classic 上读取 NDEF（较慢）",
-          "read_raw_blocks": "在 Classic 上读取原始块",
+          "read_ntag_classic": "在 MIFARE Classic 上读取 NDEF（较慢）",
+          "read_raw_blocks": "在 MIFARE Classic 上读取原始块",
           "poll_interval": "轮询间隔（秒）",
           "reconnect_interval": "重连间隔（秒）"
         }
       },
       "blocks": {
         "title": "原始块",
-        "description": "选择要读取的 Classic 扇区 0 块（下一屏需要密钥）。",
+        "description": "选择要读取的 MIFARE Classic 扇区 0 块（下一屏需要密钥）。",
         "data": {
           "block_0": "读取块 0",
           "block_1": "读取块 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic 密钥",
+        "title": "MIFARE Classic 密钥",
         "description": "按顺序尝试密钥，直到块读取成功。",
         "data": {
           "key_ff": "密钥 ffffffffffff (出厂默认)",

@@ -6,15 +6,15 @@
         "description": "יציאת USB מזוהה אוטומטית. UID נקרא תמיד.",
         "data": {
           "read_ntag": "קריאת NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "קריאת NDEF ב-Classic (איטי)",
-          "read_raw_blocks": "קריאת בלוקים גולמיים ב-Classic",
+          "read_ntag_classic": "קריאת NDEF ב-MIFARE Classic (איטי)",
+          "read_raw_blocks": "קריאת בלוקים גולמיים ב-MIFARE Classic",
           "poll_interval": "מרווח דגימה (שניות)",
           "reconnect_interval": "מרווח חיבור מחדש (שניות)"
         }
       },
       "blocks": {
         "title": "בלוקים גולמיים",
-        "description": "בחר בלוקים של מגזר 0 Classic (מפתחות במסך הבא).",
+        "description": "בחר בלוקים של מגזר 0 MIFARE Classic (מפתחות במסך הבא).",
         "data": {
           "block_0": "קריאת בלוק 0",
           "block_1": "קריאת בלוק 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "מפתחות Classic",
+        "title": "מפתחות MIFARE Classic",
         "description": "מפתחות נוסים לפי סדר עד שקריאת הבלוק מצליחה.",
         "data": {
           "key_ff": "מפתח ffffffffffff (ברירת מפעל)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "אפשרויות Proxmark3",
-        "description": "UID נקרא תמיד. הפעל רק מה שצריך — NDEF Classic ובלוקים גולמיים איטיים.",
+        "description": "UID נקרא תמיד. הפעל רק מה שצריך — NDEF MIFARE Classic ובלוקים גולמיים איטיים.",
         "data": {
           "read_ntag": "קריאת NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "קריאת NDEF ב-Classic (איטי)",
-          "read_raw_blocks": "קריאת בלוקים גולמיים ב-Classic",
+          "read_ntag_classic": "קריאת NDEF ב-MIFARE Classic (איטי)",
+          "read_raw_blocks": "קריאת בלוקים גולמיים ב-MIFARE Classic",
           "poll_interval": "מרווח דגימה (שניות)",
           "reconnect_interval": "מרווח חיבור מחדש (שניות)"
         }
       },
       "blocks": {
         "title": "בלוקים גולמיים",
-        "description": "בחר בלוקים של מגזר 0 Classic (מפתחות במסך הבא).",
+        "description": "בחר בלוקים של מגזר 0 MIFARE Classic (מפתחות במסך הבא).",
         "data": {
           "block_0": "קריאת בלוק 0",
           "block_1": "קריאת בלוק 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "מפתחות Classic",
+        "title": "מפתחות MIFARE Classic",
         "description": "מפתחות נוסים לפי סדר עד שקריאת הבלוק מצליחה.",
         "data": {
           "key_ff": "מפתח ffffffffffff (ברירת מפעל)",

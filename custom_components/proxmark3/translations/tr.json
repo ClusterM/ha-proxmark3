@@ -6,15 +6,15 @@
         "description": "USB bağlantı noktası otomatik algılanır. UID her zaman okunur.",
         "data": {
           "read_ntag": "NDEF oku (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic üzerinde NDEF oku (yavaş)",
-          "read_raw_blocks": "Classic üzerinde ham blokları oku",
+          "read_ntag_classic": "MIFARE Classic üzerinde NDEF oku (yavaş)",
+          "read_raw_blocks": "MIFARE Classic üzerinde ham blokları oku",
           "poll_interval": "Yoklama aralığı (saniye)",
           "reconnect_interval": "Yeniden bağlanma aralığı (saniye)"
         }
       },
       "blocks": {
         "title": "Ham bloklar",
-        "description": "Okunacak Classic sektör 0 bloklarını seçin (anahtarlar bir sonraki ekranda).",
+        "description": "Okunacak MIFARE Classic sektör 0 bloklarını seçin (anahtarlar bir sonraki ekranda).",
         "data": {
           "block_0": "Blok 0 oku",
           "block_1": "Blok 1 oku",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic anahtarları",
+        "title": "MIFARE Classic anahtarları",
         "description": "Bir blok okuması başarılı olana kadar anahtarlar sırayla denenir.",
         "data": {
           "key_ff": "Anahtar ffffffffffff (fabrika varsayılanı)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 seçenekleri",
-        "description": "UID her zaman okunur. Yalnızca ihtiyacınız olanı açın — Classic NDEF ve ham bloklar yavaştır.",
+        "description": "UID her zaman okunur. Yalnızca ihtiyacınız olanı açın — MIFARE Classic NDEF ve ham bloklar yavaştır.",
         "data": {
           "read_ntag": "NDEF oku (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic üzerinde NDEF oku (yavaş)",
-          "read_raw_blocks": "Classic üzerinde ham blokları oku",
+          "read_ntag_classic": "MIFARE Classic üzerinde NDEF oku (yavaş)",
+          "read_raw_blocks": "MIFARE Classic üzerinde ham blokları oku",
           "poll_interval": "Yoklama aralığı (saniye)",
           "reconnect_interval": "Yeniden bağlanma aralığı (saniye)"
         }
       },
       "blocks": {
         "title": "Ham bloklar",
-        "description": "Okunacak Classic sektör 0 bloklarını seçin (anahtarlar bir sonraki ekranda).",
+        "description": "Okunacak MIFARE Classic sektör 0 bloklarını seçin (anahtarlar bir sonraki ekranda).",
         "data": {
           "block_0": "Blok 0 oku",
           "block_1": "Blok 1 oku",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic anahtarları",
+        "title": "MIFARE Classic anahtarları",
         "description": "Bir blok okuması başarılı olana kadar anahtarlar sırayla denenir.",
         "data": {
           "key_ff": "Anahtar ffffffffffff (fabrika varsayılanı)",

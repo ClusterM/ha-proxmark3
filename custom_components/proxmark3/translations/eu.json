@@ -6,15 +6,15 @@
         "description": "USB ataka automatikoki detektatzen da. UID beti irakurtzen da.",
         "data": {
           "read_ntag": "Irakurri NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Irakurri NDEF Classic-en (motela)",
-          "read_raw_blocks": "Irakurri bloke gordinak Classic-en",
+          "read_ntag_classic": "Irakurri NDEF MIFARE Classic-en (motela)",
+          "read_raw_blocks": "Irakurri bloke gordinak MIFARE Classic-en",
           "poll_interval": "Galdeketa-tartea (segundoak)",
           "reconnect_interval": "Berriro konektatzeko tartea (segundoak)"
         }
       },
       "blocks": {
         "title": "Bloke gordinak",
-        "description": "Hautatu Classic sektore 0 blokeak (gakoak hurrengo pantailan).",
+        "description": "Hautatu MIFARE Classic sektore 0 blokeak (gakoak hurrengo pantailan).",
         "data": {
           "block_0": "Irakurri bloke 0",
           "block_1": "Irakurri bloke 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic gakoak",
+        "title": "MIFARE Classic gakoak",
         "description": "Gakoak ordenan probatzen dira blokearen irakurketa arrakastatsua izan arte.",
         "data": {
           "key_ff": "Gakoa ffffffffffff (fabrika lehenetsia)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 aukerak",
-        "description": "UID beti irakurtzen da. Gaitu behar duzuna soilik — Classic NDEF eta bloke gordinak motelak dira.",
+        "description": "UID beti irakurtzen da. Gaitu behar duzuna soilik — MIFARE Classic NDEF eta bloke gordinak motelak dira.",
         "data": {
           "read_ntag": "Irakurri NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Irakurri NDEF Classic-en (motela)",
-          "read_raw_blocks": "Irakurri bloke gordinak Classic-en",
+          "read_ntag_classic": "Irakurri NDEF MIFARE Classic-en (motela)",
+          "read_raw_blocks": "Irakurri bloke gordinak MIFARE Classic-en",
           "poll_interval": "Galdeketa-tartea (segundoak)",
           "reconnect_interval": "Berriro konektatzeko tartea (segundoak)"
         }
       },
       "blocks": {
         "title": "Bloke gordinak",
-        "description": "Hautatu Classic sektore 0 blokeak (gakoak hurrengo pantailan).",
+        "description": "Hautatu MIFARE Classic sektore 0 blokeak (gakoak hurrengo pantailan).",
         "data": {
           "block_0": "Irakurri bloke 0",
           "block_1": "Irakurri bloke 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic gakoak",
+        "title": "MIFARE Classic gakoak",
         "description": "Gakoak ordenan probatzen dira blokearen irakurketa arrakastatsua izan arte.",
         "data": {
           "key_ff": "Gakoa ffffffffffff (fabrika lehenetsia)",

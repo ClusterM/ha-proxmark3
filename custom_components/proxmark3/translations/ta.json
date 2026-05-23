@@ -6,15 +6,15 @@
         "description": "USB போர்ட் தானாகக் கண்டறியப்படுகிறது. UID எப்போதும் படிக்கப்படுகிறது.",
         "data": {
           "read_ntag": "NDEF படி (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic-இல் NDEF படி (மெதுவாக)",
-          "read_raw_blocks": "Classic-இல் மூலத் தொகுதிகளைப் படி",
+          "read_ntag_classic": "MIFARE Classic-இல் NDEF படி (மெதுவாக)",
+          "read_raw_blocks": "MIFARE Classic-இல் மூலத் தொகுதிகளைப் படி",
           "poll_interval": "கணக்கெடுப்பு இடைவெளி (விநாடிகள்)",
           "reconnect_interval": "மீண்டும் இணைப்பு இடைவெளி (விநாடிகள்)"
         }
       },
       "blocks": {
         "title": "மூலத் தொகுதிகள்",
-        "description": "படிக்க Classic பிரிவு 0 தொகுதிகளைத் தேர்ந்தெடு (அடுத்த திரையில் விசைகள் தேவை).",
+        "description": "படிக்க MIFARE Classic பிரிவு 0 தொகுதிகளைத் தேர்ந்தெடு (அடுத்த திரையில் விசைகள் தேவை).",
         "data": {
           "block_0": "தொகுதி 0 படி",
           "block_1": "தொகுதி 1 படி",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic விசைகள்",
+        "title": "MIFARE Classic விசைகள்",
         "description": "ஒரு தொகுதி வாசிப்பு வெற்றியடையும் வரை விசைகள் வரிசையில் முயற்சிக்கப்படுகின்றன.",
         "data": {
           "key_ff": "விசை ffffffffffff (ஆலை இயல்புநிலை)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 விருப்பங்கள்",
-        "description": "UID எப்போதும் படிக்கப்படுகிறது. தேவையானதை மட்டும் இயக்கவும் — Classic NDEF மற்றும் மூலத் தொகுதிகள் மெதுவானவை.",
+        "description": "UID எப்போதும் படிக்கப்படுகிறது. தேவையானதை மட்டும் இயக்கவும் — MIFARE Classic NDEF மற்றும் மூலத் தொகுதிகள் மெதுவானவை.",
         "data": {
           "read_ntag": "NDEF படி (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic-இல் NDEF படி (மெதுவாக)",
-          "read_raw_blocks": "Classic-இல் மூலத் தொகுதிகளைப் படி",
+          "read_ntag_classic": "MIFARE Classic-இல் NDEF படி (மெதுவாக)",
+          "read_raw_blocks": "MIFARE Classic-இல் மூலத் தொகுதிகளைப் படி",
           "poll_interval": "கணக்கெடுப்பு இடைவெளி (விநாடிகள்)",
           "reconnect_interval": "மீண்டும் இணைப்பு இடைவெளி (விநாடிகள்)"
         }
       },
       "blocks": {
         "title": "மூலத் தொகுதிகள்",
-        "description": "படிக்க Classic பிரிவு 0 தொகுதிகளைத் தேர்ந்தெடு (அடுத்த திரையில் விசைகள் தேவை).",
+        "description": "படிக்க MIFARE Classic பிரிவு 0 தொகுதிகளைத் தேர்ந்தெடு (அடுத்த திரையில் விசைகள் தேவை).",
         "data": {
           "block_0": "தொகுதி 0 படி",
           "block_1": "தொகுதி 1 படி",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic விசைகள்",
+        "title": "MIFARE Classic விசைகள்",
         "description": "ஒரு தொகுதி வாசிப்பு வெற்றியடையும் வரை விசைகள் வரிசையில் முயற்சிக்கப்படுகின்றன.",
         "data": {
           "key_ff": "விசை ffffffffffff (ஆலை இயல்புநிலை)",

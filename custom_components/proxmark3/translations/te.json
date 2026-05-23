@@ -6,15 +6,15 @@
         "description": "USB పోర్ట్ స్వయంచాలకంగా గుర్తించబడుతుంది. UID ఎల్లప్పుడూ చదవబడుతుంది.",
         "data": {
           "read_ntag": "NDEF చదవండి (Ultralight / NTAG)",
-          "read_ntag_classic": "Classicలో NDEF చదవండి (నెమ్మది)",
-          "read_raw_blocks": "Classicలో ముడి బ్లాక్లను చదవండి",
+          "read_ntag_classic": "MIFARE Classicలో NDEF చదవండి (నెమ్మది)",
+          "read_raw_blocks": "MIFARE Classicలో ముడి బ్లాక్లను చదవండి",
           "poll_interval": "పోల్ విరామం (సెకన్లు)",
           "reconnect_interval": "మళ్లీ కనెక్ట్ విరామం (సెకన్లు)"
         }
       },
       "blocks": {
         "title": "ముడి బ్లాక్లు",
-        "description": "చదవడానికి Classic సెక్టార్ 0 బ్లాక్లను ఎంచుకోండు (తదుపరి స్క్రీన్‌లో కీలు అవసరం).",
+        "description": "చదవడానికి MIFARE Classic సెక్టార్ 0 బ్లాక్లను ఎంచుకోండు (తదుపరి స్క్రీన్‌లో కీలు అవసరం).",
         "data": {
           "block_0": "బ్లాక్ 0 చదవండి",
           "block_1": "బ్లాక్ 1 చదవండి",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic కీలు",
+        "title": "MIFARE Classic కీలు",
         "description": "బ్లాక్ చదవడం విజయవంతమయ్యే వరకు కీలు క్రమంలో ప్రయత్నించబడతాయి.",
         "data": {
           "key_ff": "కీ ffffffffffff (ఫ్యాక్టరీ డిఫాల్ట్)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 ఎంపికలు",
-        "description": "UID ఎల్లప్పుడూ చదవబడుతుంది. అవసరమైనది మాత్రమే ప్రారంభించండి — Classic NDEF మరియు ముడి బ్లాక్లు నెమ్మదిగా ఉంటాయి.",
+        "description": "UID ఎల్లప్పుడూ చదవబడుతుంది. అవసరమైనది మాత్రమే ప్రారంభించండి — MIFARE Classic NDEF మరియు ముడి బ్లాక్లు నెమ్మదిగా ఉంటాయి.",
         "data": {
           "read_ntag": "NDEF చదవండి (Ultralight / NTAG)",
-          "read_ntag_classic": "Classicలో NDEF చదవండి (నెమ్మది)",
-          "read_raw_blocks": "Classicలో ముడి బ్లాక్లను చదవండి",
+          "read_ntag_classic": "MIFARE Classicలో NDEF చదవండి (నెమ్మది)",
+          "read_raw_blocks": "MIFARE Classicలో ముడి బ్లాక్లను చదవండి",
           "poll_interval": "పోల్ విరామం (సెకన్లు)",
           "reconnect_interval": "మళ్లీ కనెక్ట్ విరామం (సెకన్లు)"
         }
       },
       "blocks": {
         "title": "ముడి బ్లాక్లు",
-        "description": "చదవడానికి Classic సెక్టార్ 0 బ్లాక్లను ఎంచుకోండు (తదుపరి స్క్రీన్‌లో కీలు అవసరం).",
+        "description": "చదవడానికి MIFARE Classic సెక్టార్ 0 బ్లాక్లను ఎంచుకోండు (తదుపరి స్క్రీన్‌లో కీలు అవసరం).",
         "data": {
           "block_0": "బ్లాక్ 0 చదవండి",
           "block_1": "బ్లాక్ 1 చదవండి",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic కీలు",
+        "title": "MIFARE Classic కీలు",
         "description": "బ్లాక్ చదవడం విజయవంతమయ్యే వరకు కీలు క్రమంలో ప్రయత్నించబడతాయి.",
         "data": {
           "key_ff": "కీ ffffffffffff (ఫ్యాక్టరీ డిఫాల్ట్)",

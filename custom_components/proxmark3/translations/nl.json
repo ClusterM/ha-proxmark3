@@ -6,15 +6,15 @@
         "description": "De USB-poort wordt automatisch gedetecteerd. UID wordt altijd gelezen.",
         "data": {
           "read_ntag": "NDEF lezen (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF op Classic lezen (traag)",
-          "read_raw_blocks": "Ruwe blokken op Classic lezen",
+          "read_ntag_classic": "NDEF op MIFARE Classic lezen (traag)",
+          "read_raw_blocks": "Ruwe blokken op MIFARE Classic lezen",
           "poll_interval": "Polling-interval (seconden)",
           "reconnect_interval": "Herverbindingsinterval (seconden)"
         }
       },
       "blocks": {
         "title": "Ruwe blokken",
-        "description": "Selecteer Classic sector 0-blokken om te lezen (sleutels op het volgende scherm).",
+        "description": "Selecteer MIFARE Classic sector 0-blokken om te lezen (sleutels op het volgende scherm).",
         "data": {
           "block_0": "Blok 0 lezen",
           "block_1": "Blok 1 lezen",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic-sleutels",
+        "title": "MIFARE Classic-sleutels",
         "description": "Sleutels worden in volgorde geprobeerd tot een bloklezing lukt.",
         "data": {
           "key_ff": "Sleutel ffffffffffff (fabrieksstandaard)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3-opties",
-        "description": "UID wordt altijd gelezen. Schakel alleen in wat u nodig hebt — Classic NDEF en ruwe blokken zijn traag.",
+        "description": "UID wordt altijd gelezen. Schakel alleen in wat u nodig hebt — MIFARE Classic NDEF en ruwe blokken zijn traag.",
         "data": {
           "read_ntag": "NDEF lezen (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF op Classic lezen (traag)",
-          "read_raw_blocks": "Ruwe blokken op Classic lezen",
+          "read_ntag_classic": "NDEF op MIFARE Classic lezen (traag)",
+          "read_raw_blocks": "Ruwe blokken op MIFARE Classic lezen",
           "poll_interval": "Polling-interval (seconden)",
           "reconnect_interval": "Herverbindingsinterval (seconden)"
         }
       },
       "blocks": {
         "title": "Ruwe blokken",
-        "description": "Selecteer Classic sector 0-blokken om te lezen (sleutels op het volgende scherm).",
+        "description": "Selecteer MIFARE Classic sector 0-blokken om te lezen (sleutels op het volgende scherm).",
         "data": {
           "block_0": "Blok 0 lezen",
           "block_1": "Blok 1 lezen",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic-sleutels",
+        "title": "MIFARE Classic-sleutels",
         "description": "Sleutels worden in volgorde geprobeerd tot een bloklezing lukt.",
         "data": {
           "key_ff": "Sleutel ffffffffffff (fabrieksstandaard)",

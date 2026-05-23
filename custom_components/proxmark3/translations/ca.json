@@ -6,15 +6,15 @@
         "description": "El port USB es detecta automàticament. Sempre es llegeix l'UID.",
         "data": {
           "read_ntag": "Llegir NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Llegir NDEF a Classic (lent)",
-          "read_raw_blocks": "Llegir blocs en brut a Classic",
+          "read_ntag_classic": "Llegir NDEF a MIFARE Classic (lent)",
+          "read_raw_blocks": "Llegir blocs en brut a MIFARE Classic",
           "poll_interval": "Interval d'interrogació (segons)",
           "reconnect_interval": "Interval de reconnexió (segons)"
         }
       },
       "blocks": {
         "title": "Blocs en brut",
-        "description": "Seleccioneu blocs del sector 0 Classic (claus a la pantalla següent).",
+        "description": "Seleccioneu blocs del sector 0 MIFARE Classic (claus a la pantalla següent).",
         "data": {
           "block_0": "Llegir bloc 0",
           "block_1": "Llegir bloc 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Claus Classic",
+        "title": "Claus MIFARE Classic",
         "description": "Es proven les claus en ordre fins que la lectura del bloc té èxit.",
         "data": {
           "key_ff": "Clau ffffffffffff (per defecte de fàbrica)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Opcions de Proxmark3",
-        "description": "Sempre es llegeix l'UID. Activeu només el que necessiteu — NDEF Classic i blocs en brut són lents.",
+        "description": "Sempre es llegeix l'UID. Activeu només el que necessiteu — NDEF MIFARE Classic i blocs en brut són lents.",
         "data": {
           "read_ntag": "Llegir NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Llegir NDEF a Classic (lent)",
-          "read_raw_blocks": "Llegir blocs en brut a Classic",
+          "read_ntag_classic": "Llegir NDEF a MIFARE Classic (lent)",
+          "read_raw_blocks": "Llegir blocs en brut a MIFARE Classic",
           "poll_interval": "Interval d'interrogació (segons)",
           "reconnect_interval": "Interval de reconnexió (segons)"
         }
       },
       "blocks": {
         "title": "Blocs en brut",
-        "description": "Seleccioneu blocs del sector 0 Classic (claus a la pantalla següent).",
+        "description": "Seleccioneu blocs del sector 0 MIFARE Classic (claus a la pantalla següent).",
         "data": {
           "block_0": "Llegir bloc 0",
           "block_1": "Llegir bloc 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Claus Classic",
+        "title": "Claus MIFARE Classic",
         "description": "Es proven les claus en ordre fins que la lectura del bloc té èxit.",
         "data": {
           "key_ff": "Clau ffffffffffff (per defecte de fàbrica)",

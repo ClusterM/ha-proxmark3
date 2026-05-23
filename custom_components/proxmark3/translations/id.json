@@ -6,15 +6,15 @@
         "description": "Port USB terdeteksi otomatis. UID selalu dibaca.",
         "data": {
           "read_ntag": "Baca NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Baca NDEF di Classic (lambat)",
-          "read_raw_blocks": "Baca blok mentah di Classic",
+          "read_ntag_classic": "Baca NDEF di MIFARE Classic (lambat)",
+          "read_raw_blocks": "Baca blok mentah di MIFARE Classic",
           "poll_interval": "Interval polling (detik)",
           "reconnect_interval": "Interval sambung ulang (detik)"
         }
       },
       "blocks": {
         "title": "Blok mentah",
-        "description": "Pilih blok sektor 0 Classic (kunci di layar berikutnya).",
+        "description": "Pilih blok sektor 0 MIFARE Classic (kunci di layar berikutnya).",
         "data": {
           "block_0": "Baca blok 0",
           "block_1": "Baca blok 1",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Kunci Classic",
+        "title": "Kunci MIFARE Classic",
         "description": "Kunci dicoba berurutan hingga pembacaan blok berhasil.",
         "data": {
           "key_ff": "Kunci ffffffffffff (default pabrik)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Opsi Proxmark3",
-        "description": "UID selalu dibaca. Aktifkan hanya yang diperlukan — NDEF Classic dan blok mentah lambat.",
+        "description": "UID selalu dibaca. Aktifkan hanya yang diperlukan — NDEF MIFARE Classic dan blok mentah lambat.",
         "data": {
           "read_ntag": "Baca NDEF (Ultralight / NTAG)",
-          "read_ntag_classic": "Baca NDEF di Classic (lambat)",
-          "read_raw_blocks": "Baca blok mentah di Classic",
+          "read_ntag_classic": "Baca NDEF di MIFARE Classic (lambat)",
+          "read_raw_blocks": "Baca blok mentah di MIFARE Classic",
           "poll_interval": "Interval polling (detik)",
           "reconnect_interval": "Interval sambung ulang (detik)"
         }
       },
       "blocks": {
         "title": "Blok mentah",
-        "description": "Pilih blok sektor 0 Classic (kunci di layar berikutnya).",
+        "description": "Pilih blok sektor 0 MIFARE Classic (kunci di layar berikutnya).",
         "data": {
           "block_0": "Baca blok 0",
           "block_1": "Baca blok 1",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Kunci Classic",
+        "title": "Kunci MIFARE Classic",
         "description": "Kunci dicoba berurutan hingga pembacaan blok berhasil.",
         "data": {
           "key_ff": "Kunci ffffffffffff (default pabrik)",

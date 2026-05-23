@@ -6,15 +6,15 @@
         "description": "USB പോർട്ട് സ്വയമേവ തിരിച്ചറിയപ്പെടുന്നു. UID എല്ലായ്പ്പോഴും വായിക്കുന്നു.",
         "data": {
           "read_ntag": "NDEF വായിക്കുക (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic-ൽ NDEF വായിക്കുക (പതുക്കെ)",
-          "read_raw_blocks": "Classic-ൽ അസംസ്കൃത ബ്ലോക്കുകൾ വായിക്കുക",
+          "read_ntag_classic": "MIFARE Classic-ൽ NDEF വായിക്കുക (പതുക്കെ)",
+          "read_raw_blocks": "MIFARE Classic-ൽ അസംസ്കൃത ബ്ലോക്കുകൾ വായിക്കുക",
           "poll_interval": "പോൾ ഇടകാലം (സെക്കൻഡ്)",
           "reconnect_interval": "പുനഃചേരൽ ഇടകാലം (സെക്കൻഡ്)"
         }
       },
       "blocks": {
         "title": "അസംസ്കൃത ബ്ലോക്കുകൾ",
-        "description": "വായിക്കാൻ Classic സെക്ടർ 0 ബ്ലോക്കുകൾ തിരഞ്ഞെടുക്കുക (അടുത്ത സ്ക്രീനിൽ കീകൾ ആവശ്യമാണ്).",
+        "description": "വായിക്കാൻ MIFARE Classic സെക്ടർ 0 ബ്ലോക്കുകൾ തിരഞ്ഞെടുക്കുക (അടുത്ത സ്ക്രീനിൽ കീകൾ ആവശ്യമാണ്).",
         "data": {
           "block_0": "ബ്ലോക്ക് 0 വായിക്കുക",
           "block_1": "ബ്ലോക്ക് 1 വായിക്കുക",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic കീകൾ",
+        "title": "MIFARE Classic കീകൾ",
         "description": "ഒരു ബ്ലോക്ക് വിജയകരമായി വായിക്കുന്നത് വരെ കീകൾ ക്രമത്തിൽ പരീക്ഷിക്കുന്നു.",
         "data": {
           "key_ff": "കീ ffffffffffff (ഫാക്ടറി ഡിഫോൾട്ട്)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3 ഓപ്ഷനുകൾ",
-        "description": "UID എല്ലായ്പ്പോഴും വായിക്കുന്നു. ആവശ്യമുള്ളത് മാത്രം ഓൺ ചെയ്യുക — Classic NDEF-യും അസംസ്കൃത ബ്ലോക്കുകളും പതുക്കെയാണ്.",
+        "description": "UID എല്ലായ്പ്പോഴും വായിക്കുന്നു. ആവശ്യമുള്ളത് മാത്രം ഓൺ ചെയ്യുക — MIFARE Classic NDEF-യും അസംസ്കൃത ബ്ലോക്കുകളും പതുക്കെയാണ്.",
         "data": {
           "read_ntag": "NDEF വായിക്കുക (Ultralight / NTAG)",
-          "read_ntag_classic": "Classic-ൽ NDEF വായിക്കുക (പതുക്കെ)",
-          "read_raw_blocks": "Classic-ൽ അസംസ്കൃത ബ്ലോക്കുകൾ വായിക്കുക",
+          "read_ntag_classic": "MIFARE Classic-ൽ NDEF വായിക്കുക (പതുക്കെ)",
+          "read_raw_blocks": "MIFARE Classic-ൽ അസംസ്കൃത ബ്ലോക്കുകൾ വായിക്കുക",
           "poll_interval": "പോൾ ഇടകാലം (സെക്കൻഡ്)",
           "reconnect_interval": "പുനഃചേരൽ ഇടകാലം (സെക്കൻഡ്)"
         }
       },
       "blocks": {
         "title": "അസംസ്കൃത ബ്ലോക്കുകൾ",
-        "description": "വായിക്കാൻ Classic സെക്ടർ 0 ബ്ലോക്കുകൾ തിരഞ്ഞെടുക്കുക (അടുത്ത സ്ക്രീനിൽ കീകൾ ആവശ്യമാണ്).",
+        "description": "വായിക്കാൻ MIFARE Classic സെക്ടർ 0 ബ്ലോക്കുകൾ തിരഞ്ഞെടുക്കുക (അടുത്ത സ്ക്രീനിൽ കീകൾ ആവശ്യമാണ്).",
         "data": {
           "block_0": "ബ്ലോക്ക് 0 വായിക്കുക",
           "block_1": "ബ്ലോക്ക് 1 വായിക്കുക",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic കീകൾ",
+        "title": "MIFARE Classic കീകൾ",
         "description": "ഒരു ബ്ലോക്ക് വിജയകരമായി വായിക്കുന്നത് വരെ കീകൾ ക്രമത്തിൽ പരീക്ഷിക്കുന്നു.",
         "data": {
           "key_ff": "കീ ffffffffffff (ഫാക്ടറി ഡിഫോൾട്ട്)",

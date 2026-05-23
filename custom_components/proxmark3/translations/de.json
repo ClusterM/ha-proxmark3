@@ -6,15 +6,15 @@
         "description": "USB-Anschluss wird automatisch erkannt. UID wird immer gelesen.",
         "data": {
           "read_ntag": "NDEF lesen (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF auf Classic lesen (langsam)",
-          "read_raw_blocks": "Rohblöcke auf Classic lesen",
+          "read_ntag_classic": "NDEF auf MIFARE Classic lesen (langsam)",
+          "read_raw_blocks": "Rohblöcke auf MIFARE Classic lesen",
           "poll_interval": "Abfrageintervall (Sekunden)",
           "reconnect_interval": "Wiederverbindungsintervall (Sekunden)"
         }
       },
       "blocks": {
         "title": "Rohblöcke",
-        "description": "Classic-Sektor-0-Blöcke wählen (Schlüssel auf dem nächsten Bildschirm).",
+        "description": "MIFARE Classic-Sektor-0-Blöcke wählen (Schlüssel auf dem nächsten Bildschirm).",
         "data": {
           "block_0": "Block 0 lesen",
           "block_1": "Block 1 lesen",
@@ -23,7 +23,7 @@
         }
       },
       "keys": {
-        "title": "Classic-Schlüssel",
+        "title": "MIFARE Classic-Schlüssel",
         "description": "Schlüssel werden der Reihe nach versucht, bis ein Block gelesen werden kann.",
         "data": {
           "key_ff": "Schlüssel ffffffffffff (Werkseinstellung)",
@@ -48,18 +48,18 @@
     "step": {
       "init": {
         "title": "Proxmark3-Optionen",
-        "description": "UID wird immer gelesen. Aktivieren Sie nur das Nötige — Classic NDEF und Rohblöcke sind langsam.",
+        "description": "UID wird immer gelesen. Aktivieren Sie nur das Nötige — MIFARE Classic NDEF und Rohblöcke sind langsam.",
         "data": {
           "read_ntag": "NDEF lesen (Ultralight / NTAG)",
-          "read_ntag_classic": "NDEF auf Classic lesen (langsam)",
-          "read_raw_blocks": "Rohblöcke auf Classic lesen",
+          "read_ntag_classic": "NDEF auf MIFARE Classic lesen (langsam)",
+          "read_raw_blocks": "Rohblöcke auf MIFARE Classic lesen",
           "poll_interval": "Abfrageintervall (Sekunden)",
           "reconnect_interval": "Wiederverbindungsintervall (Sekunden)"
         }
       },
       "blocks": {
         "title": "Rohblöcke",
-        "description": "Classic-Sektor-0-Blöcke wählen (Schlüssel auf dem nächsten Bildschirm).",
+        "description": "MIFARE Classic-Sektor-0-Blöcke wählen (Schlüssel auf dem nächsten Bildschirm).",
         "data": {
           "block_0": "Block 0 lesen",
           "block_1": "Block 1 lesen",
@@ -68,7 +68,7 @@
         }
       },
       "keys": {
-        "title": "Classic-Schlüssel",
+        "title": "MIFARE Classic-Schlüssel",
         "description": "Schlüssel werden der Reihe nach versucht, bis ein Block gelesen werden kann.",
         "data": {
           "key_ff": "Schlüssel ffffffffffff (Werkseinstellung)",
