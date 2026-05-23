@@ -9,5 +9,5 @@
   "issue_tracker": "https://github.com/ClusterM/ha-proxmark3/issues",
   "loggers": ["proxmark3py"],
   "requirements": ["pyserial>=3.5", "proxmark3py>=0.0.4"],
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
