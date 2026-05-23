@@ -1,4 +1,4 @@
-"""Sensor platform for Proxmark3 MF tag."""
+"""Sensor platform for Proxmark3 NFC tag."""
 
 from __future__ import annotations
 
@@ -58,17 +58,17 @@ def _build_device_info(entry: ConfigEntry, info: Pm3DeviceInfo | None) -> Device
 
 
 class Proxmark3TagSensor(SensorEntity):
-    """MF tag UID and block data from Proxmark3."""
+    """NFC tag UID and optional block/NDEF data from Proxmark3."""
 
     _attr_has_entity_name = True
-    _attr_name = "MF Tag"
+    _attr_name = "NFC Tag"
     _attr_icon = "mdi:nfc-variant"
     _attr_should_poll = False
 
     def __init__(self, entry: ConfigEntry, hub: Proxmark3Hub) -> None:
         self._entry = entry
         self._hub = hub
-        self._attr_unique_id = f"{entry.entry_id}_mf_tag"
+        self._attr_unique_id = f"{entry.entry_id}_nfc_tag"
         self._unsub: Callable[[], None] | None = None
 
     @property

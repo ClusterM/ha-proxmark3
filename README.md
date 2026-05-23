@@ -62,7 +62,7 @@ For **Ultralight / NTAG** and **Classic tags formatted as NDEF**, writing on a p
    - **Text** — plain text with language code
    - **Custom** — other NDEF types supported by the app
 3. Hold the tag to the phone and write.
-4. In Home Assistant, enable **Read NDEF** (and **Read NDEF on Classic** for Classic tags), then verify the `ntag` attribute on `sensor.proxmark3_mf_tag`.
+4. In Home Assistant, enable **Read NDEF** (and **Read NDEF on Classic** for Classic tags), then verify the `ntag` attribute on `sensor.proxmark3_nfc_tag`.
 
 NFC Tools (and similar apps) produce standard NDEF that this integration parses into JSON. Classic tags are written as MAD/NDEF automatically by the phone OS or app.
 
@@ -118,7 +118,7 @@ The integration reads **blocks 0–3** (sector 0 on MIFARE Classic 1K). Block re
 
 - Write a pattern to block 1 on the tag (see PM3 examples below), e.g. `A1B2C3D4…`.
 - Enable **block 1** (and the correct key) in integration options.
-- Trigger automations on `sensor.proxmark3_mf_tag` state (UID) and/or `block_1` attribute.
+- Trigger automations on `sensor.proxmark3_nfc_tag` state (UID) and/or `block_1` attribute.
 
 **Tag types**
 
@@ -153,7 +153,7 @@ Disable unused blocks to speed up polling (each block is a separate read).
 
 `ntag` is filled when **Read NDEF** and/or **Read NDEF on Classic** matches the detected tag type.
 
-Default entity id is usually `sensor.proxmark3_mf_tag` (depends on your device name).
+Default entity id is usually `sensor.proxmark3_nfc_tag` (depends on your device name).
 
 ## Writing raw blocks (Proxmark3 client)
 
@@ -194,31 +194,31 @@ Adjust `entity_id` / `notify.*` to match your setup.
 Notify when a tag is placed on the reader (UID + block 1). Requires **Read raw blocks on Classic** and block 1 enabled.
 
 ```yaml
-alias: MF Tag (UID + block)
+alias: NFC Tag (UID + block)
 description: ""
 triggers:
   - trigger: state
     entity_id:
-      - sensor.proxmark3_mf_tag
+      - sensor.proxmark3_nfc_tag
 conditions:
   - condition: not
     conditions:
       - condition: state
-        entity_id: sensor.proxmark3_mf_tag
+        entity_id: sensor.proxmark3_nfc_tag
         state:
           - unknown
           - unavailable
 actions:
   - action: notify.persistent_notification
     data:
-      title: MF Tag
+      title: NFC Tag
       message: >-
-        Detected MF tag, ID={{ states('sensor.proxmark3_mf_tag') }},
-        block_1={{ state_attr('sensor.proxmark3_mf_tag', 'block_1') }}
+        Detected NFC tag, ID={{ states('sensor.proxmark3_nfc_tag') }},
+        block_1={{ state_attr('sensor.proxmark3_nfc_tag', 'block_1') }}
 mode: single
 ```
 
-To react only to a specific payload in block 1, add a template condition on `state_attr('sensor.proxmark3_mf_tag', 'block_1')`.
+To react only to a specific payload in block 1, add a template condition on `state_attr('sensor.proxmark3_nfc_tag', 'block_1')`.
 
 ### NDEF (URL or text from `ntag` JSON)
 
@@ -227,21 +227,21 @@ Requires **Read NDEF** and/or **Read NDEF on Classic**. The `ntag` attribute is 
 **Open a URL from the first NDEF record** (e.g. tag written with NFC Tools → URL record):
 
 ```yaml
-alias: MF Tag NDEF URL
+alias: NFC Tag NDEF URL
 description: ""
 triggers:
   - trigger: state
-    entity_id: sensor.proxmark3_mf_tag
+    entity_id: sensor.proxmark3_nfc_tag
     attribute: ntag
 conditions:
   - condition: template
     value_template: >-
-      {% set raw = state_attr('sensor.proxmark3_mf_tag', 'ntag') %}
+      {% set raw = state_attr('sensor.proxmark3_nfc_tag', 'ntag') %}
       {{ raw not in [none, ''] }}
 actions:
   - variables:
       ndef_uri: >-
-        {% set records = state_attr('sensor.proxmark3_mf_tag', 'ntag') | from_json %}
+        {% set records = state_attr('sensor.proxmark3_nfc_tag', 'ntag') | from_json %}
         {{ records[0].uri | default('') }}
   - condition: template
     value_template: "{{ ndef_uri != '' }}"
@@ -255,16 +255,16 @@ mode: single
 **Run different actions by NDEF text** (e.g. tag with text `Kitchen` / `Bedroom` from NFC Tools):
 
 ```yaml
-alias: MF Tag NDEF text room
+alias: NFC Tag NDEF text room
 description: ""
 triggers:
   - trigger: state
-    entity_id: sensor.proxmark3_mf_tag
+    entity_id: sensor.proxmark3_nfc_tag
     attribute: ntag
 conditions:
   - condition: template
     value_template: >-
-      {% set raw = state_attr('sensor.proxmark3_mf_tag', 'ntag') %}
+      {% set raw = state_attr('sensor.proxmark3_nfc_tag', 'ntag') %}
       {% if raw in [none, ''] %}
         false
       {% else %}
@@ -276,7 +276,7 @@ actions:
       - conditions:
           - condition: template
             value_template: >-
-              {% set records = state_attr('sensor.proxmark3_mf_tag', 'ntag') | from_json %}
+              {% set records = state_attr('sensor.proxmark3_nfc_tag', 'ntag') | from_json %}
               {{ records[0].text | default('') == 'Kitchen' }}
         sequence:
           - action: light.turn_on
@@ -285,7 +285,7 @@ actions:
       - conditions:
           - condition: template
             value_template: >-
-              {% set records = state_attr('sensor.proxmark3_mf_tag', 'ntag') | from_json %}
+              {% set records = state_attr('sensor.proxmark3_nfc_tag', 'ntag') | from_json %}
               {{ records[0].text | default('') == 'Bedroom' }}
         sequence:
           - action: light.turn_on
@@ -297,7 +297,7 @@ mode: single
 **Reusable template** — first URL or text from any record:
 
 ```jinja2
-{% set raw = state_attr('sensor.proxmark3_mf_tag', 'ntag') %}
+{% set raw = state_attr('sensor.proxmark3_nfc_tag', 'ntag') %}
 {% if raw in [none, ''] %}
   none
 {% else %}
