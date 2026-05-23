@@ -6,6 +6,7 @@ Home Assistant custom integration for [Proxmark3](https://github.com/RfidResearc
 
 - Single Proxmark3 via USB serial (auto-detect)
 - Configurable MIFARE Classic keys and blocks to read
+- NDEF decoding (Ultralight/NTAG and optional Classic) into a JSON `ntag` attribute
 - Device info (MCU, firmware, memory) cached while offline
 - Automatic reconnect when the device is unplugged
 - Options flow to tune keys, blocks, and poll intervals without re-adding the integration
@@ -28,13 +29,58 @@ Copy `custom_components/proxmark3` into your Home Assistant `config/custom_compo
 
 ## Configuration
 
-1. **Settings → Devices & services → Add integration → Proxmark3**
-2. Choose keys, blocks, and poll intervals (USB port is auto-detected)
-3. Use **Options** later to change keys, blocks, and intervals
+Setup is a short wizard (USB port is auto-detected):
 
-More enabled keys and blocks increase read time on each new tag presentation.
+1. **Reading** — NDEF options, raw Classic blocks toggle, poll intervals
+2. **Raw blocks** (only if enabled) — blocks 0–3 of Classic sector 0
+3. **Classic keys** (only if raw blocks enabled) — Key A presets for block reads
+
+Use **Options** later to change the same settings.
+
+**UID only:** leave everything off on screen 1. The sensor state is always the tag UID; `tag_type` is still reported.
+
+| Option | Tag types | Speed |
+|--------|-----------|-------|
+| Read NDEF (Ultralight / NTAG) | Type 2 tags | Fast |
+| Read NDEF on Classic (slow) | Phone-formatted Classic MAD/NDEF | Slow (several sector reads) |
+| Read raw blocks on Classic | Classic sector 0 blocks | Depends on enabled blocks + keys |
+
+More enabled options increase read time on each new tag presentation.
+
+### NDEF
+
+- **Ultralight / NTAG:** enable **Read NDEF** — no keys required.
+- **Classic (phone NDEF):** enable **Read NDEF on Classic (slow)** separately. Uses MAD key (`a0a1a2a3a4a5`) and NDEF sector keys automatically (same as `hf mf ndefread`).
+
+#### Writing NDEF (phone is easiest)
+
+For **Ultralight / NTAG** and **Classic tags formatted as NDEF**, writing on a phone is usually the simplest option — no Proxmark3 required for programming.
+
+1. Install a free NFC app, e.g. **[NFC Tools](https://www.wakdev.com/en/apps/nfc-tools.html)** (Android / iOS).
+2. Choose **Write** → add a record:
+   - **URL / URI** — links, `https://…`
+   - **Text** — plain text with language code
+   - **Custom** — other NDEF types supported by the app
+3. Hold the tag to the phone and write.
+4. In Home Assistant, enable **Read NDEF** (and **Read NDEF on Classic** for Classic tags), then verify the `ntag` attribute on `sensor.proxmark3_mf_tag`.
+
+NFC Tools (and similar apps) produce standard NDEF that this integration parses into JSON. Classic tags are written as MAD/NDEF automatically by the phone OS or app.
+
+**Example `ntag` values** (attribute is a JSON **string** containing an array):
+
+```json
+[{"tnf":"well_known","type":"U","uri":"https://example.com/room/kitchen"}]
+```
+
+```json
+[{"tnf":"well_known","type":"T","language":"en","text":"Kitchen light"}]
+```
+
+Multiple records in one tag appear as several objects in the array.
 
 ### Keys
+
+Keys appear on **screen 3** only when **Read raw blocks on Classic** is enabled.
 
 The integration reads **MIFARE Classic** blocks with **Key A**, trying keys **in the order** they appear in settings. It stops at the first key that works.
 
@@ -53,11 +99,13 @@ The integration reads **MIFARE Classic** blocks with **Key A**, trying keys **in
 - Put the most likely key first (order in the UI = try order).
 - Custom key is useful when you already know the sector key from `hf mf chk` / `hf mf autopwn` in the PM3 client.
 
-Keys are **not** used for MIFARE Ultralight / NTAG (see blocks below); those tag types use a plain read without authentication.
+Keys are **not** used for UID detection, Ultralight/NTAG NDEF, or Classic NDEF (those paths use built-in MAD/NDEF keys).
 
-### Blocks (0–3)
+### Raw blocks (Classic, 0–3)
 
-The integration can read **blocks 0–3** (the first sector on MIFARE Classic 1K, or pages 0–3 on Ultralight/NTAG).
+Enable **Read raw blocks on Classic** on screen 1, then pick blocks on screen 2.
+
+The integration reads **blocks 0–3** (sector 0 on MIFARE Classic 1K). Block reading is **optional** — leave the toggle off for fastest UID-only polling.
 
 | Block | MIFARE Classic 1K (sector 0) | Typical use in automations |
 |-------|--------------------------------|----------------------------|
@@ -74,11 +122,11 @@ The integration can read **blocks 0–3** (the first sector on MIFARE Classic 1K
 
 **Tag types**
 
-| Tag type | Blocks 0–3 in this integration |
-|----------|--------------------------------|
-| MIFARE Classic 1K / 4K / Mini | Yes — Classic read with keys |
-| MIFARE Ultralight / NTAG | Yes — read as Ultralight pages (no key) |
-| MIFARE DESFire, Java cards, random ISO14443-A | **No** — UID/type may appear, but Classic blocks are not applicable |
+| Tag type | Raw blocks 0–3 | NDEF |
+|----------|----------------|------|
+| MIFARE Classic 1K / 4K / Mini | Yes — with keys | Optional (**Classic NDEF**, slow) |
+| MIFARE Ultralight / NTAG | No (Classic-only toggle) | Optional (**Read NDEF**, fast) |
+| MIFARE DESFire, Java cards, random ISO14443-A | **No** | **No** |
 
 Disable unused blocks to speed up polling (each block is a separate read).
 
@@ -101,13 +149,15 @@ Disable unused blocks to speed up polling (each block is a separate read).
 | `unknown` / empty | No tag present |
 | unavailable | Proxmark3 disconnected (device info still cached on the device page) |
 
-**Attributes:** `tag_type`, `block_0` … `block_3` (hex, enabled blocks only), plus cached `bootrom`, `compiler`, `fpga`, `memory` when known.
+**Attributes:** `tag_type`, `block_0` … `block_3` (when raw Classic blocks are enabled), `ntag` (JSON array of decoded NDEF records), plus cached `bootrom`, `compiler`, `fpga`, `memory` when known.
+
+`ntag` is filled when **Read NDEF** and/or **Read NDEF on Classic** matches the detected tag type.
 
 Default entity id is usually `sensor.proxmark3_mf_tag` (depends on your device name).
 
-## Writing blocks with the PM3 client
+## Writing raw blocks (Proxmark3 client)
 
-Examples use the Iceman **client** (`pm3` / `proxmark3`) on the same machine. Stop Home Assistant polling or unload the integration while writing, so nothing else holds the serial port.
+Use the Iceman **client** (`pm3` / `proxmark3`) when you need **raw hex bytes** in Classic blocks — not for everyday NDEF (use a phone; see above). Stop Home Assistant polling or unload the integration while writing, so nothing else holds the serial port.
 
 **Read block 1 (verify):**
 
@@ -133,14 +183,18 @@ hf mf wrbl --blk 1 -k FFFFFFFFFFFF -d 4841FFFFFFFFFFFFFFFFFFFFFFFFFFFF
 hf mf wrbl --blk 4 -d 0102030405060708090a0b0c0d0e0f
 ```
 
-Do **not** write **block 0** or **block 3** on Classic unless you understand the data layout. Block 0 carries manufacturer/UID-related data; block 3 is the sector trailer (keys and access conditions). A bad write to either can brick the tag or the whole sector. On Ultralight/NTAG, avoid writing pages 0–2 for the same reason — use page 4+ for user data.
+Do **not** write **block 0** or **block 3** on Classic unless you understand the data layout. Block 0 carries manufacturer/UID-related data; block 3 is the sector trailer (keys and access conditions). A bad write to either can brick the tag or the whole sector. On Ultralight/NTAG, avoid writing pages 0–2 for the same reason — use page 4+ for user data, or prefer **NDEF via NFC Tools** instead of raw page writes.
 
-## Example automation
+## Example automations
 
-Notify when a tag is placed on the reader (UID + block 1). Adjust `entity_id` to match your entity.
+Adjust `entity_id` / `notify.*` to match your setup.
+
+### UID and Classic block 1
+
+Notify when a tag is placed on the reader (UID + block 1). Requires **Read raw blocks on Classic** and block 1 enabled.
 
 ```yaml
-alias: MF Tag
+alias: MF Tag (UID + block)
 description: ""
 triggers:
   - trigger: state
@@ -165,6 +219,92 @@ mode: single
 ```
 
 To react only to a specific payload in block 1, add a template condition on `state_attr('sensor.proxmark3_mf_tag', 'block_1')`.
+
+### NDEF (URL or text from `ntag` JSON)
+
+Requires **Read NDEF** and/or **Read NDEF on Classic**. The `ntag` attribute is a JSON string; parse it with the `from_json` filter.
+
+**Open a URL from the first NDEF record** (e.g. tag written with NFC Tools → URL record):
+
+```yaml
+alias: MF Tag NDEF URL
+description: ""
+triggers:
+  - trigger: state
+    entity_id: sensor.proxmark3_mf_tag
+    attribute: ntag
+conditions:
+  - condition: template
+    value_template: >-
+      {% set raw = state_attr('sensor.proxmark3_mf_tag', 'ntag') %}
+      {{ raw not in [none, ''] }}
+actions:
+  - variables:
+      ndef_uri: >-
+        {% set records = state_attr('sensor.proxmark3_mf_tag', 'ntag') | from_json %}
+        {{ records[0].uri | default('') }}
+  - condition: template
+    value_template: "{{ ndef_uri != '' }}"
+  - action: notify.persistent_notification
+    data:
+      title: NFC tag URL
+      message: "NDEF link: {{ ndef_uri }}"
+mode: single
+```
+
+**Run different actions by NDEF text** (e.g. tag with text `Kitchen` / `Bedroom` from NFC Tools):
+
+```yaml
+alias: MF Tag NDEF text room
+description: ""
+triggers:
+  - trigger: state
+    entity_id: sensor.proxmark3_mf_tag
+    attribute: ntag
+conditions:
+  - condition: template
+    value_template: >-
+      {% set raw = state_attr('sensor.proxmark3_mf_tag', 'ntag') %}
+      {% if raw in [none, ''] %}
+        false
+      {% else %}
+        {% set records = raw | from_json %}
+        {{ records | selectattr('text', 'defined') | list | length > 0 }}
+      {% endif %}
+actions:
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: >-
+              {% set records = state_attr('sensor.proxmark3_mf_tag', 'ntag') | from_json %}
+              {{ records[0].text | default('') == 'Kitchen' }}
+        sequence:
+          - action: light.turn_on
+            target:
+              entity_id: light.kitchen
+      - conditions:
+          - condition: template
+            value_template: >-
+              {% set records = state_attr('sensor.proxmark3_mf_tag', 'ntag') | from_json %}
+              {{ records[0].text | default('') == 'Bedroom' }}
+        sequence:
+          - action: light.turn_on
+            target:
+              entity_id: light.bedroom
+mode: single
+```
+
+**Reusable template** — first URL or text from any record:
+
+```jinja2
+{% set raw = state_attr('sensor.proxmark3_mf_tag', 'ntag') %}
+{% if raw in [none, ''] %}
+  none
+{% else %}
+  {% set records = raw | from_json %}
+  {{ records[0].uri | default(records[0].text | default(none)) }}
+{% endif %}
+```
 
 
 ## License

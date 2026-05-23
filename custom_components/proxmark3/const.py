@@ -23,6 +23,9 @@ CONF_BLOCK_0 = "block_0"
 CONF_BLOCK_1 = "block_1"
 CONF_BLOCK_2 = "block_2"
 CONF_BLOCK_3 = "block_3"
+CONF_READ_NTAG = "read_ntag"
+CONF_READ_NTAG_CLASSIC = "read_ntag_classic"
+CONF_READ_RAW_BLOCKS = "read_raw_blocks"
 
 DEFAULT_BAUD = 115200
 DEFAULT_POLL_INTERVAL = 0.05
@@ -34,10 +37,13 @@ DEFAULT_KEY_NDEF = False
 DEFAULT_KEY_NULL = False
 DEFAULT_CUSTOM_KEY = ""
 
-DEFAULT_BLOCK_0 = True
-DEFAULT_BLOCK_1 = True
-DEFAULT_BLOCK_2 = True
-DEFAULT_BLOCK_3 = True
+DEFAULT_BLOCK_0 = False
+DEFAULT_BLOCK_1 = False
+DEFAULT_BLOCK_2 = False
+DEFAULT_BLOCK_3 = False
+DEFAULT_READ_NTAG = False
+DEFAULT_READ_NTAG_CLASSIC = False
+DEFAULT_READ_RAW_BLOCKS = False
 
 PRESET_KEY_FF = "ffffffffffff"
 PRESET_KEY_MAD = "a0a1a2a3a4a5"
@@ -52,6 +58,7 @@ BLOCK_OPTIONS = (
 )
 
 ATTR_TAG_TYPE = "tag_type"
+ATTR_NTAG = "ntag"
 
 ABSENT_CONFIRM = 2
 BLOCK_RETRY = 1
@@ -66,13 +73,16 @@ DEFAULT_OPTIONS: dict[str, Any] = {
     CONF_BLOCK_1: DEFAULT_BLOCK_1,
     CONF_BLOCK_2: DEFAULT_BLOCK_2,
     CONF_BLOCK_3: DEFAULT_BLOCK_3,
+    CONF_READ_NTAG: DEFAULT_READ_NTAG,
+    CONF_READ_NTAG_CLASSIC: DEFAULT_READ_NTAG_CLASSIC,
+    CONF_READ_RAW_BLOCKS: DEFAULT_READ_RAW_BLOCKS,
     CONF_POLL_INTERVAL: DEFAULT_POLL_INTERVAL,
     CONF_RECONNECT_INTERVAL: DEFAULT_RECONNECT_INTERVAL,
 }
 
 
 def merged_options(entry: ConfigEntry) -> dict[str, Any]:
-    """Return options merged with defaults."""
+    """Return options merged with defaults and legacy migration."""
     raw = dict(entry.options or {})
     out = dict(DEFAULT_OPTIONS)
     for key, default in DEFAULT_OPTIONS.items():
@@ -80,10 +90,30 @@ def merged_options(entry: ConfigEntry) -> dict[str, Any]:
             continue
         val = raw[key]
         out[key] = default if val is None else val
+
+    if CONF_READ_RAW_BLOCKS not in raw and any(raw.get(key) for key in BLOCK_OPTIONS):
+        out[CONF_READ_RAW_BLOCKS] = True
+
+    if CONF_READ_NTAG_CLASSIC not in raw and raw.get(CONF_READ_NTAG):
+        out[CONF_READ_NTAG_CLASSIC] = True
+
     if CONF_POLL_INTERVAL in out:
         out[CONF_POLL_INTERVAL] = float(out[CONF_POLL_INTERVAL])
     if CONF_RECONNECT_INTERVAL in out:
         out[CONF_RECONNECT_INTERVAL] = float(out[CONF_RECONNECT_INTERVAL])
+    return finalize_options(out)
+
+
+def finalize_options(options: dict[str, Any]) -> dict[str, Any]:
+    """Normalize option values before save or use."""
+    out = dict(options)
+    out[CONF_CUSTOM_KEY] = (out.get(CONF_CUSTOM_KEY) or "").strip().lower()
+    out[CONF_POLL_INTERVAL] = float(out[CONF_POLL_INTERVAL])
+    out[CONF_RECONNECT_INTERVAL] = float(out[CONF_RECONNECT_INTERVAL])
+
+    if not out.get(CONF_READ_RAW_BLOCKS):
+        for key in BLOCK_OPTIONS:
+            out[key] = False
     return out
 
 
@@ -106,6 +136,8 @@ def build_key_list(options: dict[str, Any]) -> tuple[bytes, ...]:
 
 def build_block_list(options: dict[str, Any]) -> tuple[int, ...]:
     """Return enabled block numbers in order."""
+    if not options.get(CONF_READ_RAW_BLOCKS):
+        return ()
     blocks: list[int] = []
     for idx, conf_key in enumerate(BLOCK_OPTIONS):
         if options.get(conf_key):

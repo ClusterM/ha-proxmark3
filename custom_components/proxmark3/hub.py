@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 import logging
 from collections.abc import Callable
 from dataclasses import dataclass, field
@@ -14,6 +15,8 @@ from .const import (
     ABSENT_CONFIRM,
     BLOCK_RETRY,
     CONF_POLL_INTERVAL,
+    CONF_READ_NTAG,
+    CONF_READ_NTAG_CLASSIC,
     CONF_RECONNECT_INTERVAL,
     DEFAULT_BAUD,
     DEVICE_INFO_STORAGE_VERSION,
@@ -35,6 +38,7 @@ from .pm3_client import (
     open_adapter,
     poll_card,
     read_first_blocks,
+    read_ndef,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -48,6 +52,7 @@ class TagState:
     uid: str | None
     tag_type: str | None
     blocks: dict[int, str | None] = field(default_factory=dict)
+    ntag: str | None = None
 
 
 def _empty_tag_state(connected: bool) -> TagState:
@@ -56,6 +61,7 @@ def _empty_tag_state(connected: bool) -> TagState:
         uid=None,
         tag_type=None,
         blocks={},
+        ntag=None,
     )
 
 
@@ -74,6 +80,8 @@ def _read_card_blocks_sync(
     blocks: tuple[int, ...],
     keys: tuple[bytes, ...],
 ) -> dict[int, str | None]:
+    if not blocks:
+        return {}
     raw = read_first_blocks(adapter, card, blocks, keys)
     if BLOCK_RETRY and any(data is None for _, data in raw):
         retry = read_first_blocks(adapter, card, blocks, keys)
@@ -82,6 +90,29 @@ def _read_card_blocks_sync(
             for idx, (block_no, data) in enumerate(raw)
         ]
     return _blocks_to_hex(raw)
+
+
+def _read_tag_sync(
+    adapter: Proxmark3Adapter,
+    card: CardInfo,
+    blocks: tuple[int, ...],
+    keys: tuple[bytes, ...],
+    read_ntag: bool,
+    read_ntag_classic: bool,
+) -> tuple[dict[int, str | None], str | None]:
+    block_data = _read_card_blocks_sync(adapter, card, blocks, keys)
+    ntag_json: str | None = None
+    if read_ntag or read_ntag_classic:
+        records = read_ndef(
+            adapter,
+            card,
+            keys,
+            ultralight=read_ntag,
+            classic=read_ntag_classic,
+        )
+        if records is not None:
+            ntag_json = json.dumps(records, ensure_ascii=False, separators=(",", ":"))
+    return block_data, ntag_json
 
 
 class Proxmark3Hub:
@@ -187,6 +218,8 @@ class Proxmark3Hub:
         poll_interval = float(options[CONF_POLL_INTERVAL])
         blocks = build_block_list(options)
         keys = build_key_list(options)
+        read_ntag = bool(options.get(CONF_READ_NTAG))
+        read_ntag_classic = bool(options.get(CONF_READ_NTAG_CLASSIC))
 
         while not self._stop_event.is_set():
             if self._adapter is None:
@@ -228,7 +261,14 @@ class Proxmark3Hub:
 
             adapter = self._adapter
             try:
-                await self._poll_once(adapter, poll_interval, blocks, keys)
+                await self._poll_once(
+                    adapter,
+                    poll_interval,
+                    blocks,
+                    keys,
+                    read_ntag,
+                    read_ntag_classic,
+                )
             except asyncio.CancelledError:
                 raise
             except Exception as exc:
@@ -243,6 +283,8 @@ class Proxmark3Hub:
         poll_interval: float,
         blocks: tuple[int, ...],
         keys: tuple[bytes, ...],
+        read_ntag: bool,
+        read_ntag_classic: bool,
     ) -> None:
         active_uid = self._state.uid
         absent_hits = 0
@@ -261,6 +303,7 @@ class Proxmark3Hub:
                                 uid=None,
                                 tag_type=None,
                                 blocks={},
+                                ntag=None,
                             )
                         )
                         absent_hits = 0
@@ -277,12 +320,14 @@ class Proxmark3Hub:
                 await asyncio.sleep(max(poll_interval, 0.1))
                 continue
 
-            block_data = await self.hass.async_add_executor_job(
-                _read_card_blocks_sync,
+            block_data, ntag_json = await self.hass.async_add_executor_job(
+                _read_tag_sync,
                 adapter,
                 card,
                 blocks,
                 keys,
+                read_ntag,
+                read_ntag_classic,
             )
             active_uid = current_uid
             await self._set_state(
@@ -291,6 +336,7 @@ class Proxmark3Hub:
                     uid=current_uid,
                     tag_type=card.card_type,
                     blocks=block_data,
+                    ntag=ntag_json,
                 )
             )
 
@@ -315,6 +361,7 @@ class Proxmark3Hub:
             and self._state.uid == state.uid
             and self._state.tag_type == state.tag_type
             and self._state.blocks == state.blocks
+            and self._state.ntag == state.ntag
         ):
             return
         self._state = state

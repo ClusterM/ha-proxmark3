@@ -409,7 +409,7 @@ def guess_card_type(sak: int, atqa: bytes, uidlen: int) -> str:
         return "MIFARE Classic 4K"
     if sak == 0x09:
         return "MIFARE Mini"
-    if sak == 0x00 and atqa_val == 0x4400:
+    if sak == 0x00 and atqa_val in (0x0044, 0x4400):
         return "MIFARE Ultralight / NTAG"
     if sak == 0x20 and atqa_val == 0x0400:
         return "MIFARE DESFire / JCOP"
@@ -424,11 +424,23 @@ def guess_card_type(sak: int, atqa: bytes, uidlen: int) -> str:
 
 def is_ultralight(card: CardInfo) -> bool:
     atqa_val = (card.atqa[1] << 8) | card.atqa[0]
-    return card.sak == 0x00 and atqa_val == 0x4400
+    return card.sak == 0x00 and atqa_val in (0x0044, 0x4400)
 
 
 def is_mifare_classic(card: CardInfo) -> bool:
     return "Classic" in card.card_type or "Mini" in card.card_type
+
+
+def _unique_keys(*key_groups: tuple[bytes, ...]) -> tuple[bytes, ...]:
+    seen: set[bytes] = set()
+    ordered: list[bytes] = []
+    for group in key_groups:
+        for key in group:
+            if key in seen:
+                continue
+            seen.add(key)
+            ordered.append(key)
+    return tuple(ordered)
 
 
 def read_classic_block(
@@ -445,6 +457,25 @@ def read_classic_block(
             continue
         if resp["cmd"] == CMD_HF_MIFARE_READBL and resp["status"] == PM3_SUCCESS and len(resp["data"]) >= 16:
             return resp["data"][:16]
+    return None
+
+
+def read_classic_sector(
+    adapter: Proxmark3Adapter,
+    sector_no: int,
+    keys: tuple[bytes, ...],
+) -> bytes | None:
+    """Read all four blocks of a Classic sector with Key A."""
+    first_block = sector_no * 4
+    for key in keys:
+        sector = bytearray()
+        for offset in range(4):
+            block = read_classic_block(adapter, first_block + offset, (key,))
+            if block is None:
+                break
+            sector.extend(block)
+        if len(sector) == 64:
+            return bytes(sector)
     return None
 
 
@@ -474,6 +505,107 @@ def read_first_blocks(
     for block_no in blocks:
         result.append((block_no, read_classic_block(adapter, block_no, keys)))
     return result
+
+
+def read_ultralight_user_area(adapter: Proxmark3Adapter, num_bytes: int) -> bytes | None:
+    """Read Ultralight/NTAG user memory starting at page 4."""
+    if num_bytes <= 0:
+        return b""
+    buf = bytearray()
+    page = 4
+    while len(buf) < num_bytes:
+        chunk = read_ultralight_block(adapter, page)
+        if chunk is None:
+            return None
+        buf.extend(chunk)
+        page += 4
+    return bytes(buf[:num_bytes])
+
+
+def _read_ultralight_ndef(adapter: Proxmark3Adapter) -> list[dict] | None:
+    from .ndef_parse import cc_max_ndef_bytes, parse_ntag_user_area
+
+    header = read_ultralight_block(adapter, 0)
+    if header is None or len(header) < 16:
+        return None
+
+    maxsize = cc_max_ndef_bytes(header[12:16])
+    if maxsize <= 0:
+        maxsize = 144
+    maxsize = min(maxsize, 872)
+
+    user_area = read_ultralight_user_area(adapter, maxsize)
+    if user_area is None:
+        return None
+    return parse_ntag_user_area(user_area)
+
+
+def _read_classic_ndef(
+    adapter: Proxmark3Adapter,
+    keys: tuple[bytes, ...],
+) -> list[dict] | None:
+    """Read NDEF from a MIFARE Classic tag via MAD (hf mf ndefread logic)."""
+    from .mad import (
+        MAD_KEY,
+        MF_MAD1_SECTOR,
+        MF_MAD2_SECTOR,
+        MFBLOCK_SIZE,
+        NDEF_KEY,
+        NDEF_MFC_AID,
+        mad_decode,
+    )
+    from .ndef_parse import parse_ndef_buffer
+
+    mad_keys = _unique_keys((MAD_KEY,), keys)
+    sector0 = read_classic_sector(adapter, MF_MAD1_SECTOR, mad_keys)
+    if sector0 is None:
+        return None
+
+    sector16 = read_classic_sector(adapter, MF_MAD2_SECTOR, mad_keys)
+    aids = mad_decode(sector0, sector16)
+    if aids is None:
+        aids = mad_decode(sector0, sector16, override=True)
+    if not aids:
+        return None
+
+    ndef_keys = _unique_keys((NDEF_KEY, bytes.fromhex("ffffffffffff")), keys)
+    payload = bytearray()
+    for index, aid in enumerate(aids):
+        if aid != NDEF_MFC_AID:
+            continue
+        sector = read_classic_sector(adapter, index + 1, ndef_keys)
+        if sector is None:
+            return None
+        payload.extend(sector[: MFBLOCK_SIZE * 3])
+
+    if not payload:
+        return []
+    return parse_ndef_buffer(bytes(payload))
+
+
+def read_ndef(
+    adapter: Proxmark3Adapter,
+    card: CardInfo,
+    keys: tuple[bytes, ...] = (),
+    *,
+    ultralight: bool = True,
+    classic: bool = False,
+) -> list[dict] | None:
+    """Read and decode NDEF records when enabled for the detected tag type."""
+    if is_ultralight(card) and ultralight:
+        return _read_ultralight_ndef(adapter)
+    if is_mifare_classic(card) and classic:
+        return _read_classic_ndef(adapter, keys)
+    return None
+
+
+def read_ntag_ndef(
+    adapter: Proxmark3Adapter,
+    card: CardInfo,
+    keys: tuple[bytes, ...] = (),
+) -> list[dict] | None:
+    """Backward-compatible helper: read NDEF for any supported tag type."""
+    return read_ndef(adapter, card, keys, ultralight=True, classic=True)
 
 
 def _strip_ansi(text: str) -> str:

@@ -23,46 +23,57 @@ from .const import (
     CONF_KEY_NDEF,
     CONF_KEY_NULL,
     CONF_POLL_INTERVAL,
+    CONF_READ_NTAG,
+    CONF_READ_NTAG_CLASSIC,
+    CONF_READ_RAW_BLOCKS,
     CONF_RECONNECT_INTERVAL,
     DEFAULT_BAUD,
     DEFAULT_OPTIONS,
     DOMAIN,
     build_block_list,
     build_key_list,
+    finalize_options,
     merged_options,
 )
 from .pm3_client import test_connection
 
 HEX_KEY_RE = re.compile(r"^[0-9a-fA-F]{12}$")
 
-OPTION_KEYS: tuple[str, ...] = (
+READING_KEYS: tuple[str, ...] = (
+    CONF_READ_NTAG,
+    CONF_READ_NTAG_CLASSIC,
+    CONF_READ_RAW_BLOCKS,
+    CONF_POLL_INTERVAL,
+    CONF_RECONNECT_INTERVAL,
+)
+
+BLOCK_KEYS: tuple[str, ...] = (
+    CONF_BLOCK_0,
+    CONF_BLOCK_1,
+    CONF_BLOCK_2,
+    CONF_BLOCK_3,
+)
+
+KEY_OPTION_KEYS: tuple[str, ...] = (
     CONF_KEY_FF,
     CONF_KEY_MAD,
     CONF_KEY_NDEF,
     CONF_KEY_NULL,
     CONF_CUSTOM_KEY,
-    CONF_BLOCK_0,
-    CONF_BLOCK_1,
-    CONF_BLOCK_2,
-    CONF_BLOCK_3,
-    CONF_POLL_INTERVAL,
-    CONF_RECONNECT_INTERVAL,
 )
 
 
-def _option_fields(opts: dict[str, Any]) -> dict[vol.Marker, Any]:
+def _reading_fields(opts: dict[str, Any]) -> dict[vol.Marker, Any]:
     return {
-        vol.Required(CONF_KEY_FF, default=opts[CONF_KEY_FF]): selector.BooleanSelector(),
-        vol.Required(CONF_KEY_MAD, default=opts[CONF_KEY_MAD]): selector.BooleanSelector(),
-        vol.Required(CONF_KEY_NDEF, default=opts[CONF_KEY_NDEF]): selector.BooleanSelector(),
-        vol.Required(CONF_KEY_NULL, default=opts[CONF_KEY_NULL]): selector.BooleanSelector(),
-        vol.Optional(CONF_CUSTOM_KEY, default=opts[CONF_CUSTOM_KEY]): selector.TextSelector(
-            selector.TextSelectorConfig(type=selector.TextSelectorType.TEXT)
-        ),
-        vol.Required(CONF_BLOCK_0, default=opts[CONF_BLOCK_0]): selector.BooleanSelector(),
-        vol.Required(CONF_BLOCK_1, default=opts[CONF_BLOCK_1]): selector.BooleanSelector(),
-        vol.Required(CONF_BLOCK_2, default=opts[CONF_BLOCK_2]): selector.BooleanSelector(),
-        vol.Required(CONF_BLOCK_3, default=opts[CONF_BLOCK_3]): selector.BooleanSelector(),
+        vol.Required(CONF_READ_NTAG, default=opts[CONF_READ_NTAG]): selector.BooleanSelector(),
+        vol.Required(
+            CONF_READ_NTAG_CLASSIC,
+            default=opts[CONF_READ_NTAG_CLASSIC],
+        ): selector.BooleanSelector(),
+        vol.Required(
+            CONF_READ_RAW_BLOCKS,
+            default=opts[CONF_READ_RAW_BLOCKS],
+        ): selector.BooleanSelector(),
         vol.Required(
             CONF_POLL_INTERVAL,
             default=opts[CONF_POLL_INTERVAL],
@@ -90,22 +101,38 @@ def _option_fields(opts: dict[str, Any]) -> dict[vol.Marker, Any]:
     }
 
 
-def _options_from_input(user_input: dict[str, Any]) -> dict[str, Any]:
-    out = {key: user_input[key] for key in OPTION_KEYS}
-    out[CONF_CUSTOM_KEY] = (out.get(CONF_CUSTOM_KEY) or "").strip().lower()
-    out[CONF_POLL_INTERVAL] = float(out[CONF_POLL_INTERVAL])
-    out[CONF_RECONNECT_INTERVAL] = float(out[CONF_RECONNECT_INTERVAL])
-    return out
+def _block_fields(opts: dict[str, Any]) -> dict[vol.Marker, Any]:
+    return {
+        vol.Required(CONF_BLOCK_0, default=opts[CONF_BLOCK_0]): selector.BooleanSelector(),
+        vol.Required(CONF_BLOCK_1, default=opts[CONF_BLOCK_1]): selector.BooleanSelector(),
+        vol.Required(CONF_BLOCK_2, default=opts[CONF_BLOCK_2]): selector.BooleanSelector(),
+        vol.Required(CONF_BLOCK_3, default=opts[CONF_BLOCK_3]): selector.BooleanSelector(),
+    }
 
 
-def _validate_options(options: dict[str, Any]) -> str | None:
+def _key_fields(opts: dict[str, Any]) -> dict[vol.Marker, Any]:
+    return {
+        vol.Required(CONF_KEY_FF, default=opts[CONF_KEY_FF]): selector.BooleanSelector(),
+        vol.Required(CONF_KEY_MAD, default=opts[CONF_KEY_MAD]): selector.BooleanSelector(),
+        vol.Required(CONF_KEY_NDEF, default=opts[CONF_KEY_NDEF]): selector.BooleanSelector(),
+        vol.Required(CONF_KEY_NULL, default=opts[CONF_KEY_NULL]): selector.BooleanSelector(),
+        vol.Optional(CONF_CUSTOM_KEY, default=opts[CONF_CUSTOM_KEY]): selector.TextSelector(
+            selector.TextSelectorConfig(type=selector.TextSelectorType.TEXT)
+        ),
+    }
+
+
+def _merge_step(options: dict[str, Any], user_input: dict[str, Any], keys: tuple[str, ...]) -> None:
+    for key in keys:
+        options[key] = user_input[key]
+
+
+def _validate_keys(options: dict[str, Any]) -> str | None:
     custom = options.get(CONF_CUSTOM_KEY) or ""
     if custom and not HEX_KEY_RE.match(custom):
         return "invalid_key"
-    if not build_key_list(options):
+    if build_block_list(options) and not build_key_list(options):
         return "no_keys"
-    if not build_block_list(options):
-        return "no_blocks"
     return None
 
 
@@ -113,6 +140,10 @@ class Proxmark3ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Handle a config flow for Proxmark3."""
 
     VERSION = 1
+
+    def __init__(self) -> None:
+        """Initialize config flow."""
+        self._options: dict[str, Any] = dict(DEFAULT_OPTIONS)
 
     @staticmethod
     @callback
@@ -125,64 +156,135 @@ class Proxmark3ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
     ) -> FlowResult:
-        """Set up Proxmark3."""
+        """Reading options (screen 1)."""
         if self._async_current_entries():
             return self.async_abort(reason="single_instance_allowed")
 
         errors: dict[str, str] = {}
 
         if user_input is not None:
-            options = _options_from_input(user_input)
-            if error := _validate_options(options):
-                errors["base"] = error
-            else:
-                try:
-                    await self.hass.async_add_executor_job(
-                        test_connection, None, DEFAULT_BAUD
-                    )
-                except Exception:
-                    errors["base"] = "cannot_connect"
-                else:
-                    await self.async_set_unique_id(DOMAIN)
-                    self._abort_if_unique_id_configured()
-
-                    return self.async_create_entry(
-                        title="Proxmark3",
-                        data={},
-                        options=options,
-                    )
-
-        opts = dict(DEFAULT_OPTIONS)
-        schema = vol.Schema(_option_fields(opts))
+            _merge_step(self._options, user_input, READING_KEYS)
+            if self._options.get(CONF_READ_RAW_BLOCKS):
+                return await self.async_step_blocks()
+            return await self._async_create_entry()
 
         return self.async_show_form(
             step_id="user",
-            data_schema=schema,
+            data_schema=vol.Schema(_reading_fields(self._options)),
             errors=errors,
+        )
+
+    async def async_step_blocks(
+        self, user_input: dict[str, Any] | None = None
+    ) -> FlowResult:
+        """Block selection (screen 2)."""
+        if user_input is not None:
+            _merge_step(self._options, user_input, BLOCK_KEYS)
+            return await self.async_step_keys()
+
+        return self.async_show_form(
+            step_id="blocks",
+            data_schema=vol.Schema(_block_fields(self._options)),
+        )
+
+    async def async_step_keys(
+        self, user_input: dict[str, Any] | None = None
+    ) -> FlowResult:
+        """Key selection (screen 3)."""
+        errors: dict[str, str] = {}
+
+        if user_input is not None:
+            _merge_step(self._options, user_input, KEY_OPTION_KEYS)
+            options = finalize_options(self._options)
+            if error := _validate_keys(options):
+                errors["base"] = error
+            else:
+                return await self._async_create_entry(options)
+
+        return self.async_show_form(
+            step_id="keys",
+            data_schema=vol.Schema(_key_fields(self._options)),
+            errors=errors,
+        )
+
+    async def _async_create_entry(
+        self, options: dict[str, Any] | None = None
+    ) -> FlowResult:
+        """Validate connection and create the config entry."""
+        resolved = finalize_options(options or self._options)
+        try:
+            await self.hass.async_add_executor_job(test_connection, None, DEFAULT_BAUD)
+        except Exception:
+            return self.async_show_form(
+                step_id="user",
+                data_schema=vol.Schema(_reading_fields(resolved)),
+                errors={"base": "cannot_connect"},
+            )
+
+        await self.async_set_unique_id(DOMAIN)
+        self._abort_if_unique_id_configured()
+
+        return self.async_create_entry(
+            title="Proxmark3",
+            data={},
+            options=resolved,
         )
 
 
 class Proxmark3OptionsFlowHandler(config_entries.OptionsFlow):
     """Handle Proxmark3 options."""
 
+    def __init__(self) -> None:
+        """Initialize options flow."""
+        self._options: dict[str, Any] = {}
+
     async def async_step_init(
         self, user_input: dict[str, Any] | None = None
     ) -> FlowResult:
-        """Manage options."""
+        """Reading options (screen 1)."""
+        if not self._options:
+            self._options = merged_options(self.config_entry)
+
+        if user_input is not None:
+            _merge_step(self._options, user_input, READING_KEYS)
+            if self._options.get(CONF_READ_RAW_BLOCKS):
+                return await self.async_step_blocks()
+            return self.async_create_entry(title="", data=finalize_options(self._options))
+
+        return self.async_show_form(
+            step_id="init",
+            data_schema=vol.Schema(_reading_fields(self._options)),
+        )
+
+    async def async_step_blocks(
+        self, user_input: dict[str, Any] | None = None
+    ) -> FlowResult:
+        """Block selection (screen 2)."""
+        if user_input is not None:
+            _merge_step(self._options, user_input, BLOCK_KEYS)
+            return await self.async_step_keys()
+
+        return self.async_show_form(
+            step_id="blocks",
+            data_schema=vol.Schema(_block_fields(self._options)),
+        )
+
+    async def async_step_keys(
+        self, user_input: dict[str, Any] | None = None
+    ) -> FlowResult:
+        """Key selection (screen 3)."""
         errors: dict[str, str] = {}
 
         if user_input is not None:
-            options = _options_from_input(user_input)
-            if error := _validate_options(options):
+            _merge_step(self._options, user_input, KEY_OPTION_KEYS)
+            options = finalize_options(self._options)
+            if error := _validate_keys(options):
                 errors["base"] = error
             else:
                 return self.async_create_entry(title="", data=options)
 
-        opts = merged_options(self.config_entry)
-        schema = vol.Schema(_option_fields(opts))
-
         return self.async_show_form(
-            step_id="init",
-            data_schema=schema,
+            step_id="keys",
+            data_schema=vol.Schema(_key_fields(self._options)),
             errors=errors,
         )

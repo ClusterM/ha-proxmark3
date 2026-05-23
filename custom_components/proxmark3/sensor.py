@@ -11,8 +11,10 @@ from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from .const import (
+    ATTR_NTAG,
     ATTR_TAG_TYPE,
     BLOCK_OPTIONS,
+    CONF_READ_RAW_BLOCKS,
     DOMAIN,
     block_attr_name,
     merged_options,
@@ -107,7 +109,10 @@ class Proxmark3TagSensor(SensorEntity):
             attrs["fpga"] = info.fpga
             if info.memory_kb:
                 attrs["memory"] = f"{info.memory_kb} KB ({info.memory_used_percent:.0f}% used)"
-        for idx, conf_key in enumerate(BLOCK_OPTIONS):
-            if options.get(conf_key):
-                attrs[block_attr_name(idx)] = state.blocks.get(idx)
+        if options.get(CONF_READ_RAW_BLOCKS):
+            for idx, conf_key in enumerate(BLOCK_OPTIONS):
+                if options.get(conf_key):
+                    attrs[block_attr_name(idx)] = state.blocks.get(idx)
+        if state.ntag is not None:
+            attrs[ATTR_NTAG] = state.ntag
         self._attr_extra_state_attributes = attrs
