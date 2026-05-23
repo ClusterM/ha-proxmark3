@@ -15,7 +15,7 @@ Home Assistant custom integration for [Proxmark3](https://github.com/RfidResearc
 
 ### HACS
 
-> **Note:** Inclusion in the [default HACS repository](https://github.com/hacs/integration) is expected but not available yet. Until then, add this repo as a [custom repository](https://hacs.xyz/docs/faq/custom_repositories/) (category: **Integration**), then install **Proxmark3**.
+> **Note:** The integration is not in the [default HACS repository](https://github.com/hacs/integration) yet. Until it is included, add this repo as a [custom repository](https://hacs.xyz/docs/faq/custom_repositories/) (category: **Integration**), then install **Proxmark3**.
 
 ### Manual
 
