@@ -1,0 +1,59 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "The USB port is detected automatically. More enabled keys and blocks increase read time.",
+        "data": {
+          "key_ff": "Key ffffffffffff (factory default)",
+          "key_mad": "Key a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Key d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Key 000000000000 (null key)",
+          "custom_key": "Custom key (12 hex characters)",
+          "block_0": "Read block 0",
+          "block_1": "Read block 1",
+          "block_2": "Read block 2",
+          "block_3": "Read block 3",
+          "poll_interval": "Poll interval (seconds)",
+          "reconnect_interval": "Reconnect interval (seconds)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to Proxmark3. Check that the device is plugged in.",
+      "invalid_key": "Custom key must be exactly 12 hexadecimal characters.",
+      "no_blocks": "Select at least one block to read.",
+      "no_keys": "Select at least one key or enter a custom key.",
+      "single_instance_allowed": "Only one Proxmark3 integration is allowed."
+    },
+    "abort": {
+      "single_instance_allowed": "Only one Proxmark3 integration is allowed."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 options",
+        "description": "More enabled keys and blocks increase read time.",
+        "data": {
+          "key_ff": "Key ffffffffffff (factory default)",
+          "key_mad": "Key a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Key d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Key 000000000000 (null key)",
+          "custom_key": "Custom key (12 hex characters)",
+          "block_0": "Read block 0",
+          "block_1": "Read block 1",
+          "block_2": "Read block 2",
+          "block_3": "Read block 3",
+          "poll_interval": "Poll interval (seconds)",
+          "reconnect_interval": "Reconnect interval (seconds)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Custom key must be exactly 12 hexadecimal characters.",
+      "no_blocks": "Select at least one block to read.",
+      "no_keys": "Select at least one key or enter a custom key."
+    }
+  }
+}
