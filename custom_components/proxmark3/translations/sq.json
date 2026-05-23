@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "Porta USB zbulohet automatikisht. UID lexohet gjithmonë.",
+        "data": {
+          "read_ntag": "Lexo NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lexo NDEF në Classic (ngadalë)",
+          "read_raw_blocks": "Lexo blloqe të papërpunuara në Classic",
+          "poll_interval": "Interval pyetjesh (sekonda)",
+          "reconnect_interval": "Interval rilidhjeje (sekonda)"
+        }
+      },
+      "blocks": {
+        "title": "Blloqe të papërpunuara",
+        "description": "Zgjidhni blloqet e sektorit 0 Classic për lexim (çelësat në ekranin tjetër).",
+        "data": {
+          "block_0": "Lexo bllokun 0",
+          "block_1": "Lexo bllokun 1",
+          "block_2": "Lexo bllokun 2",
+          "block_3": "Lexo bllokun 3"
+        }
+      },
+      "keys": {
+        "title": "Çelësat Classic",
+        "description": "Çelësat provohen me radhë derisa leximi i një blloku të ketë sukses.",
+        "data": {
+          "key_ff": "Çelësi ffffffffffff (fabrikë)",
+          "key_mad": "Çelësi a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Çelësi d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Çelësi 000000000000 (zero)",
+          "custom_key": "Çelës i personalizuar (12 karaktere hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Lidhja me Proxmark3 dështoi. Kontrolloni që pajisja është e lidhur.",
+      "invalid_key": "Çelësi i personalizuar duhet të ketë saktësisht 12 karaktere gjashtëmbëdhjetëshe.",
+      "no_keys": "Zgjidhni të paktën një çelës kur leximi i bllokut është aktiv.",
+      "single_instance_allowed": "Lejohet vetëm një integrim Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Lejohet vetëm një integrim Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opsione Proxmark3",
+        "description": "UID lexohet gjithmonë. Aktivizo vetëm çfarë të duhet — NDEF në Classic dhe blloqet e papërpunuara janë të ngadalta.",
+        "data": {
+          "read_ntag": "Lexo NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lexo NDEF në Classic (ngadalë)",
+          "read_raw_blocks": "Lexo blloqe të papërpunuara në Classic",
+          "poll_interval": "Interval pyetjesh (sekonda)",
+          "reconnect_interval": "Interval rilidhjeje (sekonda)"
+        }
+      },
+      "blocks": {
+        "title": "Blloqe të papërpunuara",
+        "description": "Zgjidhni blloqet e sektorit 0 Classic për lexim (çelësat në ekranin tjetër).",
+        "data": {
+          "block_0": "Lexo bllokun 0",
+          "block_1": "Lexo bllokun 1",
+          "block_2": "Lexo bllokun 2",
+          "block_3": "Lexo bllokun 3"
+        }
+      },
+      "keys": {
+        "title": "Çelësat Classic",
+        "description": "Çelësat provohen me radhë derisa leximi i një blloku të ketë sukses.",
+        "data": {
+          "key_ff": "Çelësi ffffffffffff (fabrikë)",
+          "key_mad": "Çelësi a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Çelësi d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Çelësi 000000000000 (zero)",
+          "custom_key": "Çelës i personalizuar (12 karaktere hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Çelësi i personalizuar duhet të ketë saktësisht 12 karaktere gjashtëmbëdhjetëshe.",
+      "no_keys": "Zgjidhni të paktën një çelës kur leximi i bllokut është aktiv."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-portti tunnistetaan automaattisesti. UID luetaan aina.",
+        "data": {
+          "read_ntag": "Lue NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lue NDEF Classicilla (hidas)",
+          "read_raw_blocks": "Lue raakalohkot Classicilla",
+          "poll_interval": "Kyselyväli (sekuntia)",
+          "reconnect_interval": "Uudelleenyhdistysväli (sekuntia)"
+        }
+      },
+      "blocks": {
+        "title": "Raakalohkot",
+        "description": "Valitse Classic sektorin 0 lohkot (avaimet seuraavalla näytöllä).",
+        "data": {
+          "block_0": "Lue lohko 0",
+          "block_1": "Lue lohko 1",
+          "block_2": "Lue lohko 2",
+          "block_3": "Lue lohko 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-avaimet",
+        "description": "Avaimia yritetään järjestyksessä, kunnes lohkon luku onnistuu.",
+        "data": {
+          "key_ff": "Avain ffffffffffff (tehdasasetus)",
+          "key_mad": "Avain a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Avain d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Avain 000000000000 (nolla)",
+          "custom_key": "Mukautettu avain (12 hex-merkkiä)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Yhteyttä Proxmark3:een ei voitu muodostaa. Tarkista, että laite on kytketty.",
+      "invalid_key": "Mukautetussa avaimessa on oltava tasan 12 heksadesimaalimerkkiä.",
+      "no_keys": "Valitse vähintään yksi avain, kun lohkojen luku on käytössä.",
+      "single_instance_allowed": "Vain yksi Proxmark3-integraatio sallitaan."
+    },
+    "abort": {
+      "single_instance_allowed": "Vain yksi Proxmark3-integraatio sallitaan."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3-asetukset",
+        "description": "UID luetaan aina. Ota käyttöön vain tarvitsemasi — Classic NDEF ja raakalohkot ovat hitaita.",
+        "data": {
+          "read_ntag": "Lue NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lue NDEF Classicilla (hidas)",
+          "read_raw_blocks": "Lue raakalohkot Classicilla",
+          "poll_interval": "Kyselyväli (sekuntia)",
+          "reconnect_interval": "Uudelleenyhdistysväli (sekuntia)"
+        }
+      },
+      "blocks": {
+        "title": "Raakalohkot",
+        "description": "Valitse Classic sektorin 0 lohkot (avaimet seuraavalla näytöllä).",
+        "data": {
+          "block_0": "Lue lohko 0",
+          "block_1": "Lue lohko 1",
+          "block_2": "Lue lohko 2",
+          "block_3": "Lue lohko 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-avaimet",
+        "description": "Avaimia yritetään järjestyksessä, kunnes lohkon luku onnistuu.",
+        "data": {
+          "key_ff": "Avain ffffffffffff (tehdasasetus)",
+          "key_mad": "Avain a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Avain d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Avain 000000000000 (nolla)",
+          "custom_key": "Mukautettu avain (12 hex-merkkiä)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Mukautetussa avaimessa on oltava tasan 12 heksadesimaalimerkkiä.",
+      "no_keys": "Valitse vähintään yksi avain, kun lohkojen luku on käytössä."
+    }
+  }
+}

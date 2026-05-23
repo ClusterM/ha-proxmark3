@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB ataka automatikoki detektatzen da. UID beti irakurtzen da.",
+        "data": {
+          "read_ntag": "Irakurri NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Irakurri NDEF Classic-en (motela)",
+          "read_raw_blocks": "Irakurri bloke gordinak Classic-en",
+          "poll_interval": "Galdeketa-tartea (segundoak)",
+          "reconnect_interval": "Berriro konektatzeko tartea (segundoak)"
+        }
+      },
+      "blocks": {
+        "title": "Bloke gordinak",
+        "description": "Hautatu Classic sektore 0 blokeak (gakoak hurrengo pantailan).",
+        "data": {
+          "block_0": "Irakurri bloke 0",
+          "block_1": "Irakurri bloke 1",
+          "block_2": "Irakurri bloke 2",
+          "block_3": "Irakurri bloke 3"
+        }
+      },
+      "keys": {
+        "title": "Classic gakoak",
+        "description": "Gakoak ordenan probatzen dira blokearen irakurketa arrakastatsua izan arte.",
+        "data": {
+          "key_ff": "Gakoa ffffffffffff (fabrika lehenetsia)",
+          "key_mad": "Gakoa a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Gakoa d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Gakoa 000000000000 (nulua)",
+          "custom_key": "Gako pertsonalizatua (12 hex karaktere)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Ezin izan da Proxmark3-rekin konektatu. Egiaztatu gailua konektatuta dagoela.",
+      "invalid_key": "Gako pertsonalizatuak 12 hex karaktere zehatz izan behar ditu.",
+      "no_keys": "Hautatu gutxienez gako bat blokeak irakurtzea gaituta dagoenean.",
+      "single_instance_allowed": "Proxmark3 integrazio bakarra onartzen da."
+    },
+    "abort": {
+      "single_instance_allowed": "Proxmark3 integrazio bakarra onartzen da."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 aukerak",
+        "description": "UID beti irakurtzen da. Gaitu behar duzuna soilik — Classic NDEF eta bloke gordinak motelak dira.",
+        "data": {
+          "read_ntag": "Irakurri NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Irakurri NDEF Classic-en (motela)",
+          "read_raw_blocks": "Irakurri bloke gordinak Classic-en",
+          "poll_interval": "Galdeketa-tartea (segundoak)",
+          "reconnect_interval": "Berriro konektatzeko tartea (segundoak)"
+        }
+      },
+      "blocks": {
+        "title": "Bloke gordinak",
+        "description": "Hautatu Classic sektore 0 blokeak (gakoak hurrengo pantailan).",
+        "data": {
+          "block_0": "Irakurri bloke 0",
+          "block_1": "Irakurri bloke 1",
+          "block_2": "Irakurri bloke 2",
+          "block_3": "Irakurri bloke 3"
+        }
+      },
+      "keys": {
+        "title": "Classic gakoak",
+        "description": "Gakoak ordenan probatzen dira blokearen irakurketa arrakastatsua izan arte.",
+        "data": {
+          "key_ff": "Gakoa ffffffffffff (fabrika lehenetsia)",
+          "key_mad": "Gakoa a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Gakoa d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Gakoa 000000000000 (nulua)",
+          "custom_key": "Gako pertsonalizatua (12 hex karaktere)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Gako pertsonalizatuak 12 hex karaktere zehatz izan behar ditu.",
+      "no_keys": "Hautatu gutxienez gako bat blokeak irakurtzea gaituta dagoenean."
+    }
+  }
+}

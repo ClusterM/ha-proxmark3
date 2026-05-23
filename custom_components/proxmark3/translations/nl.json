@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "De USB-poort wordt automatisch gedetecteerd. UID wordt altijd gelezen.",
+        "data": {
+          "read_ntag": "NDEF lezen (Ultralight / NTAG)",
+          "read_ntag_classic": "NDEF op Classic lezen (traag)",
+          "read_raw_blocks": "Ruwe blokken op Classic lezen",
+          "poll_interval": "Polling-interval (seconden)",
+          "reconnect_interval": "Herverbindingsinterval (seconden)"
+        }
+      },
+      "blocks": {
+        "title": "Ruwe blokken",
+        "description": "Selecteer Classic sector 0-blokken om te lezen (sleutels op het volgende scherm).",
+        "data": {
+          "block_0": "Blok 0 lezen",
+          "block_1": "Blok 1 lezen",
+          "block_2": "Blok 2 lezen",
+          "block_3": "Blok 3 lezen"
+        }
+      },
+      "keys": {
+        "title": "Classic-sleutels",
+        "description": "Sleutels worden in volgorde geprobeerd tot een bloklezing lukt.",
+        "data": {
+          "key_ff": "Sleutel ffffffffffff (fabrieksstandaard)",
+          "key_mad": "Sleutel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Sleutel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Sleutel 000000000000 (nul)",
+          "custom_key": "Aangepaste sleutel (12 hex-tekens)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan geen verbinding maken met Proxmark3. Controleer of het apparaat is aangesloten.",
+      "invalid_key": "Aangepaste sleutel moet precies 12 hexadecimale tekens zijn.",
+      "no_keys": "Selecteer minstens één sleutel wanneer bloklezen is ingeschakeld.",
+      "single_instance_allowed": "Slechts één Proxmark3-integratie is toegestaan."
+    },
+    "abort": {
+      "single_instance_allowed": "Slechts één Proxmark3-integratie is toegestaan."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3-opties",
+        "description": "UID wordt altijd gelezen. Schakel alleen in wat u nodig hebt — Classic NDEF en ruwe blokken zijn traag.",
+        "data": {
+          "read_ntag": "NDEF lezen (Ultralight / NTAG)",
+          "read_ntag_classic": "NDEF op Classic lezen (traag)",
+          "read_raw_blocks": "Ruwe blokken op Classic lezen",
+          "poll_interval": "Polling-interval (seconden)",
+          "reconnect_interval": "Herverbindingsinterval (seconden)"
+        }
+      },
+      "blocks": {
+        "title": "Ruwe blokken",
+        "description": "Selecteer Classic sector 0-blokken om te lezen (sleutels op het volgende scherm).",
+        "data": {
+          "block_0": "Blok 0 lezen",
+          "block_1": "Blok 1 lezen",
+          "block_2": "Blok 2 lezen",
+          "block_3": "Blok 3 lezen"
+        }
+      },
+      "keys": {
+        "title": "Classic-sleutels",
+        "description": "Sleutels worden in volgorde geprobeerd tot een bloklezing lukt.",
+        "data": {
+          "key_ff": "Sleutel ffffffffffff (fabrieksstandaard)",
+          "key_mad": "Sleutel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Sleutel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Sleutel 000000000000 (nul)",
+          "custom_key": "Aangepaste sleutel (12 hex-tekens)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Aangepaste sleutel moet precies 12 hexadecimale tekens zijn.",
+      "no_keys": "Selecteer minstens één sleutel wanneer bloklezen is ingeschakeld."
+    }
+  }
+}

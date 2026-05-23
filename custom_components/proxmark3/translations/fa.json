@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "درگاه USB به‌طور خودکار شناسایی می‌شود. UID همیشه خوانده می‌شود.",
+        "data": {
+          "read_ntag": "خواندن NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "خواندن NDEF روی Classic (کند)",
+          "read_raw_blocks": "خواندن بلوک‌های خام روی Classic",
+          "poll_interval": "فاصله نظرسنجی (ثانیه)",
+          "reconnect_interval": "فاصله اتصال مجدد (ثانیه)"
+        }
+      },
+      "blocks": {
+        "title": "بلوک‌های خام",
+        "description": "بلوک‌های بخش ۰ Classic را انتخاب کنید (کلیدها در صفحه بعد).",
+        "data": {
+          "block_0": "خواندن بلوک 0",
+          "block_1": "خواندن بلوک 1",
+          "block_2": "خواندن بلوک 2",
+          "block_3": "خواندن بلوک 3"
+        }
+      },
+      "keys": {
+        "title": "کلیدهای Classic",
+        "description": "کلیدها به ترتیب امتحان می‌شوند تا خواندن بلوک موفق شود.",
+        "data": {
+          "key_ff": "کلید ffffffffffff (پیش‌فرض کارخانه)",
+          "key_mad": "کلید a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "کلید d3f7d3f7d3f7 (NDEF)",
+          "key_null": "کلید 000000000000 (صفر)",
+          "custom_key": "کلید سفارشی (۱۲ کاراکتر hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "اتصال به Proxmark3 ناموفق بود. بررسی کنید دستگاه متصل است.",
+      "invalid_key": "کلید سفارشی باید دقیقاً ۱۲ کاراکتر hex داشته باشد.",
+      "no_keys": "وقتی خواندن بلوک فعال است حداقل یک کلید انتخاب کنید.",
+      "single_instance_allowed": "فقط یک یکپارچه‌سازی Proxmark3 مجاز است."
+    },
+    "abort": {
+      "single_instance_allowed": "فقط یک یکپارچه‌سازی Proxmark3 مجاز است."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "گزینه‌های Proxmark3",
+        "description": "UID همیشه خوانده می‌شود. فقط موارد لازم را فعال کنید — NDEF Classic و بلوک‌های خام کند هستند.",
+        "data": {
+          "read_ntag": "خواندن NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "خواندن NDEF روی Classic (کند)",
+          "read_raw_blocks": "خواندن بلوک‌های خام روی Classic",
+          "poll_interval": "فاصله نظرسنجی (ثانیه)",
+          "reconnect_interval": "فاصله اتصال مجدد (ثانیه)"
+        }
+      },
+      "blocks": {
+        "title": "بلوک‌های خام",
+        "description": "بلوک‌های بخش ۰ Classic را انتخاب کنید (کلیدها در صفحه بعد).",
+        "data": {
+          "block_0": "خواندن بلوک 0",
+          "block_1": "خواندن بلوک 1",
+          "block_2": "خواندن بلوک 2",
+          "block_3": "خواندن بلوک 3"
+        }
+      },
+      "keys": {
+        "title": "کلیدهای Classic",
+        "description": "کلیدها به ترتیب امتحان می‌شوند تا خواندن بلوک موفق شود.",
+        "data": {
+          "key_ff": "کلید ffffffffffff (پیش‌فرض کارخانه)",
+          "key_mad": "کلید a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "کلید d3f7d3f7d3f7 (NDEF)",
+          "key_null": "کلید 000000000000 (صفر)",
+          "custom_key": "کلید سفارشی (۱۲ کاراکتر hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "کلید سفارشی باید دقیقاً ۱۲ کاراکتر hex داشته باشد.",
+      "no_keys": "وقتی خواندن بلوک فعال است حداقل یک کلید انتخاب کنید."
+    }
+  }
+}

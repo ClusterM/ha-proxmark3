@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-pordo estas aŭtomate detektita. UID ĉiam legiĝas.",
+        "data": {
+          "read_ntag": "Legi NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Legi NDEF sur Classic (malrapide)",
+          "read_raw_blocks": "Legi krudajn blokojn sur Classic",
+          "poll_interval": "Enketintervalo (sekundoj)",
+          "reconnect_interval": "Rekonektintervalo (sekundoj)"
+        }
+      },
+      "blocks": {
+        "title": "Krudaj blokoj",
+        "description": "Elektu Classic-sektoron 0-blokojn (ŝlosiloj je la sekva ekrano).",
+        "data": {
+          "block_0": "Legi blokon 0",
+          "block_1": "Legi blokon 1",
+          "block_2": "Legi blokon 2",
+          "block_3": "Legi blokon 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-ŝlosiloj",
+        "description": "Ŝlosiloj proviĝas laŭvice ĝis bloklego sukcesas.",
+        "data": {
+          "key_ff": "Ŝlosilo ffffffffffff (fabrika defaŭlto)",
+          "key_mad": "Ŝlosilo a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Ŝlosilo d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Ŝlosilo 000000000000 (nula)",
+          "custom_key": "Propra ŝlosilo (12 heksaj signoj)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Malsukcesis konekti al Proxmark3. Kontrolu ĉu la aparato estas konektita.",
+      "invalid_key": "Propra ŝlosilo devas havi precize 12 heksadecimajn signojn.",
+      "no_keys": "Elektu almenaŭ unu ŝlosilon kiam bloklego estas ŝaltita.",
+      "single_instance_allowed": "Nur unu Proxmark3-integriĝo estas permesita."
+    },
+    "abort": {
+      "single_instance_allowed": "Nur unu Proxmark3-integriĝo estas permesita."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3-opcioj",
+        "description": "UID ĉiam legiĝas. Ŝaltu nur kion vi bezonas — Classic NDEF kaj krudaj blokoj estas malrapidaj.",
+        "data": {
+          "read_ntag": "Legi NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Legi NDEF sur Classic (malrapide)",
+          "read_raw_blocks": "Legi krudajn blokojn sur Classic",
+          "poll_interval": "Enketintervalo (sekundoj)",
+          "reconnect_interval": "Rekonektintervalo (sekundoj)"
+        }
+      },
+      "blocks": {
+        "title": "Krudaj blokoj",
+        "description": "Elektu Classic-sektoron 0-blokojn (ŝlosiloj je la sekva ekrano).",
+        "data": {
+          "block_0": "Legi blokon 0",
+          "block_1": "Legi blokon 1",
+          "block_2": "Legi blokon 2",
+          "block_3": "Legi blokon 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-ŝlosiloj",
+        "description": "Ŝlosiloj proviĝas laŭvice ĝis bloklego sukcesas.",
+        "data": {
+          "key_ff": "Ŝlosilo ffffffffffff (fabrika defaŭlto)",
+          "key_mad": "Ŝlosilo a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Ŝlosilo d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Ŝlosilo 000000000000 (nula)",
+          "custom_key": "Propra ŝlosilo (12 heksaj signoj)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Propra ŝlosilo devas havi precize 12 heksadecimajn signojn.",
+      "no_keys": "Elektu almenaŭ unu ŝlosilon kiam bloklego estas ŝaltita."
+    }
+  }
+}

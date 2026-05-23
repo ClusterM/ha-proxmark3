@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB vrata se zaznajo samodejno. UID se vedno prebere.",
+        "data": {
+          "read_ntag": "Preberi NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Preberi NDEF na Classic (počasi)",
+          "read_raw_blocks": "Preberi surove bloke na Classic",
+          "poll_interval": "Interval poizvedbe (sekunde)",
+          "reconnect_interval": "Interval ponovne povezave (sekunde)"
+        }
+      },
+      "blocks": {
+        "title": "Surovi bloki",
+        "description": "Izberite bloke sektorja 0 Classic za branje (ključi na naslednjem zaslonu).",
+        "data": {
+          "block_0": "Preberi blok 0",
+          "block_1": "Preberi blok 1",
+          "block_2": "Preberi blok 2",
+          "block_3": "Preberi blok 3"
+        }
+      },
+      "keys": {
+        "title": "Classic ključi",
+        "description": "Ključi se poskušajo zaporedoma, dokler branje bloka ne uspe.",
+        "data": {
+          "key_ff": "Ključ ffffffffffff (tovarniški)",
+          "key_mad": "Ključ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Ključ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Ključ 000000000000 (ničelni)",
+          "custom_key": "Lastni ključ (12 hex znakov)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Povezava s Proxmark3 ni uspela. Preverite, ali je naprava priključena.",
+      "invalid_key": "Lastni ključ mora vsebovati natančno 12 šestnajstiških znakov.",
+      "no_keys": "Ko je branje blokov vključeno, izberite vsaj en ključ.",
+      "single_instance_allowed": "Dovoljena je le ena integracija Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Dovoljena je le ena integracija Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti Proxmark3",
+        "description": "UID se vedno prebere. Vklopite le potrebno — Classic NDEF in surovi bloki so počasni.",
+        "data": {
+          "read_ntag": "Preberi NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Preberi NDEF na Classic (počasi)",
+          "read_raw_blocks": "Preberi surove bloke na Classic",
+          "poll_interval": "Interval poizvedbe (sekunde)",
+          "reconnect_interval": "Interval ponovne povezave (sekunde)"
+        }
+      },
+      "blocks": {
+        "title": "Surovi bloki",
+        "description": "Izberite bloke sektorja 0 Classic za branje (ključi na naslednjem zaslonu).",
+        "data": {
+          "block_0": "Preberi blok 0",
+          "block_1": "Preberi blok 1",
+          "block_2": "Preberi blok 2",
+          "block_3": "Preberi blok 3"
+        }
+      },
+      "keys": {
+        "title": "Classic ključi",
+        "description": "Ključi se poskušajo zaporedoma, dokler branje bloka ne uspe.",
+        "data": {
+          "key_ff": "Ključ ffffffffffff (tovarniški)",
+          "key_mad": "Ključ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Ključ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Ključ 000000000000 (ničelni)",
+          "custom_key": "Lastni ključ (12 hex znakov)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Lastni ključ mora vsebovati natančno 12 šestnajstiških znakov.",
+      "no_keys": "Ko je branje blokov vključeno, izberite vsaj en ključ."
+    }
+  }
+}

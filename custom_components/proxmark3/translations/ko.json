@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB 포트가 자동으로 감지됩니다. UID는 항상 읽습니다.",
+        "data": {
+          "read_ntag": "NDEF 읽기 (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic에서 NDEF 읽기 (느림)",
+          "read_raw_blocks": "Classic에서 원시 블록 읽기",
+          "poll_interval": "폴링 간격(초)",
+          "reconnect_interval": "재연결 간격(초)"
+        }
+      },
+      "blocks": {
+        "title": "원시 블록",
+        "description": "읽을 Classic 섹터 0 블록을 선택합니다(다음 화면에서 키가 필요합니다).",
+        "data": {
+          "block_0": "블록 0 읽기",
+          "block_1": "블록 1 읽기",
+          "block_2": "블록 2 읽기",
+          "block_3": "블록 3 읽기"
+        }
+      },
+      "keys": {
+        "title": "Classic 키",
+        "description": "블록 읽기가 성공할 때까지 키를 순서대로 시도합니다.",
+        "data": {
+          "key_ff": "키 ffffffffffff (공장 기본값)",
+          "key_mad": "키 a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "키 d3f7d3f7d3f7 (NDEF)",
+          "key_null": "키 000000000000 (널)",
+          "custom_key": "사용자 지정 키(16진수 12자)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Proxmark3에 연결하지 못했습니다. 장치가 USB로 연결되어 있는지 확인하세요.",
+      "invalid_key": "사용자 지정 키는 정확히 12개의 16진수 문자여야 합니다.",
+      "no_keys": "블록 읽기를 사용할 때 키를 하나 이상 선택하세요.",
+      "single_instance_allowed": "Proxmark3 통합은 하나만 허용됩니다."
+    },
+    "abort": {
+      "single_instance_allowed": "Proxmark3 통합은 하나만 허용됩니다."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 옵션",
+        "description": "UID는 항상 읽습니다. 필요한 항목만 켜세요 — Classic NDEF와 원시 블록은 느립니다.",
+        "data": {
+          "read_ntag": "NDEF 읽기 (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic에서 NDEF 읽기 (느림)",
+          "read_raw_blocks": "Classic에서 원시 블록 읽기",
+          "poll_interval": "폴링 간격(초)",
+          "reconnect_interval": "재연결 간격(초)"
+        }
+      },
+      "blocks": {
+        "title": "원시 블록",
+        "description": "읽을 Classic 섹터 0 블록을 선택합니다(다음 화면에서 키가 필요합니다).",
+        "data": {
+          "block_0": "블록 0 읽기",
+          "block_1": "블록 1 읽기",
+          "block_2": "블록 2 읽기",
+          "block_3": "블록 3 읽기"
+        }
+      },
+      "keys": {
+        "title": "Classic 키",
+        "description": "블록 읽기가 성공할 때까지 키를 순서대로 시도합니다.",
+        "data": {
+          "key_ff": "키 ffffffffffff (공장 기본값)",
+          "key_mad": "키 a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "키 d3f7d3f7d3f7 (NDEF)",
+          "key_null": "키 000000000000 (널)",
+          "custom_key": "사용자 지정 키(16진수 12자)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "사용자 지정 키는 정확히 12개의 16진수 문자여야 합니다.",
+      "no_keys": "블록 읽기를 사용할 때 키를 하나 이상 선택하세요."
+    }
+  }
+}

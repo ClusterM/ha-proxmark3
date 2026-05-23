@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "A porta USB é detectada automaticamente. O UID é sempre lido.",
+        "data": {
+          "read_ntag": "Ler NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Ler NDEF no Classic (lento)",
+          "read_raw_blocks": "Ler blocos brutos no Classic",
+          "poll_interval": "Intervalo de sondagem (segundos)",
+          "reconnect_interval": "Intervalo de reconexão (segundos)"
+        }
+      },
+      "blocks": {
+        "title": "Blocos brutos",
+        "description": "Selecione os blocos do setor 0 Classic para leitura (chaves na próxima tela).",
+        "data": {
+          "block_0": "Ler bloco 0",
+          "block_1": "Ler bloco 1",
+          "block_2": "Ler bloco 2",
+          "block_3": "Ler bloco 3"
+        }
+      },
+      "keys": {
+        "title": "Chaves Classic",
+        "description": "As chaves são tentadas em ordem até uma leitura de bloco ter sucesso.",
+        "data": {
+          "key_ff": "Chave ffffffffffff (padrão de fábrica)",
+          "key_mad": "Chave a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Chave d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Chave 000000000000 (nula)",
+          "custom_key": "Chave personalizada (12 caracteres hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Falha ao conectar ao Proxmark3. Verifique se o dispositivo está conectado.",
+      "invalid_key": "A chave personalizada deve ter exatamente 12 caracteres hexadecimais.",
+      "no_keys": "Selecione pelo menos uma chave quando a leitura de blocos estiver ativa.",
+      "single_instance_allowed": "Apenas uma integração Proxmark3 é permitida."
+    },
+    "abort": {
+      "single_instance_allowed": "Apenas uma integração Proxmark3 é permitida."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opções Proxmark3",
+        "description": "O UID é sempre lido. Ative apenas o necessário — NDEF Classic e blocos brutos são lentos.",
+        "data": {
+          "read_ntag": "Ler NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Ler NDEF no Classic (lento)",
+          "read_raw_blocks": "Ler blocos brutos no Classic",
+          "poll_interval": "Intervalo de sondagem (segundos)",
+          "reconnect_interval": "Intervalo de reconexão (segundos)"
+        }
+      },
+      "blocks": {
+        "title": "Blocos brutos",
+        "description": "Selecione os blocos do setor 0 Classic para leitura (chaves na próxima tela).",
+        "data": {
+          "block_0": "Ler bloco 0",
+          "block_1": "Ler bloco 1",
+          "block_2": "Ler bloco 2",
+          "block_3": "Ler bloco 3"
+        }
+      },
+      "keys": {
+        "title": "Chaves Classic",
+        "description": "As chaves são tentadas em ordem até uma leitura de bloco ter sucesso.",
+        "data": {
+          "key_ff": "Chave ffffffffffff (padrão de fábrica)",
+          "key_mad": "Chave a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Chave d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Chave 000000000000 (nula)",
+          "custom_key": "Chave personalizada (12 caracteres hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "A chave personalizada deve ter exatamente 12 caracteres hexadecimais.",
+      "no_keys": "Selecione pelo menos uma chave quando a leitura de blocos estiver ativa."
+    }
+  }
+}

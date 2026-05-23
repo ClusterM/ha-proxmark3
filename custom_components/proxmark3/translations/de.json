@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-Anschluss wird automatisch erkannt. UID wird immer gelesen.",
+        "data": {
+          "read_ntag": "NDEF lesen (Ultralight / NTAG)",
+          "read_ntag_classic": "NDEF auf Classic lesen (langsam)",
+          "read_raw_blocks": "Rohblöcke auf Classic lesen",
+          "poll_interval": "Abfrageintervall (Sekunden)",
+          "reconnect_interval": "Wiederverbindungsintervall (Sekunden)"
+        }
+      },
+      "blocks": {
+        "title": "Rohblöcke",
+        "description": "Classic-Sektor-0-Blöcke wählen (Schlüssel auf dem nächsten Bildschirm).",
+        "data": {
+          "block_0": "Block 0 lesen",
+          "block_1": "Block 1 lesen",
+          "block_2": "Block 2 lesen",
+          "block_3": "Block 3 lesen"
+        }
+      },
+      "keys": {
+        "title": "Classic-Schlüssel",
+        "description": "Schlüssel werden der Reihe nach versucht, bis ein Block gelesen werden kann.",
+        "data": {
+          "key_ff": "Schlüssel ffffffffffff (Werkseinstellung)",
+          "key_mad": "Schlüssel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Schlüssel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Schlüssel 000000000000 (Nullschlüssel)",
+          "custom_key": "Eigener Schlüssel (12 Hex-Zeichen)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zu Proxmark3 fehlgeschlagen. Prüfen Sie, ob das Gerät angeschlossen ist.",
+      "invalid_key": "Eigener Schlüssel muss genau 12 hexadezimale Zeichen haben.",
+      "no_keys": "Wählen Sie mindestens einen Schlüssel, wenn Blocklesen aktiviert ist.",
+      "single_instance_allowed": "Nur eine Proxmark3-Integration ist erlaubt."
+    },
+    "abort": {
+      "single_instance_allowed": "Nur eine Proxmark3-Integration ist erlaubt."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3-Optionen",
+        "description": "UID wird immer gelesen. Aktivieren Sie nur das Nötige — Classic NDEF und Rohblöcke sind langsam.",
+        "data": {
+          "read_ntag": "NDEF lesen (Ultralight / NTAG)",
+          "read_ntag_classic": "NDEF auf Classic lesen (langsam)",
+          "read_raw_blocks": "Rohblöcke auf Classic lesen",
+          "poll_interval": "Abfrageintervall (Sekunden)",
+          "reconnect_interval": "Wiederverbindungsintervall (Sekunden)"
+        }
+      },
+      "blocks": {
+        "title": "Rohblöcke",
+        "description": "Classic-Sektor-0-Blöcke wählen (Schlüssel auf dem nächsten Bildschirm).",
+        "data": {
+          "block_0": "Block 0 lesen",
+          "block_1": "Block 1 lesen",
+          "block_2": "Block 2 lesen",
+          "block_3": "Block 3 lesen"
+        }
+      },
+      "keys": {
+        "title": "Classic-Schlüssel",
+        "description": "Schlüssel werden der Reihe nach versucht, bis ein Block gelesen werden kann.",
+        "data": {
+          "key_ff": "Schlüssel ffffffffffff (Werkseinstellung)",
+          "key_mad": "Schlüssel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Schlüssel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Schlüssel 000000000000 (Nullschlüssel)",
+          "custom_key": "Eigener Schlüssel (12 Hex-Zeichen)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Eigener Schlüssel muss genau 12 hexadezimale Zeichen haben.",
+      "no_keys": "Wählen Sie mindestens einen Schlüssel, wenn Blocklesen aktiviert ist."
+    }
+  }
+}

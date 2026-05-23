@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-porten upptäcks automatiskt. UID läses alltid.",
+        "data": {
+          "read_ntag": "Läs NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Läs NDEF på Classic (långsamt)",
+          "read_raw_blocks": "Läs råblock på Classic",
+          "poll_interval": "Avfrågningsintervall (sekunder)",
+          "reconnect_interval": "Återanslutningsintervall (sekunder)"
+        }
+      },
+      "blocks": {
+        "title": "Råblock",
+        "description": "Välj Classic sektor 0-block att läsa (nycklar på nästa skärm).",
+        "data": {
+          "block_0": "Läs block 0",
+          "block_1": "Läs block 1",
+          "block_2": "Läs block 2",
+          "block_3": "Läs block 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-nycklar",
+        "description": "Nycklar provas i ordning tills blockläsning lyckas.",
+        "data": {
+          "key_ff": "Nyckel ffffffffffff (fabriksstandard)",
+          "key_mad": "Nyckel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Nyckel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Nyckel 000000000000 (noll)",
+          "custom_key": "Anpassad nyckel (12 hex-tecken)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kunde inte ansluta till Proxmark3. Kontrollera att enheten är ansluten.",
+      "invalid_key": "Anpassad nyckel måste vara exakt 12 hexadecimala tecken.",
+      "no_keys": "Välj minst en nyckel när blockläsning är aktiverad.",
+      "single_instance_allowed": "Endast en Proxmark3-integration tillåts."
+    },
+    "abort": {
+      "single_instance_allowed": "Endast en Proxmark3-integration tillåts."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3-alternativ",
+        "description": "UID läses alltid. Aktivera bara det du behöver — Classic NDEF och råblock är långsamma.",
+        "data": {
+          "read_ntag": "Läs NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Läs NDEF på Classic (långsamt)",
+          "read_raw_blocks": "Läs råblock på Classic",
+          "poll_interval": "Avfrågningsintervall (sekunder)",
+          "reconnect_interval": "Återanslutningsintervall (sekunder)"
+        }
+      },
+      "blocks": {
+        "title": "Råblock",
+        "description": "Välj Classic sektor 0-block att läsa (nycklar på nästa skärm).",
+        "data": {
+          "block_0": "Läs block 0",
+          "block_1": "Läs block 1",
+          "block_2": "Läs block 2",
+          "block_3": "Läs block 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-nycklar",
+        "description": "Nycklar provas i ordning tills blockläsning lyckas.",
+        "data": {
+          "key_ff": "Nyckel ffffffffffff (fabriksstandard)",
+          "key_mad": "Nyckel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Nyckel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Nyckel 000000000000 (noll)",
+          "custom_key": "Anpassad nyckel (12 hex-tecken)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Anpassad nyckel måste vara exakt 12 hexadecimala tecken.",
+      "no_keys": "Välj minst en nyckel när blockläsning är aktiverad."
+    }
+  }
+}

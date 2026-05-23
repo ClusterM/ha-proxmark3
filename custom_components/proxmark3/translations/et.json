@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-port tuvastatakse automaatselt. UID loetakse alati.",
+        "data": {
+          "read_ntag": "Loe NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Loe NDEF Classicul (aeglane)",
+          "read_raw_blocks": "Loe toorblokke Classicul",
+          "poll_interval": "Küsitluse intervall (sekundid)",
+          "reconnect_interval": "Taasühenduse intervall (sekundid)"
+        }
+      },
+      "blocks": {
+        "title": "Toorblokid",
+        "description": "Vali Classic sektori 0 blokid (võtmed järgmisel ekraanil).",
+        "data": {
+          "block_0": "Loe blokk 0",
+          "block_1": "Loe blokk 1",
+          "block_2": "Loe blokk 2",
+          "block_3": "Loe blokk 3"
+        }
+      },
+      "keys": {
+        "title": "Classic võtmed",
+        "description": "Võtmeid proovitakse järjekorras, kuni bloki lugemine õnnestub.",
+        "data": {
+          "key_ff": "Võti ffffffffffff (tehase vaikimisi)",
+          "key_mad": "Võti a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Võti d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Võti 000000000000 (nullvõti)",
+          "custom_key": "Kohandatud võti (12 hex märki)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Proxmark3-ga ühendamine ebaõnnestus. Kontrolli, kas seade on ühendatud.",
+      "invalid_key": "Kohandatud võti peab sisaldama täpselt 12 kuueteistkümnend märki.",
+      "no_keys": "Vali vähemalt üks võti, kui blokkide lugemine on lubatud.",
+      "single_instance_allowed": "Lubatud on ainult üks Proxmark3 integratsioon."
+    },
+    "abort": {
+      "single_instance_allowed": "Lubatud on ainult üks Proxmark3 integratsioon."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 valikud",
+        "description": "UID loetakse alati. Luba ainult vajalik — Classic NDEF ja toorblokid on aeglased.",
+        "data": {
+          "read_ntag": "Loe NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Loe NDEF Classicul (aeglane)",
+          "read_raw_blocks": "Loe toorblokke Classicul",
+          "poll_interval": "Küsitluse intervall (sekundid)",
+          "reconnect_interval": "Taasühenduse intervall (sekundid)"
+        }
+      },
+      "blocks": {
+        "title": "Toorblokid",
+        "description": "Vali Classic sektori 0 blokid (võtmed järgmisel ekraanil).",
+        "data": {
+          "block_0": "Loe blokk 0",
+          "block_1": "Loe blokk 1",
+          "block_2": "Loe blokk 2",
+          "block_3": "Loe blokk 3"
+        }
+      },
+      "keys": {
+        "title": "Classic võtmed",
+        "description": "Võtmeid proovitakse järjekorras, kuni bloki lugemine õnnestub.",
+        "data": {
+          "key_ff": "Võti ffffffffffff (tehase vaikimisi)",
+          "key_mad": "Võti a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Võti d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Võti 000000000000 (nullvõti)",
+          "custom_key": "Kohandatud võti (12 hex märki)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Kohandatud võti peab sisaldama täpselt 12 kuueteistkümnend märki.",
+      "no_keys": "Vali vähemalt üks võti, kui blokkide lugemine on lubatud."
+    }
+  }
+}

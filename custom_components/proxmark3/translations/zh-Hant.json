@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB 連接埠會自動偵測。UID 一律讀取。",
+        "data": {
+          "read_ntag": "讀取 NDEF（Ultralight / NTAG）",
+          "read_ntag_classic": "在 Classic 上讀取 NDEF（較慢）",
+          "read_raw_blocks": "在 Classic 上讀取原始區塊",
+          "poll_interval": "輪詢間隔（秒）",
+          "reconnect_interval": "重新連線間隔（秒）"
+        }
+      },
+      "blocks": {
+        "title": "原始區塊",
+        "description": "選擇要讀取的 Classic 磁區 0 區塊（下一畫面需要金鑰）。",
+        "data": {
+          "block_0": "讀取區塊 0",
+          "block_1": "讀取區塊 1",
+          "block_2": "讀取區塊 2",
+          "block_3": "讀取區塊 3"
+        }
+      },
+      "keys": {
+        "title": "Classic 金鑰",
+        "description": "依序嘗試金鑰，直到區塊讀取成功。",
+        "data": {
+          "key_ff": "金鑰 ffffffffffff (出廠預設)",
+          "key_mad": "金鑰 a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "金鑰 d3f7d3f7d3f7 (NDEF)",
+          "key_null": "金鑰 000000000000 (零)",
+          "custom_key": "自訂金鑰（12 個十六進位字元）"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "無法連線至 Proxmark3。請確認裝置已連接。",
+      "invalid_key": "自訂金鑰必須為恰好 12 個十六進位字元。",
+      "no_keys": "啟用區塊讀取時請至少選擇一個金鑰。",
+      "single_instance_allowed": "僅允許一個 Proxmark3 整合。"
+    },
+    "abort": {
+      "single_instance_allowed": "僅允許一個 Proxmark3 整合。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 選項",
+        "description": "UID 一律讀取。僅啟用所需項目 — Classic NDEF 與原始區塊較慢。",
+        "data": {
+          "read_ntag": "讀取 NDEF（Ultralight / NTAG）",
+          "read_ntag_classic": "在 Classic 上讀取 NDEF（較慢）",
+          "read_raw_blocks": "在 Classic 上讀取原始區塊",
+          "poll_interval": "輪詢間隔（秒）",
+          "reconnect_interval": "重新連線間隔（秒）"
+        }
+      },
+      "blocks": {
+        "title": "原始區塊",
+        "description": "選擇要讀取的 Classic 磁區 0 區塊（下一畫面需要金鑰）。",
+        "data": {
+          "block_0": "讀取區塊 0",
+          "block_1": "讀取區塊 1",
+          "block_2": "讀取區塊 2",
+          "block_3": "讀取區塊 3"
+        }
+      },
+      "keys": {
+        "title": "Classic 金鑰",
+        "description": "依序嘗試金鑰，直到區塊讀取成功。",
+        "data": {
+          "key_ff": "金鑰 ffffffffffff (出廠預設)",
+          "key_mad": "金鑰 a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "金鑰 d3f7d3f7d3f7 (NDEF)",
+          "key_null": "金鑰 000000000000 (零)",
+          "custom_key": "自訂金鑰（12 個十六進位字元）"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "自訂金鑰必須為恰好 12 個十六進位字元。",
+      "no_keys": "啟用區塊讀取時請至少選擇一個金鑰。"
+    }
+  }
+}

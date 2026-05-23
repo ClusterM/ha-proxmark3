@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "Portul USB este detectat automat. UID este mereu citit.",
+        "data": {
+          "read_ntag": "Citește NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Citește NDEF pe Classic (lent)",
+          "read_raw_blocks": "Citește blocuri brute pe Classic",
+          "poll_interval": "Interval de interogare (secunde)",
+          "reconnect_interval": "Interval de reconectare (secunde)"
+        }
+      },
+      "blocks": {
+        "title": "Blocuri brute",
+        "description": "Selectează blocurile sectorului 0 Classic de citit (chei pe ecranul următor).",
+        "data": {
+          "block_0": "Citește blocul 0",
+          "block_1": "Citește blocul 1",
+          "block_2": "Citește blocul 2",
+          "block_3": "Citește blocul 3"
+        }
+      },
+      "keys": {
+        "title": "Chei Classic",
+        "description": "Cheile sunt încercate în ordine până reușește citirea unui bloc.",
+        "data": {
+          "key_ff": "Cheie ffffffffffff (implicit din fabrică)",
+          "key_mad": "Cheie a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Cheie d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Cheie 000000000000 (nulă)",
+          "custom_key": "Cheie personalizată (12 caractere hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Conectarea la Proxmark3 a eșuat. Verificați că dispozitivul este conectat.",
+      "invalid_key": "Cheia personalizată trebuie să aibă exact 12 caractere hexazecimale.",
+      "no_keys": "Selectați cel puțin o cheie când citirea blocurilor este activată.",
+      "single_instance_allowed": "Este permisă o singură integrare Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Este permisă o singură integrare Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opțiuni Proxmark3",
+        "description": "UID este mereu citit. Activați doar ce aveți nevoie — NDEF Classic și blocurile brute sunt lente.",
+        "data": {
+          "read_ntag": "Citește NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Citește NDEF pe Classic (lent)",
+          "read_raw_blocks": "Citește blocuri brute pe Classic",
+          "poll_interval": "Interval de interogare (secunde)",
+          "reconnect_interval": "Interval de reconectare (secunde)"
+        }
+      },
+      "blocks": {
+        "title": "Blocuri brute",
+        "description": "Selectează blocurile sectorului 0 Classic de citit (chei pe ecranul următor).",
+        "data": {
+          "block_0": "Citește blocul 0",
+          "block_1": "Citește blocul 1",
+          "block_2": "Citește blocul 2",
+          "block_3": "Citește blocul 3"
+        }
+      },
+      "keys": {
+        "title": "Chei Classic",
+        "description": "Cheile sunt încercate în ordine până reușește citirea unui bloc.",
+        "data": {
+          "key_ff": "Cheie ffffffffffff (implicit din fabrică)",
+          "key_mad": "Cheie a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Cheie d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Cheie 000000000000 (nulă)",
+          "custom_key": "Cheie personalizată (12 caractere hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Cheia personalizată trebuie să aibă exact 12 caractere hexazecimale.",
+      "no_keys": "Selectați cel puțin o cheie când citirea blocurilor este activată."
+    }
+  }
+}

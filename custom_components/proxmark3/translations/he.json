@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "יציאת USB מזוהה אוטומטית. UID נקרא תמיד.",
+        "data": {
+          "read_ntag": "קריאת NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "קריאת NDEF ב-Classic (איטי)",
+          "read_raw_blocks": "קריאת בלוקים גולמיים ב-Classic",
+          "poll_interval": "מרווח דגימה (שניות)",
+          "reconnect_interval": "מרווח חיבור מחדש (שניות)"
+        }
+      },
+      "blocks": {
+        "title": "בלוקים גולמיים",
+        "description": "בחר בלוקים של מגזר 0 Classic (מפתחות במסך הבא).",
+        "data": {
+          "block_0": "קריאת בלוק 0",
+          "block_1": "קריאת בלוק 1",
+          "block_2": "קריאת בלוק 2",
+          "block_3": "קריאת בלוק 3"
+        }
+      },
+      "keys": {
+        "title": "מפתחות Classic",
+        "description": "מפתחות נוסים לפי סדר עד שקריאת הבלוק מצליחה.",
+        "data": {
+          "key_ff": "מפתח ffffffffffff (ברירת מפעל)",
+          "key_mad": "מפתח a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "מפתח d3f7d3f7d3f7 (NDEF)",
+          "key_null": "מפתח 000000000000 (אפס)",
+          "custom_key": "מפתח מותאם (12 תווי hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "החיבור ל-Proxmark3 נכשל. ודא שהמכשיר מחובר.",
+      "invalid_key": "מפתח מותאם חייב להכיל בדיוק 12 תווים hexadecimal.",
+      "no_keys": "בחר לפחות מפתח אחד כשקריאת בלוקים מופעלת.",
+      "single_instance_allowed": "מותרת רק אינטגרציית Proxmark3 אחת."
+    },
+    "abort": {
+      "single_instance_allowed": "מותרת רק אינטגרציית Proxmark3 אחת."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "אפשרויות Proxmark3",
+        "description": "UID נקרא תמיד. הפעל רק מה שצריך — NDEF Classic ובלוקים גולמיים איטיים.",
+        "data": {
+          "read_ntag": "קריאת NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "קריאת NDEF ב-Classic (איטי)",
+          "read_raw_blocks": "קריאת בלוקים גולמיים ב-Classic",
+          "poll_interval": "מרווח דגימה (שניות)",
+          "reconnect_interval": "מרווח חיבור מחדש (שניות)"
+        }
+      },
+      "blocks": {
+        "title": "בלוקים גולמיים",
+        "description": "בחר בלוקים של מגזר 0 Classic (מפתחות במסך הבא).",
+        "data": {
+          "block_0": "קריאת בלוק 0",
+          "block_1": "קריאת בלוק 1",
+          "block_2": "קריאת בלוק 2",
+          "block_3": "קריאת בלוק 3"
+        }
+      },
+      "keys": {
+        "title": "מפתחות Classic",
+        "description": "מפתחות נוסים לפי סדר עד שקריאת הבלוק מצליחה.",
+        "data": {
+          "key_ff": "מפתח ffffffffffff (ברירת מפעל)",
+          "key_mad": "מפתח a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "מפתח d3f7d3f7d3f7 (NDEF)",
+          "key_null": "מפתח 000000000000 (אפס)",
+          "custom_key": "מפתח מותאם (12 תווי hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "מפתח מותאם חייב להכיל בדיוק 12 תווים hexadecimal.",
+      "no_keys": "בחר לפחות מפתח אחד כשקריאת בלוקים מופעלת."
+    }
+  }
+}

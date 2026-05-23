@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB портът се открива автоматично. UID винаги се чете.",
+        "data": {
+          "read_ntag": "Четене на NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Четене на NDEF на Classic (бавно)",
+          "read_raw_blocks": "Четене на сурови блокове на Classic",
+          "poll_interval": "Интервал на опрос (секунди)",
+          "reconnect_interval": "Интервал на повторно свързване (секунди)"
+        }
+      },
+      "blocks": {
+        "title": "Сурови блокове",
+        "description": "Изберете блокове от сектор 0 на Classic (ключове на следващия екран).",
+        "data": {
+          "block_0": "Четене на блок 0",
+          "block_1": "Четене на блок 1",
+          "block_2": "Четене на блок 2",
+          "block_3": "Четене на блок 3"
+        }
+      },
+      "keys": {
+        "title": "Classic ключове",
+        "description": "Ключовете се опитват по ред, докато четенето на блок успее.",
+        "data": {
+          "key_ff": "Ключ ffffffffffff (фабричен)",
+          "key_mad": "Ключ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Ключ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Ключ 000000000000 (нулев)",
+          "custom_key": "Персонален ключ (12 hex символа)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Неуспешна връзка с Proxmark3. Проверете дали устройството е включено.",
+      "invalid_key": "Персоналният ключ трябва да съдържа точно 12 hex символа.",
+      "no_keys": "Изберете поне един ключ, когато четенето на блокове е включено.",
+      "single_instance_allowed": "Разрешена е само една интеграция Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Разрешена е само една интеграция Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Настройки на Proxmark3",
+        "description": "UID винаги се чете. Включвайте само нужното — Classic NDEF и суровите блокове са бавни.",
+        "data": {
+          "read_ntag": "Четене на NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Четене на NDEF на Classic (бавно)",
+          "read_raw_blocks": "Четене на сурови блокове на Classic",
+          "poll_interval": "Интервал на опрос (секунди)",
+          "reconnect_interval": "Интервал на повторно свързване (секунди)"
+        }
+      },
+      "blocks": {
+        "title": "Сурови блокове",
+        "description": "Изберете блокове от сектор 0 на Classic (ключове на следващия екран).",
+        "data": {
+          "block_0": "Четене на блок 0",
+          "block_1": "Четене на блок 1",
+          "block_2": "Четене на блок 2",
+          "block_3": "Четене на блок 3"
+        }
+      },
+      "keys": {
+        "title": "Classic ключове",
+        "description": "Ключовете се опитват по ред, докато четенето на блок успее.",
+        "data": {
+          "key_ff": "Ключ ffffffffffff (фабричен)",
+          "key_mad": "Ключ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Ключ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Ключ 000000000000 (нулев)",
+          "custom_key": "Персонален ключ (12 hex символа)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Персоналният ключ трябва да съдържа точно 12 hex символа.",
+      "no_keys": "Изберете поне един ключ, когато четенето на блокове е включено."
+    }
+  }
+}

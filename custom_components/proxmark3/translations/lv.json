@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB ports tiek atrasts automātiski. UID vienmēr tiek lasīts.",
+        "data": {
+          "read_ntag": "Lasīt NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lasīt NDEF uz Classic (lēni)",
+          "read_raw_blocks": "Lasīt neapstrādātus blokus uz Classic",
+          "poll_interval": "Aptaujas intervāls (sekundes)",
+          "reconnect_interval": "Atkārtotas savienošanas intervāls (sekundes)"
+        }
+      },
+      "blocks": {
+        "title": "Neapstrādātie bloki",
+        "description": "Izvēlieties Classic 0. sektora blokus lasīšanai (nākamajā ekrānā būs nepieciešamas atslēgas).",
+        "data": {
+          "block_0": "Lasīt bloku 0",
+          "block_1": "Lasīt bloku 1",
+          "block_2": "Lasīt bloku 2",
+          "block_3": "Lasīt bloku 3"
+        }
+      },
+      "keys": {
+        "title": "Classic atslēgas",
+        "description": "Atslēgas tiek mēģinātas secīgi līdz bloklasīšanai izdodas.",
+        "data": {
+          "key_ff": "Atslēga ffffffffffff (rūpnīcas noklusējums)",
+          "key_mad": "Atslēga a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Atslēga d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Atslēga 000000000000 (nulle)",
+          "custom_key": "Pielāgota atslēga (12 hex rakstzīmes)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Neizdevās savienoties ar Proxmark3. Pārbaudiet, vai ierīce ir pievienota.",
+      "invalid_key": "Pielāgotajai atslēgai jābūt tieši 12 heksadecimālām rakstzīmēm.",
+      "no_keys": "Ieslēdzot bloku lasīšanu, izvēlieties vismaz vienu atslēgu.",
+      "single_instance_allowed": "Atļauta tikai viena Proxmark3 integrācija."
+    },
+    "abort": {
+      "single_instance_allowed": "Atļauta tikai viena Proxmark3 integrācija."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 opcijas",
+        "description": "UID vienmēr tiek lasīts. Ieslēdziet tikai nepieciešamo — Classic NDEF un neapstrādātie bloki ir lēni.",
+        "data": {
+          "read_ntag": "Lasīt NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lasīt NDEF uz Classic (lēni)",
+          "read_raw_blocks": "Lasīt neapstrādātus blokus uz Classic",
+          "poll_interval": "Aptaujas intervāls (sekundes)",
+          "reconnect_interval": "Atkārtotas savienošanas intervāls (sekundes)"
+        }
+      },
+      "blocks": {
+        "title": "Neapstrādātie bloki",
+        "description": "Izvēlieties Classic 0. sektora blokus lasīšanai (nākamajā ekrānā būs nepieciešamas atslēgas).",
+        "data": {
+          "block_0": "Lasīt bloku 0",
+          "block_1": "Lasīt bloku 1",
+          "block_2": "Lasīt bloku 2",
+          "block_3": "Lasīt bloku 3"
+        }
+      },
+      "keys": {
+        "title": "Classic atslēgas",
+        "description": "Atslēgas tiek mēģinātas secīgi līdz bloklasīšanai izdodas.",
+        "data": {
+          "key_ff": "Atslēga ffffffffffff (rūpnīcas noklusējums)",
+          "key_mad": "Atslēga a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Atslēga d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Atslēga 000000000000 (nulle)",
+          "custom_key": "Pielāgota atslēga (12 hex rakstzīmes)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Pielāgotajai atslēgai jābūt tieši 12 heksadecimālām rakstzīmēm.",
+      "no_keys": "Ieslēdzot bloku lasīšanu, izvēlieties vismaz vienu atslēgu."
+    }
+  }
+}

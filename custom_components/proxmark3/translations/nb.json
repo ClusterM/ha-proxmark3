@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-porten oppdages automatisk. UID leses alltid.",
+        "data": {
+          "read_ntag": "Les NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Les NDEF på Classic (tregt)",
+          "read_raw_blocks": "Les råblokker på Classic",
+          "poll_interval": "Avspørringsintervall (sekunder)",
+          "reconnect_interval": "Gjenopprettingsintervall (sekunder)"
+        }
+      },
+      "blocks": {
+        "title": "Råblokker",
+        "description": "Velg Classic sektor 0-blokker som skal leses (nøkler på neste skjerm).",
+        "data": {
+          "block_0": "Les blokk 0",
+          "block_1": "Les blokk 1",
+          "block_2": "Les blokk 2",
+          "block_3": "Les blokk 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-nøkler",
+        "description": "Nøkler prøves i rekkefølge til en blokklesing lykkes.",
+        "data": {
+          "key_ff": "Nøkkel ffffffffffff (fabrikkstandard)",
+          "key_mad": "Nøkkel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Nøkkel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Nøkkel 000000000000 (null)",
+          "custom_key": "Tilpasset nøkkel (12 heksadesimale tegn)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kunne ikke koble til Proxmark3. Sjekk at enheten er tilkoblet.",
+      "invalid_key": "Tilpasset nøkkel må være nøyaktig 12 heksadesimale tegn.",
+      "no_keys": "Velg minst én nøkkel når blokklesing er aktivert.",
+      "single_instance_allowed": "Kun én Proxmark3-integrasjon er tillatt."
+    },
+    "abort": {
+      "single_instance_allowed": "Kun én Proxmark3-integrasjon er tillatt."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3-innstillinger",
+        "description": "UID leses alltid. Aktiver bare det du trenger — Classic NDEF og råblokker er trege.",
+        "data": {
+          "read_ntag": "Les NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Les NDEF på Classic (tregt)",
+          "read_raw_blocks": "Les råblokker på Classic",
+          "poll_interval": "Avspørringsintervall (sekunder)",
+          "reconnect_interval": "Gjenopprettingsintervall (sekunder)"
+        }
+      },
+      "blocks": {
+        "title": "Råblokker",
+        "description": "Velg Classic sektor 0-blokker som skal leses (nøkler på neste skjerm).",
+        "data": {
+          "block_0": "Les blokk 0",
+          "block_1": "Les blokk 1",
+          "block_2": "Les blokk 2",
+          "block_3": "Les blokk 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-nøkler",
+        "description": "Nøkler prøves i rekkefølge til en blokklesing lykkes.",
+        "data": {
+          "key_ff": "Nøkkel ffffffffffff (fabrikkstandard)",
+          "key_mad": "Nøkkel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Nøkkel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Nøkkel 000000000000 (null)",
+          "custom_key": "Tilpasset nøkkel (12 heksadesimale tegn)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Tilpasset nøkkel må være nøyaktig 12 heksadesimale tegn.",
+      "no_keys": "Velg minst én nøkkel når blokklesing er aktivert."
+    }
+  }
+}

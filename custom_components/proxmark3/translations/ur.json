@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB پورٹ خودکار پتہ چل جاتا ہے۔ UID ہمیشہ پڑھا جاتا ہے۔",
+        "data": {
+          "read_ntag": "NDEF پڑھیں (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic پر NDEF پڑھیں (آہستہ)",
+          "read_raw_blocks": "Classic پر خام بلاکس پڑھیں",
+          "poll_interval": "پول وقفہ (سیکنڈ)",
+          "reconnect_interval": "دوبارہ ربط وقفہ (سیکنڈ)"
+        }
+      },
+      "blocks": {
+        "title": "خام بلاکس",
+        "description": "پڑھنے کے لیے Classic سیکٹر 0 کے بلاکس منتخب کریں (اگلے اسکرین پر کیز درکار)۔",
+        "data": {
+          "block_0": "بلاک 0 پڑھیں",
+          "block_1": "بلاک 1 پڑھیں",
+          "block_2": "بلاک 2 پڑھیں",
+          "block_3": "بلاک 3 پڑھیں"
+        }
+      },
+      "keys": {
+        "title": "Classic کیز",
+        "description": "جب تک بلاک ریڈ کامیاب نہ ہو کیز ترتیب سے آزمائی جاتی ہیں۔",
+        "data": {
+          "key_ff": "کلید ffffffffffff (فیکٹری ڈیفالٹ)",
+          "key_mad": "کلید a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "کلید d3f7d3f7d3f7 (NDEF)",
+          "key_null": "کلید 000000000000 (صفر)",
+          "custom_key": "اپنی کلید (12 hex حروف)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Proxmark3 سے کنیکٹ ہونے میں ناکامی۔ آلہ منسلک ہے چیک کریں۔",
+      "invalid_key": "اپنی کلید میں بالکل 12 ہیکسیڈیمل حروف ہونے چاہئیں۔",
+      "no_keys": "بلاک ریڈنگ آن ہونے پر کم از کم ایک کلید منتخب کریں۔",
+      "single_instance_allowed": "صرف ایک Proxmark3 انٹیگریشن کی اجازت ہے۔"
+    },
+    "abort": {
+      "single_instance_allowed": "صرف ایک Proxmark3 انٹیگریشن کی اجازت ہے۔"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 اختیارات",
+        "description": "UID ہمیشہ پڑھا جاتا ہے۔ صرف وہی فعال کریں جس کی ضورت ہے — Classic NDEF اور خام بلاکس آہستہ ہیں۔",
+        "data": {
+          "read_ntag": "NDEF پڑھیں (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic پر NDEF پڑھیں (آہستہ)",
+          "read_raw_blocks": "Classic پر خام بلاکس پڑھیں",
+          "poll_interval": "پول وقفہ (سیکنڈ)",
+          "reconnect_interval": "دوبارہ ربط وقفہ (سیکنڈ)"
+        }
+      },
+      "blocks": {
+        "title": "خام بلاکس",
+        "description": "پڑھنے کے لیے Classic سیکٹر 0 کے بلاکس منتخب کریں (اگلے اسکرین پر کیز درکار)۔",
+        "data": {
+          "block_0": "بلاک 0 پڑھیں",
+          "block_1": "بلاک 1 پڑھیں",
+          "block_2": "بلاک 2 پڑھیں",
+          "block_3": "بلاک 3 پڑھیں"
+        }
+      },
+      "keys": {
+        "title": "Classic کیز",
+        "description": "جب تک بلاک ریڈ کامیاب نہ ہو کیز ترتیب سے آزمائی جاتی ہیں۔",
+        "data": {
+          "key_ff": "کلید ffffffffffff (فیکٹری ڈیفالٹ)",
+          "key_mad": "کلید a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "کلید d3f7d3f7d3f7 (NDEF)",
+          "key_null": "کلید 000000000000 (صفر)",
+          "custom_key": "اپنی کلید (12 hex حروف)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "اپنی کلید میں بالکل 12 ہیکسیڈیمل حروف ہونے چاہئیں۔",
+      "no_keys": "بلاک ریڈنگ آن ہونے پر کم از کم ایک کلید منتخب کریں۔"
+    }
+  }
+}

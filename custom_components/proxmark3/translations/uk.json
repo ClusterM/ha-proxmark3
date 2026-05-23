@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-порт визначається автоматично. UID завжди зчитується.",
+        "data": {
+          "read_ntag": "Читати NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Читати NDEF у Classic (повільно)",
+          "read_raw_blocks": "Читати сирі блоки у Classic",
+          "poll_interval": "Інтервал опитування (сек)",
+          "reconnect_interval": "Інтервал перепідключення (сек)"
+        }
+      },
+      "blocks": {
+        "title": "Сирі блоки",
+        "description": "Виберіть блоки сектора 0 Classic для зчитування (ключі на наступному екрані).",
+        "data": {
+          "block_0": "Читати блок 0",
+          "block_1": "Читати блок 1",
+          "block_2": "Читати блок 2",
+          "block_3": "Читати блок 3"
+        }
+      },
+      "keys": {
+        "title": "Ключі Classic",
+        "description": "Ключі перебираються по черзі, доки читання блоку не вдасться.",
+        "data": {
+          "key_ff": "Ключ ffffffffffff (заводський)",
+          "key_mad": "Ключ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Ключ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Ключ 000000000000 (нульовий)",
+          "custom_key": "Власний ключ (12 hex-символів)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Не вдалося підключитися до Proxmark3. Перевірте, що пристрій підключено.",
+      "invalid_key": "Власний ключ має містити рівно 12 hex-символів.",
+      "no_keys": "Виберіть хоча б один ключ, якщо увімкнено читання блоків.",
+      "single_instance_allowed": "Дозволена лише одна інтеграція Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Дозволена лише одна інтеграція Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Параметри Proxmark3",
+        "description": "UID завжди зчитується. Увімкніть лише потрібне — NDEF і сирі блоки Classic сповільнюють опитування.",
+        "data": {
+          "read_ntag": "Читати NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Читати NDEF у Classic (повільно)",
+          "read_raw_blocks": "Читати сирі блоки у Classic",
+          "poll_interval": "Інтервал опитування (сек)",
+          "reconnect_interval": "Інтервал перепідключення (сек)"
+        }
+      },
+      "blocks": {
+        "title": "Сирі блоки",
+        "description": "Виберіть блоки сектора 0 Classic для зчитування (ключі на наступному екрані).",
+        "data": {
+          "block_0": "Читати блок 0",
+          "block_1": "Читати блок 1",
+          "block_2": "Читати блок 2",
+          "block_3": "Читати блок 3"
+        }
+      },
+      "keys": {
+        "title": "Ключі Classic",
+        "description": "Ключі перебираються по черзі, доки читання блоку не вдасться.",
+        "data": {
+          "key_ff": "Ключ ffffffffffff (заводський)",
+          "key_mad": "Ключ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Ключ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Ключ 000000000000 (нульовий)",
+          "custom_key": "Власний ключ (12 hex-символів)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Власний ключ має містити рівно 12 hex-символів.",
+      "no_keys": "Виберіть хоча б один ключ, якщо увімкнено читання блоків."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB порт се аутоматски открива. UID се увек чита.",
+        "data": {
+          "read_ntag": "Читај NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Читај NDEF на Classic (споро)",
+          "read_raw_blocks": "Читај сирове блокове на Classic",
+          "poll_interval": "Интервал упита (секунде)",
+          "reconnect_interval": "Интервал поновног повезивања (секунде)"
+        }
+      },
+      "blocks": {
+        "title": "Сирови блокови",
+        "description": "Изаберите блокове сектора 0 Classic за читање (кључеви на следећем екрану).",
+        "data": {
+          "block_0": "Читај блок 0",
+          "block_1": "Читај блок 1",
+          "block_2": "Читај блок 2",
+          "block_3": "Читај блок 3"
+        }
+      },
+      "keys": {
+        "title": "Classic кључеви",
+        "description": "Кључеви се пробају редом док читање блока не успе.",
+        "data": {
+          "key_ff": "Кључ ffffffffffff (фабрички)",
+          "key_mad": "Кључ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Кључ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Кључ 000000000000 (nula)",
+          "custom_key": "Прилагођени кључ (12 хекс знакова)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Неуспешна веза са Proxmark3. Проверите да ли је уређај прикључен.",
+      "invalid_key": "Прилагођени кључ мора имати тачно 12 хексадекадних знакова.",
+      "no_keys": "Изаберите бар један кључ када је читање блокова укључено.",
+      "single_instance_allowed": "Дозвољена је само једна Proxmark3 интеграција."
+    },
+    "abort": {
+      "single_instance_allowed": "Дозвољена је само једна Proxmark3 интеграција."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Опције Proxmark3",
+        "description": "UID се увек чита. Укључите само потребно — Classic NDEF и сирови блокови су спори.",
+        "data": {
+          "read_ntag": "Читај NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Читај NDEF на Classic (споро)",
+          "read_raw_blocks": "Читај сирове блокове на Classic",
+          "poll_interval": "Интервал упита (секунде)",
+          "reconnect_interval": "Интервал поновног повезивања (секунде)"
+        }
+      },
+      "blocks": {
+        "title": "Сирови блокови",
+        "description": "Изаберите блокове сектора 0 Classic за читање (кључеви на следећем екрану).",
+        "data": {
+          "block_0": "Читај блок 0",
+          "block_1": "Читај блок 1",
+          "block_2": "Читај блок 2",
+          "block_3": "Читај блок 3"
+        }
+      },
+      "keys": {
+        "title": "Classic кључеви",
+        "description": "Кључеви се пробају редом док читање блока не успе.",
+        "data": {
+          "key_ff": "Кључ ffffffffffff (фабрички)",
+          "key_mad": "Кључ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Кључ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Кључ 000000000000 (nula)",
+          "custom_key": "Прилагођени кључ (12 хекс знакова)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Прилагођени кључ мора имати тачно 12 хексадекадних знакова.",
+      "no_keys": "Изаберите бар један кључ када је читање блокова укључено."
+    }
+  }
+}

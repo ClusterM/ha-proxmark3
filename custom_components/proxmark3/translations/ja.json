@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USBポートは自動検出されます。UIDは常に読み取られます。",
+        "data": {
+          "read_ntag": "NDEFを読み取る (Ultralight / NTAG)",
+          "read_ntag_classic": "ClassicでNDEFを読み取る (低速)",
+          "read_raw_blocks": "Classicで生ブロックを読み取る",
+          "poll_interval": "ポーリング間隔 (秒)",
+          "reconnect_interval": "再接続間隔 (秒)"
+        }
+      },
+      "blocks": {
+        "title": "生ブロック",
+        "description": "Classicセクター0のブロックを選択 (次の画面でキー設定)。",
+        "data": {
+          "block_0": "ブロック 0 を読み取る",
+          "block_1": "ブロック 1 を読み取る",
+          "block_2": "ブロック 2 を読み取る",
+          "block_3": "ブロック 3 を読み取る"
+        }
+      },
+      "keys": {
+        "title": "Classicキー",
+        "description": "ブロック読み取りが成功するまでキーを順に試します。",
+        "data": {
+          "key_ff": "キー ffffffffffff (工場出荷時)",
+          "key_mad": "キー a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "キー d3f7d3f7d3f7 (NDEF)",
+          "key_null": "キー 000000000000 (ゼロ)",
+          "custom_key": "カスタムキー (12文字の16進数)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Proxmark3に接続できませんでした。デバイスが接続されているか確認してください。",
+      "invalid_key": "カスタムキーは12文字の16進数である必要があります。",
+      "no_keys": "ブロック読み取りを有効にした場合は、少なくとも1つのキーを選択してください。",
+      "single_instance_allowed": "Proxmark3統合は1つのみ許可されています。"
+    },
+    "abort": {
+      "single_instance_allowed": "Proxmark3統合は1つのみ許可されています。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3オプション",
+        "description": "UIDは常に読み取られます。必要なものだけ有効にしてください — Classic NDEFと生ブロックは低速です。",
+        "data": {
+          "read_ntag": "NDEFを読み取る (Ultralight / NTAG)",
+          "read_ntag_classic": "ClassicでNDEFを読み取る (低速)",
+          "read_raw_blocks": "Classicで生ブロックを読み取る",
+          "poll_interval": "ポーリング間隔 (秒)",
+          "reconnect_interval": "再接続間隔 (秒)"
+        }
+      },
+      "blocks": {
+        "title": "生ブロック",
+        "description": "Classicセクター0のブロックを選択 (次の画面でキー設定)。",
+        "data": {
+          "block_0": "ブロック 0 を読み取る",
+          "block_1": "ブロック 1 を読み取る",
+          "block_2": "ブロック 2 を読み取る",
+          "block_3": "ブロック 3 を読み取る"
+        }
+      },
+      "keys": {
+        "title": "Classicキー",
+        "description": "ブロック読み取りが成功するまでキーを順に試します。",
+        "data": {
+          "key_ff": "キー ffffffffffff (工場出荷時)",
+          "key_mad": "キー a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "キー d3f7d3f7d3f7 (NDEF)",
+          "key_null": "キー 000000000000 (ゼロ)",
+          "custom_key": "カスタムキー (12文字の16進数)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "カスタムキーは12文字の16進数である必要があります。",
+      "no_keys": "ブロック読み取りを有効にした場合は、少なくとも1つのキーを選択してください。"
+    }
+  }
+}

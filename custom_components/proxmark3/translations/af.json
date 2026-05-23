@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-poort word outomaties opgespoor. UID word altyd gelees.",
+        "data": {
+          "read_ntag": "Lees NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lees NDEF op Classic (stadig)",
+          "read_raw_blocks": "Lees rou blokke op Classic",
+          "poll_interval": "Poll-interval (sekondes)",
+          "reconnect_interval": "Herverbind-interval (sekondes)"
+        }
+      },
+      "blocks": {
+        "title": "Rou blokke",
+        "description": "Kies Classic sektor 0-blokke om te lees (sleutels op die volgende skerm).",
+        "data": {
+          "block_0": "Lees blok 0",
+          "block_1": "Lees blok 1",
+          "block_2": "Lees blok 2",
+          "block_3": "Lees blok 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-sleutels",
+        "description": "Sleutels word in volgorde probeer totdat 'n blok suksesvol gelees word.",
+        "data": {
+          "key_ff": "Sleutel ffffffffffff (fabriekstandaard)",
+          "key_mad": "Sleutel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Sleutel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Sleutel 000000000000 (nulsleutel)",
+          "custom_key": "Pasgemaakte sleutel (12 heks tekens)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kon nie aan Proxmark3 koppel nie. Kontroleer dat die toestel ingeprop is.",
+      "invalid_key": "Pasgemaakte sleutel moet presies 12 heksadesimale tekens wees.",
+      "no_keys": "Kies ten minste een sleutel wanneer bloklees aktief is.",
+      "single_instance_allowed": "Slegs een Proxmark3-integrasie word toegelaat."
+    },
+    "abort": {
+      "single_instance_allowed": "Slegs een Proxmark3-integrasie word toegelaat."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3-opsies",
+        "description": "UID word altyd gelees. Skakel net aan wat jy nodig het — Classic NDEF en rou blokke is stadig.",
+        "data": {
+          "read_ntag": "Lees NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lees NDEF op Classic (stadig)",
+          "read_raw_blocks": "Lees rou blokke op Classic",
+          "poll_interval": "Poll-interval (sekondes)",
+          "reconnect_interval": "Herverbind-interval (sekondes)"
+        }
+      },
+      "blocks": {
+        "title": "Rou blokke",
+        "description": "Kies Classic sektor 0-blokke om te lees (sleutels op die volgende skerm).",
+        "data": {
+          "block_0": "Lees blok 0",
+          "block_1": "Lees blok 1",
+          "block_2": "Lees blok 2",
+          "block_3": "Lees blok 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-sleutels",
+        "description": "Sleutels word in volgorde probeer totdat 'n blok suksesvol gelees word.",
+        "data": {
+          "key_ff": "Sleutel ffffffffffff (fabriekstandaard)",
+          "key_mad": "Sleutel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Sleutel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Sleutel 000000000000 (nulsleutel)",
+          "custom_key": "Pasgemaakte sleutel (12 heks tekens)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Pasgemaakte sleutel moet presies 12 heksadesimale tekens wees.",
+      "no_keys": "Kies ten minste een sleutel wanneer bloklees aktief is."
+    }
+  }
+}

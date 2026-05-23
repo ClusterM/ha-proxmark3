@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-portur greinist sjálfkrafa. UID er alltaf lesið.",
+        "data": {
+          "read_ntag": "Lesa NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lesa NDEF á Classic (hægt)",
+          "read_raw_blocks": "Lesa hráblokkir á Classic",
+          "poll_interval": "Könnunarbil (sekúndur)",
+          "reconnect_interval": "Endurtengingarbil (sekúndur)"
+        }
+      },
+      "blocks": {
+        "title": "Hráblokkir",
+        "description": "Veldu Classic geir 0 blokkir (lyklar á næsta skjá).",
+        "data": {
+          "block_0": "Lesa blokk 0",
+          "block_1": "Lesa blokk 1",
+          "block_2": "Lesa blokk 2",
+          "block_3": "Lesa blokk 3"
+        }
+      },
+      "keys": {
+        "title": "Classic lyklar",
+        "description": "Lyklar eru reynir í röð þar til blokk lest heppnast.",
+        "data": {
+          "key_ff": "Lykill ffffffffffff (verksmiðjustilling)",
+          "key_mad": "Lykill a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Lykill d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Lykill 000000000000 (núll)",
+          "custom_key": "Sérsniðinn lykill (12 hex stafir)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Tókst ekki að tengjast Proxmark3. Athugaðu hvort tækið sé tengt.",
+      "invalid_key": "Sérsniðinn lykill verður að hafa nákvæmlega 12 hexadecimals stafi.",
+      "no_keys": "Veldu að minnsta kosti einn lykil þegar blokk lest er virk.",
+      "single_instance_allowed": "Aðeins ein Proxmark3 samþætting er leyfð."
+    },
+    "abort": {
+      "single_instance_allowed": "Aðeins ein Proxmark3 samþætting er leyfð."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 valkostir",
+        "description": "UID er alltaf lesið. Virkjaðu aðeins það sem þú þarft — Classic NDEF og hráblokkir eru hægar.",
+        "data": {
+          "read_ntag": "Lesa NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lesa NDEF á Classic (hægt)",
+          "read_raw_blocks": "Lesa hráblokkir á Classic",
+          "poll_interval": "Könnunarbil (sekúndur)",
+          "reconnect_interval": "Endurtengingarbil (sekúndur)"
+        }
+      },
+      "blocks": {
+        "title": "Hráblokkir",
+        "description": "Veldu Classic geir 0 blokkir (lyklar á næsta skjá).",
+        "data": {
+          "block_0": "Lesa blokk 0",
+          "block_1": "Lesa blokk 1",
+          "block_2": "Lesa blokk 2",
+          "block_3": "Lesa blokk 3"
+        }
+      },
+      "keys": {
+        "title": "Classic lyklar",
+        "description": "Lyklar eru reynir í röð þar til blokk lest heppnast.",
+        "data": {
+          "key_ff": "Lykill ffffffffffff (verksmiðjustilling)",
+          "key_mad": "Lykill a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Lykill d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Lykill 000000000000 (núll)",
+          "custom_key": "Sérsniðinn lykill (12 hex stafir)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Sérsniðinn lykill verður að hafa nákvæmlega 12 hexadecimals stafi.",
+      "no_keys": "Veldu að minnsta kosti einn lykil þegar blokk lest er virk."
+    }
+  }
+}

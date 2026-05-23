@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "Cổng USB được tự động phát hiện. UID luôn được đọc.",
+        "data": {
+          "read_ntag": "Đọc NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Đọc NDEF trên Classic (chậm)",
+          "read_raw_blocks": "Đọc khối thô trên Classic",
+          "poll_interval": "Chu kỳ poll (giây)",
+          "reconnect_interval": "Chu kỳ kết nối lại (giây)"
+        }
+      },
+      "blocks": {
+        "title": "Khối thô",
+        "description": "Chọn các khối sector 0 Classic cần đọc (cần khóa ở màn hình tiếp theo).",
+        "data": {
+          "block_0": "Đọc khối 0",
+          "block_1": "Đọc khối 1",
+          "block_2": "Đọc khối 2",
+          "block_3": "Đọc khối 3"
+        }
+      },
+      "keys": {
+        "title": "Khóa Classic",
+        "description": "Các khóa được thử theo thứ tự cho đến khi đọc khối thành công.",
+        "data": {
+          "key_ff": "Khóa ffffffffffff (mặc định nhà máy)",
+          "key_mad": "Khóa a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Khóa d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Khóa 000000000000 (rỗng)",
+          "custom_key": "Khóa tùy chỉnh (12 ký tự hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Không kết nối được Proxmark3. Kiểm tra thiết bị đã cắm USB.",
+      "invalid_key": "Khóa tùy chỉnh phải đúng 12 ký tự hex.",
+      "no_keys": "Khi bật đọc khối, hãy chọn ít nhất một khóa.",
+      "single_instance_allowed": "Chỉ cho phép một tích hợp Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Chỉ cho phép một tích hợp Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tùy chọn Proxmark3",
+        "description": "UID luôn được đọc. Chỉ bật phần cần thiết — NDEF Classic và khối thô chậm.",
+        "data": {
+          "read_ntag": "Đọc NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Đọc NDEF trên Classic (chậm)",
+          "read_raw_blocks": "Đọc khối thô trên Classic",
+          "poll_interval": "Chu kỳ poll (giây)",
+          "reconnect_interval": "Chu kỳ kết nối lại (giây)"
+        }
+      },
+      "blocks": {
+        "title": "Khối thô",
+        "description": "Chọn các khối sector 0 Classic cần đọc (cần khóa ở màn hình tiếp theo).",
+        "data": {
+          "block_0": "Đọc khối 0",
+          "block_1": "Đọc khối 1",
+          "block_2": "Đọc khối 2",
+          "block_3": "Đọc khối 3"
+        }
+      },
+      "keys": {
+        "title": "Khóa Classic",
+        "description": "Các khóa được thử theo thứ tự cho đến khi đọc khối thành công.",
+        "data": {
+          "key_ff": "Khóa ffffffffffff (mặc định nhà máy)",
+          "key_mad": "Khóa a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Khóa d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Khóa 000000000000 (rỗng)",
+          "custom_key": "Khóa tùy chỉnh (12 ký tự hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Khóa tùy chỉnh phải đúng 12 ký tự hex.",
+      "no_keys": "Khi bật đọc khối, hãy chọn ít nhất một khóa."
+    }
+  }
+}

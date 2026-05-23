@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB পোর্ট স্বয়ংক্রিয়ভাবে শনাক্ত হয়। UID সবসময় পড়া হয়।",
+        "data": {
+          "read_ntag": "NDEF পড়ুন (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic-এ NDEF পড়ুন (ধীর)",
+          "read_raw_blocks": "Classic-এ কাঁচা ব্লক পড়ুন",
+          "poll_interval": "পোল ব্যবধান (সেকেন্ড)",
+          "reconnect_interval": "পুনঃসংযোগ ব্যবধান (সেকেন্ড)"
+        }
+      },
+      "blocks": {
+        "title": "কাঁচা ব্লক",
+        "description": "Classic সেক্টর ০-এর ব্লক বেছে নিন (পরের স্ক্রিনে কী লাগবে)।",
+        "data": {
+          "block_0": "ব্লক 0 পড়ুন",
+          "block_1": "ব্লক 1 পড়ুন",
+          "block_2": "ব্লক 2 পড়ুন",
+          "block_3": "ব্লক 3 পড়ুন"
+        }
+      },
+      "keys": {
+        "title": "Classic কী",
+        "description": "ব্লক পড়া সফল না হওয়া পর্যন্ত কীগুলো ক্রমানুসারে চেষ্টা করা হয়।",
+        "data": {
+          "key_ff": "কী ffffffffffff (ফ্যাক্টরি ডিফল্ট)",
+          "key_mad": "কী a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "কী d3f7d3f7d3f7 (NDEF)",
+          "key_null": "কী 000000000000 (নাল)",
+          "custom_key": "কাস্টম কী (১২ hex অক্ষর)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Proxmark3-এ সংযোগ ব্যর্থ। ডিভাইস সংযুক্ত আছে কিনা দেখুন।",
+      "invalid_key": "কাস্টম কী অবশ্যই ঠিক ১২টি hex অক্ষরের হতে হবে।",
+      "no_keys": "ব্লক পড়া চালু থাকলে অন্তত একটি কী বেছে নিন।",
+      "single_instance_allowed": "শুধু একটি Proxmark3 ইন্টিগ্রেশন অনুমোদিত।"
+    },
+    "abort": {
+      "single_instance_allowed": "শুধু একটি Proxmark3 ইন্টিগ্রেশন অনুমোদিত।"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 অপশন",
+        "description": "UID সবসময় পড়া হয়। শুধু প্রয়োজনীয়টি চালু করুন — Classic NDEF ও কাঁচা ব্লক ধীর।",
+        "data": {
+          "read_ntag": "NDEF পড়ুন (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic-এ NDEF পড়ুন (ধীর)",
+          "read_raw_blocks": "Classic-এ কাঁচা ব্লক পড়ুন",
+          "poll_interval": "পোল ব্যবধান (সেকেন্ড)",
+          "reconnect_interval": "পুনঃসংযোগ ব্যবধান (সেকেন্ড)"
+        }
+      },
+      "blocks": {
+        "title": "কাঁচা ব্লক",
+        "description": "Classic সেক্টর ০-এর ব্লক বেছে নিন (পরের স্ক্রিনে কী লাগবে)।",
+        "data": {
+          "block_0": "ব্লক 0 পড়ুন",
+          "block_1": "ব্লক 1 পড়ুন",
+          "block_2": "ব্লক 2 পড়ুন",
+          "block_3": "ব্লক 3 পড়ুন"
+        }
+      },
+      "keys": {
+        "title": "Classic কী",
+        "description": "ব্লক পড়া সফল না হওয়া পর্যন্ত কীগুলো ক্রমানুসারে চেষ্টা করা হয়।",
+        "data": {
+          "key_ff": "কী ffffffffffff (ফ্যাক্টরি ডিফল্ট)",
+          "key_mad": "কী a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "কী d3f7d3f7d3f7 (NDEF)",
+          "key_null": "কী 000000000000 (নাল)",
+          "custom_key": "কাস্টম কী (১২ hex অক্ষর)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "কাস্টম কী অবশ্যই ঠিক ১২টি hex অক্ষরের হতে হবে।",
+      "no_keys": "ব্লক পড়া চালু থাকলে অন্তত একটি কী বেছে নিন।"
+    }
+  }
+}

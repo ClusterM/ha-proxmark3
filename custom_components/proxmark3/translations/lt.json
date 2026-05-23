@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB prievadas aptinkamas automatiškai. UID visada skaitomas.",
+        "data": {
+          "read_ntag": "Skaityti NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Skaityti NDEF iš Classic (lėta)",
+          "read_raw_blocks": "Skaityti neapdorotus blokus iš Classic",
+          "poll_interval": "Apklausos intervalas (sek.)",
+          "reconnect_interval": "Pakartotinio ryšio intervalas (sek.)"
+        }
+      },
+      "blocks": {
+        "title": "Neapdoroti blokai",
+        "description": "Pasirinkite Classic sektoriaus 0 blokus skaitymui (rakto poreikį nustatysite kitame ekrane).",
+        "data": {
+          "block_0": "Skaityti bloką 0",
+          "block_1": "Skaityti bloką 1",
+          "block_2": "Skaityti bloką 2",
+          "block_3": "Skaityti bloką 3"
+        }
+      },
+      "keys": {
+        "title": "Classic raktai",
+        "description": "Raktai bandomi iš eilės, kol sėkmingai perskaitomas blokas.",
+        "data": {
+          "key_ff": "Raktas ffffffffffff (gamyklinis)",
+          "key_mad": "Raktas a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Raktas d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Raktas 000000000000 (nulinis)",
+          "custom_key": "Pasirinktinis raktas (12 hex simbolių)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nepavyko prisijungti prie Proxmark3. Patikrinkite, ar įrenginys prijungtas.",
+      "invalid_key": "Pasirinktinis raktas turi būti lygiai 12 šešioliktainių simbolių.",
+      "no_keys": "Įjungus blokų skaitymą pasirinkite bent vieną raktą.",
+      "single_instance_allowed": "Leidžiama tik viena Proxmark3 integracija."
+    },
+    "abort": {
+      "single_instance_allowed": "Leidžiama tik viena Proxmark3 integracija."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 parinktys",
+        "description": "UID visada skaitomas. Įjunkite tik tai, ko reikia — Classic NDEF ir neapdoroti blokai lėti.",
+        "data": {
+          "read_ntag": "Skaityti NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Skaityti NDEF iš Classic (lėta)",
+          "read_raw_blocks": "Skaityti neapdorotus blokus iš Classic",
+          "poll_interval": "Apklausos intervalas (sek.)",
+          "reconnect_interval": "Pakartotinio ryšio intervalas (sek.)"
+        }
+      },
+      "blocks": {
+        "title": "Neapdoroti blokai",
+        "description": "Pasirinkite Classic sektoriaus 0 blokus skaitymui (rakto poreikį nustatysite kitame ekrane).",
+        "data": {
+          "block_0": "Skaityti bloką 0",
+          "block_1": "Skaityti bloką 1",
+          "block_2": "Skaityti bloką 2",
+          "block_3": "Skaityti bloką 3"
+        }
+      },
+      "keys": {
+        "title": "Classic raktai",
+        "description": "Raktai bandomi iš eilės, kol sėkmingai perskaitomas blokas.",
+        "data": {
+          "key_ff": "Raktas ffffffffffff (gamyklinis)",
+          "key_mad": "Raktas a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Raktas d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Raktas 000000000000 (nulinis)",
+          "custom_key": "Pasirinktinis raktas (12 hex simbolių)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Pasirinktinis raktas turi būti lygiai 12 šešioliktainių simbolių.",
+      "no_keys": "Įjungus blokų skaitymą pasirinkite bent vieną raktą."
+    }
+  }
+}

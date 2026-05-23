@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "يتم اكتشاف منفذ USB تلقائياً. يُقرأ UID دائماً.",
+        "data": {
+          "read_ntag": "قراءة NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "قراءة NDEF على Classic (بطيء)",
+          "read_raw_blocks": "قراءة الكتل الخام على Classic",
+          "poll_interval": "فترة الاستطلاع (ثوانٍ)",
+          "reconnect_interval": "فترة إعادة الاتصال (ثوانٍ)"
+        }
+      },
+      "blocks": {
+        "title": "كتل خام",
+        "description": "اختر كتل القطاع 0 من Classic للقراءة (يتطلب مفاتيح في الشاشة التالية).",
+        "data": {
+          "block_0": "قراءة الكتلة 0",
+          "block_1": "قراءة الكتلة 1",
+          "block_2": "قراءة الكتلة 2",
+          "block_3": "قراءة الكتلة 3"
+        }
+      },
+      "keys": {
+        "title": "مفاتيح Classic",
+        "description": "تُجرَّب المفاتيح بالترتيب حتى ينجح قراءة الكتلة.",
+        "data": {
+          "key_ff": "مفتاح ffffffffffff (افتراضي المصنع)",
+          "key_mad": "مفتاح a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "مفتاح d3f7d3f7d3f7 (NDEF)",
+          "key_null": "مفتاح 000000000000 (مفتاح فارغ)",
+          "custom_key": "مفتاح مخصص (12 حرفاً hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "فشل الاتصال بـ Proxmark3. تحقق من أن الجهاز موصول.",
+      "invalid_key": "يجب أن يحتوي المفتاح المخصص على 12 حرفاً hex بالضبط.",
+      "no_keys": "اختر مفتاحاً واحداً على الأقل عند تفعيل قراءة الكتل.",
+      "single_instance_allowed": "يُسمح بتكامل Proxmark3 واحد فقط."
+    },
+    "abort": {
+      "single_instance_allowed": "يُسمح بتكامل Proxmark3 واحد فقط."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "خيارات Proxmark3",
+        "description": "يُقرأ UID دائماً. فعّل ما تحتاجه فقط — NDEF على Classic والكتل الخام بطيئة.",
+        "data": {
+          "read_ntag": "قراءة NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "قراءة NDEF على Classic (بطيء)",
+          "read_raw_blocks": "قراءة الكتل الخام على Classic",
+          "poll_interval": "فترة الاستطلاع (ثوانٍ)",
+          "reconnect_interval": "فترة إعادة الاتصال (ثوانٍ)"
+        }
+      },
+      "blocks": {
+        "title": "كتل خام",
+        "description": "اختر كتل القطاع 0 من Classic للقراءة (يتطلب مفاتيح في الشاشة التالية).",
+        "data": {
+          "block_0": "قراءة الكتلة 0",
+          "block_1": "قراءة الكتلة 1",
+          "block_2": "قراءة الكتلة 2",
+          "block_3": "قراءة الكتلة 3"
+        }
+      },
+      "keys": {
+        "title": "مفاتيح Classic",
+        "description": "تُجرَّب المفاتيح بالترتيب حتى ينجح قراءة الكتلة.",
+        "data": {
+          "key_ff": "مفتاح ffffffffffff (افتراضي المصنع)",
+          "key_mad": "مفتاح a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "مفتاح d3f7d3f7d3f7 (NDEF)",
+          "key_null": "مفتاح 000000000000 (مفتاح فارغ)",
+          "custom_key": "مفتاح مخصص (12 حرفاً hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "يجب أن يحتوي المفتاح المخصص على 12 حرفاً hex بالضبط.",
+      "no_keys": "اختر مفتاحاً واحداً على الأقل عند تفعيل قراءة الكتل."
+    }
+  }
+}

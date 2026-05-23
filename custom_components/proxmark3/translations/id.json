@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "Port USB terdeteksi otomatis. UID selalu dibaca.",
+        "data": {
+          "read_ntag": "Baca NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Baca NDEF di Classic (lambat)",
+          "read_raw_blocks": "Baca blok mentah di Classic",
+          "poll_interval": "Interval polling (detik)",
+          "reconnect_interval": "Interval sambung ulang (detik)"
+        }
+      },
+      "blocks": {
+        "title": "Blok mentah",
+        "description": "Pilih blok sektor 0 Classic (kunci di layar berikutnya).",
+        "data": {
+          "block_0": "Baca blok 0",
+          "block_1": "Baca blok 1",
+          "block_2": "Baca blok 2",
+          "block_3": "Baca blok 3"
+        }
+      },
+      "keys": {
+        "title": "Kunci Classic",
+        "description": "Kunci dicoba berurutan hingga pembacaan blok berhasil.",
+        "data": {
+          "key_ff": "Kunci ffffffffffff (default pabrik)",
+          "key_mad": "Kunci a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Kunci d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Kunci 000000000000 (nol)",
+          "custom_key": "Kunci kustom (12 karakter hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Gagal terhubung ke Proxmark3. Periksa apakah perangkat tersambung.",
+      "invalid_key": "Kunci kustom harus tepat 12 karakter heksadesimal.",
+      "no_keys": "Pilih setidaknya satu kunci saat pembacaan blok diaktifkan.",
+      "single_instance_allowed": "Hanya satu integrasi Proxmark3 yang diizinkan."
+    },
+    "abort": {
+      "single_instance_allowed": "Hanya satu integrasi Proxmark3 yang diizinkan."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opsi Proxmark3",
+        "description": "UID selalu dibaca. Aktifkan hanya yang diperlukan — NDEF Classic dan blok mentah lambat.",
+        "data": {
+          "read_ntag": "Baca NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Baca NDEF di Classic (lambat)",
+          "read_raw_blocks": "Baca blok mentah di Classic",
+          "poll_interval": "Interval polling (detik)",
+          "reconnect_interval": "Interval sambung ulang (detik)"
+        }
+      },
+      "blocks": {
+        "title": "Blok mentah",
+        "description": "Pilih blok sektor 0 Classic (kunci di layar berikutnya).",
+        "data": {
+          "block_0": "Baca blok 0",
+          "block_1": "Baca blok 1",
+          "block_2": "Baca blok 2",
+          "block_3": "Baca blok 3"
+        }
+      },
+      "keys": {
+        "title": "Kunci Classic",
+        "description": "Kunci dicoba berurutan hingga pembacaan blok berhasil.",
+        "data": {
+          "key_ff": "Kunci ffffffffffff (default pabrik)",
+          "key_mad": "Kunci a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Kunci d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Kunci 000000000000 (nol)",
+          "custom_key": "Kunci kustom (12 karakter hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Kunci kustom harus tepat 12 karakter heksadesimal.",
+      "no_keys": "Pilih setidaknya satu kunci saat pembacaan blok diaktifkan."
+    }
+  }
+}

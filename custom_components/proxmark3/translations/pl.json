@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "Port USB jest wykrywany automatycznie. UID jest zawsze odczytywany.",
+        "data": {
+          "read_ntag": "Odczytaj NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Odczytaj NDEF z Classic (wolno)",
+          "read_raw_blocks": "Odczytaj surowe bloki z Classic",
+          "poll_interval": "Interwał odpytywania (sekundy)",
+          "reconnect_interval": "Interwał ponownego połączenia (sekundy)"
+        }
+      },
+      "blocks": {
+        "title": "Surowe bloki",
+        "description": "Wybierz bloki sektora 0 Classic do odczytu (klucze na następnym ekranie).",
+        "data": {
+          "block_0": "Odczytaj blok 0",
+          "block_1": "Odczytaj blok 1",
+          "block_2": "Odczytaj blok 2",
+          "block_3": "Odczytaj blok 3"
+        }
+      },
+      "keys": {
+        "title": "Klucze Classic",
+        "description": "Klucze są próbowane po kolei, aż uda się odczytać blok.",
+        "data": {
+          "key_ff": "Klucz ffffffffffff (fabryczny)",
+          "key_mad": "Klucz a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Klucz d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Klucz 000000000000 (zerowy)",
+          "custom_key": "Niestandardowy klucz (12 znaków hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nie można połączyć się z Proxmark3. Sprawdź, czy urządzenie jest podłączone.",
+      "invalid_key": "Niestandardowy klucz musi mieć dokładnie 12 znaków szesnastkowych.",
+      "no_keys": "Wybierz co najmniej jeden klucz przy włączonym odczycie bloków.",
+      "single_instance_allowed": "Dozwolona jest tylko jedna integracja Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Dozwolona jest tylko jedna integracja Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje Proxmark3",
+        "description": "UID jest zawsze odczytywany. Włącz tylko to, czego potrzebujesz — NDEF Classic i surowe bloki są wolne.",
+        "data": {
+          "read_ntag": "Odczytaj NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Odczytaj NDEF z Classic (wolno)",
+          "read_raw_blocks": "Odczytaj surowe bloki z Classic",
+          "poll_interval": "Interwał odpytywania (sekundy)",
+          "reconnect_interval": "Interwał ponownego połączenia (sekundy)"
+        }
+      },
+      "blocks": {
+        "title": "Surowe bloki",
+        "description": "Wybierz bloki sektora 0 Classic do odczytu (klucze na następnym ekranie).",
+        "data": {
+          "block_0": "Odczytaj blok 0",
+          "block_1": "Odczytaj blok 1",
+          "block_2": "Odczytaj blok 2",
+          "block_3": "Odczytaj blok 3"
+        }
+      },
+      "keys": {
+        "title": "Klucze Classic",
+        "description": "Klucze są próbowane po kolei, aż uda się odczytać blok.",
+        "data": {
+          "key_ff": "Klucz ffffffffffff (fabryczny)",
+          "key_mad": "Klucz a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Klucz d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Klucz 000000000000 (zerowy)",
+          "custom_key": "Niestandardowy klucz (12 znaków hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Niestandardowy klucz musi mieć dokładnie 12 znaków szesnastkowych.",
+      "no_keys": "Wybierz co najmniej jeden klucz przy włączonym odczycie bloków."
+    }
+  }
+}

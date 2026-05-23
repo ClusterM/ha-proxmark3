@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB-poort wurdt automatysk ûntdutsen. UID wurdt altyd lêzen.",
+        "data": {
+          "read_ntag": "Lês NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lês NDEF op Classic (tydlik)",
+          "read_raw_blocks": "Lês rwe blokken op Classic",
+          "poll_interval": "Poll-ynteval (sekonden)",
+          "reconnect_interval": "Opnij ferbinen-ynteval (sekonden)"
+        }
+      },
+      "blocks": {
+        "title": "Rwe blokken",
+        "description": "Selektearje Classic sektor 0-blokken (kaaien op it folgjende skerm).",
+        "data": {
+          "block_0": "Lês blok 0",
+          "block_1": "Lês blok 1",
+          "block_2": "Lês blok 2",
+          "block_3": "Lês blok 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-kaaien",
+        "description": "Kaaien wurde op folchoard besocht oant bloklêzen slagget.",
+        "data": {
+          "key_ff": "Kaai ffffffffffff (fabrieksstandert)",
+          "key_mad": "Kaai a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Kaai d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Kaai 000000000000 (nul)",
+          "custom_key": "Oanpaste kaai (12 hex tekens)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Koe net ferbine mei Proxmark3. Kontrolearje oft it apparaat oansluten is.",
+      "invalid_key": "Oanpaste kaai moat presys 12 hexadecimale tekens hawwe.",
+      "no_keys": "Selektearje minstens ien kaai as bloklêzen ynskeakele is.",
+      "single_instance_allowed": "Allinnich ien Proxmark3-yntergraasje is tastien."
+    },
+    "abort": {
+      "single_instance_allowed": "Allinnich ien Proxmark3-yntergraasje is tastien."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3-opsjes",
+        "description": "UID wurdt altyd lêzen. Skeakel allinnich yn wat jo nedich hawwe — Classic NDEF en rwe blokken binne tydlik.",
+        "data": {
+          "read_ntag": "Lês NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Lês NDEF op Classic (tydlik)",
+          "read_raw_blocks": "Lês rwe blokken op Classic",
+          "poll_interval": "Poll-ynteval (sekonden)",
+          "reconnect_interval": "Opnij ferbinen-ynteval (sekonden)"
+        }
+      },
+      "blocks": {
+        "title": "Rwe blokken",
+        "description": "Selektearje Classic sektor 0-blokken (kaaien op it folgjende skerm).",
+        "data": {
+          "block_0": "Lês blok 0",
+          "block_1": "Lês blok 1",
+          "block_2": "Lês blok 2",
+          "block_3": "Lês blok 3"
+        }
+      },
+      "keys": {
+        "title": "Classic-kaaien",
+        "description": "Kaaien wurde op folchoard besocht oant bloklêzen slagget.",
+        "data": {
+          "key_ff": "Kaai ffffffffffff (fabrieksstandert)",
+          "key_mad": "Kaai a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Kaai d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Kaai 000000000000 (nul)",
+          "custom_key": "Oanpaste kaai (12 hex tekens)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Oanpaste kaai moat presys 12 hexadecimale tekens hawwe.",
+      "no_keys": "Selektearje minstens ien kaai as bloklêzen ynskeakele is."
+    }
+  }
+}

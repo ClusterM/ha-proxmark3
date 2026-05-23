@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB port je detekován automaticky. UID se vždy čte.",
+        "data": {
+          "read_ntag": "Číst NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Číst NDEF na Classic (pomalé)",
+          "read_raw_blocks": "Číst surové bloky na Classic",
+          "poll_interval": "Interval dotazování (sekundy)",
+          "reconnect_interval": "Interval opětovného připojení (sekundy)"
+        }
+      },
+      "blocks": {
+        "title": "Surové bloky",
+        "description": "Vyberte bloky sektoru 0 Classic (klíče na další obrazovce).",
+        "data": {
+          "block_0": "Číst blok 0",
+          "block_1": "Číst blok 1",
+          "block_2": "Číst blok 2",
+          "block_3": "Číst blok 3"
+        }
+      },
+      "keys": {
+        "title": "Klíče Classic",
+        "description": "Klíče se zkouší postupně, dokud čtení bloku neuspěje.",
+        "data": {
+          "key_ff": "Klíč ffffffffffff (výchozí tovární)",
+          "key_mad": "Klíč a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Klíč d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Klíč 000000000000 (nulový)",
+          "custom_key": "Vlastní klíč (12 hex znaků)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nepodařilo se připojit k Proxmark3. Zkontrolujte, zda je zařízení zapojeno.",
+      "invalid_key": "Vlastní klíč musí mít přesně 12 hexadecimálních znaků.",
+      "no_keys": "Při zapnutém čtení bloků vyberte alespoň jeden klíč.",
+      "single_instance_allowed": "Je povolena pouze jedna integrace Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Je povolena pouze jedna integrace Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti Proxmark3",
+        "description": "UID se vždy čte. Zapněte jen to, co potřebujete — Classic NDEF a surové bloky jsou pomalé.",
+        "data": {
+          "read_ntag": "Číst NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Číst NDEF na Classic (pomalé)",
+          "read_raw_blocks": "Číst surové bloky na Classic",
+          "poll_interval": "Interval dotazování (sekundy)",
+          "reconnect_interval": "Interval opětovného připojení (sekundy)"
+        }
+      },
+      "blocks": {
+        "title": "Surové bloky",
+        "description": "Vyberte bloky sektoru 0 Classic (klíče na další obrazovce).",
+        "data": {
+          "block_0": "Číst blok 0",
+          "block_1": "Číst blok 1",
+          "block_2": "Číst blok 2",
+          "block_3": "Číst blok 3"
+        }
+      },
+      "keys": {
+        "title": "Klíče Classic",
+        "description": "Klíče se zkouší postupně, dokud čtení bloku neuspěje.",
+        "data": {
+          "key_ff": "Klíč ffffffffffff (výchozí tovární)",
+          "key_mad": "Klíč a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Klíč d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Klíč 000000000000 (nulový)",
+          "custom_key": "Vlastní klíč (12 hex znaků)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Vlastní klíč musí mít přesně 12 hexadecimálních znaků.",
+      "no_keys": "Při zapnutém čtení bloků vyberte alespoň jeden klíč."
+    }
+  }
+}

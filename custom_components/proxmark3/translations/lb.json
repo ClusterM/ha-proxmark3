@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "De USB-Port gëtt automatesch entdeckt. Den UID ass ëmmer gelies.",
+        "data": {
+          "read_ntag": "NDEF liesen (Ultralight / NTAG)",
+          "read_ntag_classic": "NDEF um Classic liesen (lues)",
+          "read_raw_blocks": "Rohbléck um Classic liesen",
+          "poll_interval": "Ofaaf-Intervall (Sekonnen)",
+          "reconnect_interval": "Reconnexion-Intervall (Sekonnen)"
+        }
+      },
+      "blocks": {
+        "title": "Rohbléck",
+        "description": "Classic Sektor 0 Blécker zum Liesen auswielen (nennt Schlësselen op nächstem Bildschierm).",
+        "data": {
+          "block_0": "Bloc 0 liesen",
+          "block_1": "Bloc 1 liesen",
+          "block_2": "Bloc 2 liesen",
+          "block_3": "Bloc 3 liesen"
+        }
+      },
+      "keys": {
+        "title": "Classic Schlëssel",
+        "description": "Schlëssel ginn a Reiefolleg probéiert bis ee Blécke liesen erfollegräich ass.",
+        "data": {
+          "key_ff": "Schlëssel ffffffffffff (Fabrik-Standard)",
+          "key_mad": "Schlëssel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Schlëssel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Schlëssel 000000000000 (Null)",
+          "custom_key": "Eegene Schlëssel (12 hex Zeechen)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung mat Proxmark3 ass feelgeschloen. Kontrolléiert ob den Apparat ugeschloss ass.",
+      "invalid_key": "De eegenen Schlëssel muss genau 12 hexadezimal Zeechen hunn.",
+      "no_keys": "Wielt mindestens ee Schlüssel wa Blécke liesen aktiv ass.",
+      "single_instance_allowed": "Et ass nëmmen eng Proxmark3-Integratioun erlaabt."
+    },
+    "abort": {
+      "single_instance_allowed": "Et ass nëmmen eng Proxmark3-Integratioun erlaabt."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 Optiounen",
+        "description": "Den UID ass ëmmer gelies. Aktivéiert nëmmen wat Dir braucht — Classic NDEF an Rohbléck sinn lues.",
+        "data": {
+          "read_ntag": "NDEF liesen (Ultralight / NTAG)",
+          "read_ntag_classic": "NDEF um Classic liesen (lues)",
+          "read_raw_blocks": "Rohbléck um Classic liesen",
+          "poll_interval": "Ofaaf-Intervall (Sekonnen)",
+          "reconnect_interval": "Reconnexion-Intervall (Sekonnen)"
+        }
+      },
+      "blocks": {
+        "title": "Rohbléck",
+        "description": "Classic Sektor 0 Blécker zum Liesen auswielen (nennt Schlësselen op nächstem Bildschierm).",
+        "data": {
+          "block_0": "Bloc 0 liesen",
+          "block_1": "Bloc 1 liesen",
+          "block_2": "Bloc 2 liesen",
+          "block_3": "Bloc 3 liesen"
+        }
+      },
+      "keys": {
+        "title": "Classic Schlëssel",
+        "description": "Schlëssel ginn a Reiefolleg probéiert bis ee Blécke liesen erfollegräich ass.",
+        "data": {
+          "key_ff": "Schlëssel ffffffffffff (Fabrik-Standard)",
+          "key_mad": "Schlëssel a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Schlëssel d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Schlëssel 000000000000 (Null)",
+          "custom_key": "Eegene Schlëssel (12 hex Zeechen)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "De eegenen Schlëssel muss genau 12 hexadezimal Zeechen hunn.",
+      "no_keys": "Wielt mindestens ee Schlüssel wa Blécke liesen aktiv ass."
+    }
+  }
+}

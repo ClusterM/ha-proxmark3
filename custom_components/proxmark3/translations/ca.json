@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "El port USB es detecta automàticament. Sempre es llegeix l'UID.",
+        "data": {
+          "read_ntag": "Llegir NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Llegir NDEF a Classic (lent)",
+          "read_raw_blocks": "Llegir blocs en brut a Classic",
+          "poll_interval": "Interval d'interrogació (segons)",
+          "reconnect_interval": "Interval de reconnexió (segons)"
+        }
+      },
+      "blocks": {
+        "title": "Blocs en brut",
+        "description": "Seleccioneu blocs del sector 0 Classic (claus a la pantalla següent).",
+        "data": {
+          "block_0": "Llegir bloc 0",
+          "block_1": "Llegir bloc 1",
+          "block_2": "Llegir bloc 2",
+          "block_3": "Llegir bloc 3"
+        }
+      },
+      "keys": {
+        "title": "Claus Classic",
+        "description": "Es proven les claus en ordre fins que la lectura del bloc té èxit.",
+        "data": {
+          "key_ff": "Clau ffffffffffff (per defecte de fàbrica)",
+          "key_mad": "Clau a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Clau d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Clau 000000000000 (nul·la)",
+          "custom_key": "Clau personalitzada (12 caràcters hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No s'ha pogut connectar a Proxmark3. Comproveu que el dispositiu estigui connectat.",
+      "invalid_key": "La clau personalitzada ha de tenir exactament 12 caràcters hexadecimals.",
+      "no_keys": "Seleccioneu almenys una clau quan la lectura de blocs estigui activada.",
+      "single_instance_allowed": "Només es permet una integració Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Només es permet una integració Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcions de Proxmark3",
+        "description": "Sempre es llegeix l'UID. Activeu només el que necessiteu — NDEF Classic i blocs en brut són lents.",
+        "data": {
+          "read_ntag": "Llegir NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Llegir NDEF a Classic (lent)",
+          "read_raw_blocks": "Llegir blocs en brut a Classic",
+          "poll_interval": "Interval d'interrogació (segons)",
+          "reconnect_interval": "Interval de reconnexió (segons)"
+        }
+      },
+      "blocks": {
+        "title": "Blocs en brut",
+        "description": "Seleccioneu blocs del sector 0 Classic (claus a la pantalla següent).",
+        "data": {
+          "block_0": "Llegir bloc 0",
+          "block_1": "Llegir bloc 1",
+          "block_2": "Llegir bloc 2",
+          "block_3": "Llegir bloc 3"
+        }
+      },
+      "keys": {
+        "title": "Claus Classic",
+        "description": "Es proven les claus en ordre fins que la lectura del bloc té èxit.",
+        "data": {
+          "key_ff": "Clau ffffffffffff (per defecte de fàbrica)",
+          "key_mad": "Clau a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Clau d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Clau 000000000000 (nul·la)",
+          "custom_key": "Clau personalitzada (12 caràcters hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "La clau personalitzada ha de tenir exactament 12 caràcters hexadecimals.",
+      "no_keys": "Seleccioneu almenys una clau quan la lectura de blocs estigui activada."
+    }
+  }
+}

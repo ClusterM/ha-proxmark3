@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "Canfod porth USB yn awtomatig. Darllenir UID bob amser.",
+        "data": {
+          "read_ntag": "Darllen NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Darllen NDEF ar Classic (araf)",
+          "read_raw_blocks": "Darllen blociau crai ar Classic",
+          "poll_interval": "Cyfnod polio (eiliadau)",
+          "reconnect_interval": "Cyfnod ailgysylltu (eiliadau)"
+        }
+      },
+      "blocks": {
+        "title": "Blociau crai",
+        "description": "Dewiswch flociau sector 0 Classic (allweddi ar y sgrin nesaf).",
+        "data": {
+          "block_0": "Darllen bloc 0",
+          "block_1": "Darllen bloc 1",
+          "block_2": "Darllen bloc 2",
+          "block_3": "Darllen bloc 3"
+        }
+      },
+      "keys": {
+        "title": "Allweddi Classic",
+        "description": "Ceisir allweddi mewn trefn nes bod darllen bloc yn llwyddiannus.",
+        "data": {
+          "key_ff": "Allwedd ffffffffffff (rhagosodiad ffatri)",
+          "key_mad": "Allwedd a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Allwedd d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Allwedd 000000000000 (sero)",
+          "custom_key": "Allwedd bersonol (12 nod hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Methodd cysylltu â Proxmark3. Gwiriwch fod y ddyfais wedi'i chysylltu.",
+      "invalid_key": "Rhaid i'r allwedd bersonol gael union 12 nod hecsadecimal.",
+      "no_keys": "Dewiswch o leiaf un allwedd pan fo darllen bloc wedi'i galluogi.",
+      "single_instance_allowed": "Caniateir un integreiddiad Proxmark3 yn unig."
+    },
+    "abort": {
+      "single_instance_allowed": "Caniateir un integreiddiad Proxmark3 yn unig."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opsiynau Proxmark3",
+        "description": "Darllenir UID bob amser. Galluogwch dim ond yr hyn sydd ei angen — NDEF Classic a blociau crai yn araf.",
+        "data": {
+          "read_ntag": "Darllen NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Darllen NDEF ar Classic (araf)",
+          "read_raw_blocks": "Darllen blociau crai ar Classic",
+          "poll_interval": "Cyfnod polio (eiliadau)",
+          "reconnect_interval": "Cyfnod ailgysylltu (eiliadau)"
+        }
+      },
+      "blocks": {
+        "title": "Blociau crai",
+        "description": "Dewiswch flociau sector 0 Classic (allweddi ar y sgrin nesaf).",
+        "data": {
+          "block_0": "Darllen bloc 0",
+          "block_1": "Darllen bloc 1",
+          "block_2": "Darllen bloc 2",
+          "block_3": "Darllen bloc 3"
+        }
+      },
+      "keys": {
+        "title": "Allweddi Classic",
+        "description": "Ceisir allweddi mewn trefn nes bod darllen bloc yn llwyddiannus.",
+        "data": {
+          "key_ff": "Allwedd ffffffffffff (rhagosodiad ffatri)",
+          "key_mad": "Allwedd a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Allwedd d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Allwedd 000000000000 (sero)",
+          "custom_key": "Allwedd bersonol (12 nod hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Rhaid i'r allwedd bersonol gael union 12 nod hecsadecimal.",
+      "no_keys": "Dewiswch o leiaf un allwedd pan fo darllen bloc wedi'i galluogi."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB पोर्ट स्वचालित रूप से पहचाना जाता है। UID हमेशा पढ़ा जाता है।",
+        "data": {
+          "read_ntag": "NDEF पढ़ें (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic पर NDEF पढ़ें (धीमा)",
+          "read_raw_blocks": "Classic पर कच्चे ब्लॉक पढ़ें",
+          "poll_interval": "पोल अंतराल (सेकंड)",
+          "reconnect_interval": "पुन: कनेक्ट अंतराल (सेकंड)"
+        }
+      },
+      "blocks": {
+        "title": "कच्चे ब्लॉक",
+        "description": "Classic सेक्टर 0 ब्लॉक चुनें (अगली स्क्रीन पर कुंजी)।",
+        "data": {
+          "block_0": "ब्लॉक 0 पढ़ें",
+          "block_1": "ब्लॉक 1 पढ़ें",
+          "block_2": "ब्लॉक 2 पढ़ें",
+          "block_3": "ब्लॉक 3 पढ़ें"
+        }
+      },
+      "keys": {
+        "title": "Classic कुंजी",
+        "description": "ब्लॉक पढ़ना सफल होने तक कुंजियाँ क्रम से आज़माई जाती हैं।",
+        "data": {
+          "key_ff": "कुंजी ffffffffffff (फ़ैक्टरी डिफ़ॉल्ट)",
+          "key_mad": "कुंजी a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "कुंजी d3f7d3f7d3f7 (NDEF)",
+          "key_null": "कुंजी 000000000000 (शून्य)",
+          "custom_key": "कस्टम कुंजी (12 hex अक्षर)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Proxmark3 से कनेक्ट नहीं हो सका। जाँचें कि डिवाइस जुड़ा है।",
+      "invalid_key": "कस्टम कुंजी में ठीक 12 hexadecimal अक्षर होने चाहिए।",
+      "no_keys": "ब्लॉक पढ़ना सक्षम हो तो कम से कम एक कुंजी चुनें।",
+      "single_instance_allowed": "केवल एक Proxmark3 एकीकरण की अनुमति है।"
+    },
+    "abort": {
+      "single_instance_allowed": "केवल एक Proxmark3 एकीकरण की अनुमति है।"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 विकल्प",
+        "description": "UID हमेशा पढ़ा जाता है। केवल जरूरी सक्षम करें — Classic NDEF और कच्चे ब्लॉक धीमे हैं।",
+        "data": {
+          "read_ntag": "NDEF पढ़ें (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic पर NDEF पढ़ें (धीमा)",
+          "read_raw_blocks": "Classic पर कच्चे ब्लॉक पढ़ें",
+          "poll_interval": "पोल अंतराल (सेकंड)",
+          "reconnect_interval": "पुन: कनेक्ट अंतराल (सेकंड)"
+        }
+      },
+      "blocks": {
+        "title": "कच्चे ब्लॉक",
+        "description": "Classic सेक्टर 0 ब्लॉक चुनें (अगली स्क्रीन पर कुंजी)।",
+        "data": {
+          "block_0": "ब्लॉक 0 पढ़ें",
+          "block_1": "ब्लॉक 1 पढ़ें",
+          "block_2": "ब्लॉक 2 पढ़ें",
+          "block_3": "ब्लॉक 3 पढ़ें"
+        }
+      },
+      "keys": {
+        "title": "Classic कुंजी",
+        "description": "ब्लॉक पढ़ना सफल होने तक कुंजियाँ क्रम से आज़माई जाती हैं।",
+        "data": {
+          "key_ff": "कुंजी ffffffffffff (फ़ैक्टरी डिफ़ॉल्ट)",
+          "key_mad": "कुंजी a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "कुंजी d3f7d3f7d3f7 (NDEF)",
+          "key_null": "कुंजी 000000000000 (शून्य)",
+          "custom_key": "कस्टम कुंजी (12 hex अक्षर)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "कस्टम कुंजी में ठीक 12 hexadecimal अक्षर होने चाहिए।",
+      "no_keys": "ब्लॉक पढ़ना सक्षम हो तो कम से कम एक कुंजी चुनें।"
+    }
+  }
+}

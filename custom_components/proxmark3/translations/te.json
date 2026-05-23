@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB పోర్ట్ స్వయంచాలకంగా గుర్తించబడుతుంది. UID ఎల్లప్పుడూ చదవబడుతుంది.",
+        "data": {
+          "read_ntag": "NDEF చదవండి (Ultralight / NTAG)",
+          "read_ntag_classic": "Classicలో NDEF చదవండి (నెమ్మది)",
+          "read_raw_blocks": "Classicలో ముడి బ్లాక్లను చదవండి",
+          "poll_interval": "పోల్ విరామం (సెకన్లు)",
+          "reconnect_interval": "మళ్లీ కనెక్ట్ విరామం (సెకన్లు)"
+        }
+      },
+      "blocks": {
+        "title": "ముడి బ్లాక్లు",
+        "description": "చదవడానికి Classic సెక్టార్ 0 బ్లాక్లను ఎంచుకోండు (తదుపరి స్క్రీన్‌లో కీలు అవసరం).",
+        "data": {
+          "block_0": "బ్లాక్ 0 చదవండి",
+          "block_1": "బ్లాక్ 1 చదవండి",
+          "block_2": "బ్లాక్ 2 చదవండి",
+          "block_3": "బ్లాక్ 3 చదవండి"
+        }
+      },
+      "keys": {
+        "title": "Classic కీలు",
+        "description": "బ్లాక్ చదవడం విజయవంతమయ్యే వరకు కీలు క్రమంలో ప్రయత్నించబడతాయి.",
+        "data": {
+          "key_ff": "కీ ffffffffffff (ఫ్యాక్టరీ డిఫాల్ట్)",
+          "key_mad": "కీ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "కీ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "కీ 000000000000 (సున్నా)",
+          "custom_key": "స్వీయ కీ (12 hex అక్షరాలు)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Proxmark3కు కనెక్ట్ చేయడంలో విఫలమైంది. పరికరం ప్లగ్ చేయబడిందో తనిఖీ చేయండి.",
+      "invalid_key": "స్వీయ కీ ఖచ్చితంగా 12 హెక్సాడెసిమల్ అక్షరాలుగా ఉండాలి.",
+      "no_keys": "బ్లాక్ చదవడం ప్రారంభించినప్పుడు కనీసం ఒక కీ ఎంచుకోండి.",
+      "single_instance_allowed": "ఒకే Proxmark3 ఇంటిగ్రేషన్ మాత్రమే అనుమతించబడుతుంది."
+    },
+    "abort": {
+      "single_instance_allowed": "ఒకే Proxmark3 ఇంటిగ్రేషన్ మాత్రమే అనుమతించబడుతుంది."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 ఎంపికలు",
+        "description": "UID ఎల్లప్పుడూ చదవబడుతుంది. అవసరమైనది మాత్రమే ప్రారంభించండి — Classic NDEF మరియు ముడి బ్లాక్లు నెమ్మదిగా ఉంటాయి.",
+        "data": {
+          "read_ntag": "NDEF చదవండి (Ultralight / NTAG)",
+          "read_ntag_classic": "Classicలో NDEF చదవండి (నెమ్మది)",
+          "read_raw_blocks": "Classicలో ముడి బ్లాక్లను చదవండి",
+          "poll_interval": "పోల్ విరామం (సెకన్లు)",
+          "reconnect_interval": "మళ్లీ కనెక్ట్ విరామం (సెకన్లు)"
+        }
+      },
+      "blocks": {
+        "title": "ముడి బ్లాక్లు",
+        "description": "చదవడానికి Classic సెక్టార్ 0 బ్లాక్లను ఎంచుకోండు (తదుపరి స్క్రీన్‌లో కీలు అవసరం).",
+        "data": {
+          "block_0": "బ్లాక్ 0 చదవండి",
+          "block_1": "బ్లాక్ 1 చదవండి",
+          "block_2": "బ్లాక్ 2 చదవండి",
+          "block_3": "బ్లాక్ 3 చదవండి"
+        }
+      },
+      "keys": {
+        "title": "Classic కీలు",
+        "description": "బ్లాక్ చదవడం విజయవంతమయ్యే వరకు కీలు క్రమంలో ప్రయత్నించబడతాయి.",
+        "data": {
+          "key_ff": "కీ ffffffffffff (ఫ్యాక్టరీ డిఫాల్ట్)",
+          "key_mad": "కీ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "కీ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "కీ 000000000000 (సున్నా)",
+          "custom_key": "స్వీయ కీ (12 hex అక్షరాలు)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "స్వీయ కీ ఖచ్చితంగా 12 హెక్సాడెసిమల్ అక్షరాలుగా ఉండాలి.",
+      "no_keys": "బ్లాక్ చదవడం ప్రారంభించినప్పుడు కనీసం ఒక కీ ఎంచుకోండి."
+    }
+  }
+}

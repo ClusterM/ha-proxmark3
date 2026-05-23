@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "พอร์ต USB ตรวจพบอัตโนมัติ อ่าน UID เสมอ",
+        "data": {
+          "read_ntag": "อ่าน NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "อ่าน NDEF บน Classic (ช้า)",
+          "read_raw_blocks": "อ่านบล็อกดิบบน Classic",
+          "poll_interval": "ช่วงเวลาโพล (วินาที)",
+          "reconnect_interval": "ช่วงเวลาเชื่อมต่อใหม่ (วินาที)"
+        }
+      },
+      "blocks": {
+        "title": "บล็อกดิบ",
+        "description": "เลือกบล็อกเซกเตอร์ 0 ของ Classic ที่จะอ่าน (ต้องมีคีย์ในหน้าถัดไป)",
+        "data": {
+          "block_0": "อ่านบล็อก 0",
+          "block_1": "อ่านบล็อก 1",
+          "block_2": "อ่านบล็อก 2",
+          "block_3": "อ่านบล็อก 3"
+        }
+      },
+      "keys": {
+        "title": "คีย์ Classic",
+        "description": "ลองคีย์ตามลำดับจนกว่าจะอ่านบล็อกสำเร็จ",
+        "data": {
+          "key_ff": "คีย์ ffffffffffff (ค่าเริ่มต้นจากโรงงาน)",
+          "key_mad": "คีย์ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "คีย์ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "คีย์ 000000000000 (ว่าง)",
+          "custom_key": "คีย์กำหนดเอง (12 ตัวอักษร hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "เชื่อมต่อ Proxmark3 ไม่สำเร็จ ตรวจสอบว่าอุปกรณ์เสียบ USB แล้ว",
+      "invalid_key": "คีย์กำหนดเองต้องเป็นตัวอักษรฐานสิบหกพอดี 12 ตัว",
+      "no_keys": "เมื่อเปิดการอ่านบล็อก ให้เลือกคีย์อย่างน้อยหนึ่งคีย์",
+      "single_instance_allowed": "อนุญาตการรวม Proxmark3 เพียงหนึ่งรายการ"
+    },
+    "abort": {
+      "single_instance_allowed": "อนุญาตการรวม Proxmark3 เพียงหนึ่งรายการ"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ตัวเลือก Proxmark3",
+        "description": "อ่าน UID เสมอ เปิดเฉพาะที่ต้องการ — Classic NDEF และบล็อกดิบใช้เวลานาน",
+        "data": {
+          "read_ntag": "อ่าน NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "อ่าน NDEF บน Classic (ช้า)",
+          "read_raw_blocks": "อ่านบล็อกดิบบน Classic",
+          "poll_interval": "ช่วงเวลาโพล (วินาที)",
+          "reconnect_interval": "ช่วงเวลาเชื่อมต่อใหม่ (วินาที)"
+        }
+      },
+      "blocks": {
+        "title": "บล็อกดิบ",
+        "description": "เลือกบล็อกเซกเตอร์ 0 ของ Classic ที่จะอ่าน (ต้องมีคีย์ในหน้าถัดไป)",
+        "data": {
+          "block_0": "อ่านบล็อก 0",
+          "block_1": "อ่านบล็อก 1",
+          "block_2": "อ่านบล็อก 2",
+          "block_3": "อ่านบล็อก 3"
+        }
+      },
+      "keys": {
+        "title": "คีย์ Classic",
+        "description": "ลองคีย์ตามลำดับจนกว่าจะอ่านบล็อกสำเร็จ",
+        "data": {
+          "key_ff": "คีย์ ffffffffffff (ค่าเริ่มต้นจากโรงงาน)",
+          "key_mad": "คีย์ a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "คีย์ d3f7d3f7d3f7 (NDEF)",
+          "key_null": "คีย์ 000000000000 (ว่าง)",
+          "custom_key": "คีย์กำหนดเอง (12 ตัวอักษร hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "คีย์กำหนดเองต้องเป็นตัวอักษรฐานสิบหกพอดี 12 ตัว",
+      "no_keys": "เมื่อเปิดการอ่านบล็อก ให้เลือกคีย์อย่างน้อยหนึ่งคีย์"
+    }
+  }
+}

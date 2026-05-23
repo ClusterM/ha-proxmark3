@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "USB bağlantı noktası otomatik algılanır. UID her zaman okunur.",
+        "data": {
+          "read_ntag": "NDEF oku (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic üzerinde NDEF oku (yavaş)",
+          "read_raw_blocks": "Classic üzerinde ham blokları oku",
+          "poll_interval": "Yoklama aralığı (saniye)",
+          "reconnect_interval": "Yeniden bağlanma aralığı (saniye)"
+        }
+      },
+      "blocks": {
+        "title": "Ham bloklar",
+        "description": "Okunacak Classic sektör 0 bloklarını seçin (anahtarlar bir sonraki ekranda).",
+        "data": {
+          "block_0": "Blok 0 oku",
+          "block_1": "Blok 1 oku",
+          "block_2": "Blok 2 oku",
+          "block_3": "Blok 3 oku"
+        }
+      },
+      "keys": {
+        "title": "Classic anahtarları",
+        "description": "Bir blok okuması başarılı olana kadar anahtarlar sırayla denenir.",
+        "data": {
+          "key_ff": "Anahtar ffffffffffff (fabrika varsayılanı)",
+          "key_mad": "Anahtar a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Anahtar d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Anahtar 000000000000 (sıfır)",
+          "custom_key": "Özel anahtar (12 hex karakter)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Proxmark3'e bağlanılamadı. Cihazın takılı olduğunu kontrol edin.",
+      "invalid_key": "Özel anahtar tam olarak 12 onaltılık karakter olmalıdır.",
+      "no_keys": "Blok okuma etkinken en az bir anahtar seçin.",
+      "single_instance_allowed": "Yalnızca bir Proxmark3 entegrasyonuna izin verilir."
+    },
+    "abort": {
+      "single_instance_allowed": "Yalnızca bir Proxmark3 entegrasyonuna izin verilir."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 seçenekleri",
+        "description": "UID her zaman okunur. Yalnızca ihtiyacınız olanı açın — Classic NDEF ve ham bloklar yavaştır.",
+        "data": {
+          "read_ntag": "NDEF oku (Ultralight / NTAG)",
+          "read_ntag_classic": "Classic üzerinde NDEF oku (yavaş)",
+          "read_raw_blocks": "Classic üzerinde ham blokları oku",
+          "poll_interval": "Yoklama aralığı (saniye)",
+          "reconnect_interval": "Yeniden bağlanma aralığı (saniye)"
+        }
+      },
+      "blocks": {
+        "title": "Ham bloklar",
+        "description": "Okunacak Classic sektör 0 bloklarını seçin (anahtarlar bir sonraki ekranda).",
+        "data": {
+          "block_0": "Blok 0 oku",
+          "block_1": "Blok 1 oku",
+          "block_2": "Blok 2 oku",
+          "block_3": "Blok 3 oku"
+        }
+      },
+      "keys": {
+        "title": "Classic anahtarları",
+        "description": "Bir blok okuması başarılı olana kadar anahtarlar sırayla denenir.",
+        "data": {
+          "key_ff": "Anahtar ffffffffffff (fabrika varsayılanı)",
+          "key_mad": "Anahtar a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Anahtar d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Anahtar 000000000000 (sıfır)",
+          "custom_key": "Özel anahtar (12 hex karakter)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Özel anahtar tam olarak 12 onaltılık karakter olmalıdır.",
+      "no_keys": "Blok okuma etkinken en az bir anahtar seçin."
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "Az USB-port automatikusan felismerhető. Az UID mindig olvasásra kerül.",
+        "data": {
+          "read_ntag": "NDEF olvasása (Ultralight / NTAG)",
+          "read_ntag_classic": "NDEF olvasása Classic-on (lassú)",
+          "read_raw_blocks": "Nyers blokkok olvasása Classic-on",
+          "poll_interval": "Lekérdezési intervallum (másodperc)",
+          "reconnect_interval": "Újracsatlakozási intervallum (másodperc)"
+        }
+      },
+      "blocks": {
+        "title": "Nyers blokkok",
+        "description": "Classic 0. szektor blokkjainak kiválasztása (kulcsok a következő képernyőn).",
+        "data": {
+          "block_0": "0. blokk olvasása",
+          "block_1": "1. blokk olvasása",
+          "block_2": "2. blokk olvasása",
+          "block_3": "3. blokk olvasása"
+        }
+      },
+      "keys": {
+        "title": "Classic kulcsok",
+        "description": "A kulcsokat sorrendben próbálja, amíg a blokk olvasása sikerül.",
+        "data": {
+          "key_ff": "Kulcs ffffffffffff (gyári alapértelmezett)",
+          "key_mad": "Kulcs a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Kulcs d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Kulcs 000000000000 (nulla)",
+          "custom_key": "Egyéni kulcs (12 hex karakter)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Nem sikerült csatlakozni a Proxmark3-hoz. Ellenőrizze, hogy az eszköz csatlakoztatva van-e.",
+      "invalid_key": "Az egyéni kulcsnak pontosan 12 hexadecimális karakterből kell állnia.",
+      "no_keys": "Válasszon legalább egy kulcsot, ha a blokk olvasás engedélyezve van.",
+      "single_instance_allowed": "Csak egy Proxmark3 integráció engedélyezett."
+    },
+    "abort": {
+      "single_instance_allowed": "Csak egy Proxmark3 integráció engedélyezett."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Proxmark3 beállítások",
+        "description": "Az UID mindig olvasásra kerül. Csak a szükségeset engedélyezze — a Classic NDEF és nyers blokkok lassúak.",
+        "data": {
+          "read_ntag": "NDEF olvasása (Ultralight / NTAG)",
+          "read_ntag_classic": "NDEF olvasása Classic-on (lassú)",
+          "read_raw_blocks": "Nyers blokkok olvasása Classic-on",
+          "poll_interval": "Lekérdezési intervallum (másodperc)",
+          "reconnect_interval": "Újracsatlakozási intervallum (másodperc)"
+        }
+      },
+      "blocks": {
+        "title": "Nyers blokkok",
+        "description": "Classic 0. szektor blokkjainak kiválasztása (kulcsok a következő képernyőn).",
+        "data": {
+          "block_0": "0. blokk olvasása",
+          "block_1": "1. blokk olvasása",
+          "block_2": "2. blokk olvasása",
+          "block_3": "3. blokk olvasása"
+        }
+      },
+      "keys": {
+        "title": "Classic kulcsok",
+        "description": "A kulcsokat sorrendben próbálja, amíg a blokk olvasása sikerül.",
+        "data": {
+          "key_ff": "Kulcs ffffffffffff (gyári alapértelmezett)",
+          "key_mad": "Kulcs a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Kulcs d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Kulcs 000000000000 (nulla)",
+          "custom_key": "Egyéni kulcs (12 hex karakter)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Az egyéni kulcsnak pontosan 12 hexadecimális karakterből kell állnia.",
+      "no_keys": "Válasszon legalább egy kulcsot, ha a blokk olvasás engedélyezve van."
+    }
+  }
+}

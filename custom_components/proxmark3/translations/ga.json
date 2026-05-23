@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "Braithítear port USB go huathoibríoch. Léitear UID i gcónaí.",
+        "data": {
+          "read_ntag": "Léigh NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Léigh NDEF ar Classic (mall)",
+          "read_raw_blocks": "Léigh bloic amh ar Classic",
+          "poll_interval": "Eatramh vótaála (soicindí)",
+          "reconnect_interval": "Eatramh athcheangail (soicindí)"
+        }
+      },
+      "blocks": {
+        "title": "Bloic amh",
+        "description": "Roghnaigh bloic earnála 0 Classic (eochracha ar an scáileán seo chugainn).",
+        "data": {
+          "block_0": "Léigh bloc 0",
+          "block_1": "Léigh bloc 1",
+          "block_2": "Léigh bloc 2",
+          "block_3": "Léigh bloc 3"
+        }
+      },
+      "keys": {
+        "title": "Eochracha Classic",
+        "description": "Déantar iarracht ar eochracha in ord go n-éireoidh le léamh bloc.",
+        "data": {
+          "key_ff": "Eochair ffffffffffff (réamhshocrú monarchan)",
+          "key_mad": "Eochair a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Eochair d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Eochair 000000000000 (náid)",
+          "custom_key": "Eochair saincheaptha (12 carachtar hex)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Theip ar nascadh le Proxmark3. Seiceáil go bhfuil an gléas ceangailte.",
+      "invalid_key": "Caithfidh 12 carachtar heicsidheachúil cruinn a bheith san eochair shaincheaptha.",
+      "no_keys": "Roghnaigh eochair amháin ar a laghad nuair atá léamh bloic cumasaithe.",
+      "single_instance_allowed": "Ní cheadaítear ach comhtháthú Proxmark3 amháin."
+    },
+    "abort": {
+      "single_instance_allowed": "Ní cheadaítear ach comhtháthú Proxmark3 amháin."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Roghanna Proxmark3",
+        "description": "Léitear UID i gcónaí. Cumasaigh an méid atá uait — tá NDEF Classic agus bloic amh mall.",
+        "data": {
+          "read_ntag": "Léigh NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Léigh NDEF ar Classic (mall)",
+          "read_raw_blocks": "Léigh bloic amh ar Classic",
+          "poll_interval": "Eatramh vótaála (soicindí)",
+          "reconnect_interval": "Eatramh athcheangail (soicindí)"
+        }
+      },
+      "blocks": {
+        "title": "Bloic amh",
+        "description": "Roghnaigh bloic earnála 0 Classic (eochracha ar an scáileán seo chugainn).",
+        "data": {
+          "block_0": "Léigh bloc 0",
+          "block_1": "Léigh bloc 1",
+          "block_2": "Léigh bloc 2",
+          "block_3": "Léigh bloc 3"
+        }
+      },
+      "keys": {
+        "title": "Eochracha Classic",
+        "description": "Déantar iarracht ar eochracha in ord go n-éireoidh le léamh bloc.",
+        "data": {
+          "key_ff": "Eochair ffffffffffff (réamhshocrú monarchan)",
+          "key_mad": "Eochair a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Eochair d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Eochair 000000000000 (náid)",
+          "custom_key": "Eochair saincheaptha (12 carachtar hex)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Caithfidh 12 carachtar heicsidheachúil cruinn a bheith san eochair shaincheaptha.",
+      "no_keys": "Roghnaigh eochair amháin ar a laghad nuair atá léamh bloic cumasaithe."
+    }
+  }
+}

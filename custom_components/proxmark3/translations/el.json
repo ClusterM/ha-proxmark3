@@ -1,0 +1,87 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Proxmark3",
+        "description": "Η θύρα USB εντοπίζεται αυτόματα. Το UID διαβάζεται πάντα.",
+        "data": {
+          "read_ntag": "Ανάγνωση NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Ανάγνωση NDEF σε Classic (αργά)",
+          "read_raw_blocks": "Ανάγνωση ακατέργαστων blocks σε Classic",
+          "poll_interval": "Διάστημα polling (δευτερόλεπτα)",
+          "reconnect_interval": "Διάστημα επανασύνδεσης (δευτερόλεπτα)"
+        }
+      },
+      "blocks": {
+        "title": "Ακατέργαστα blocks",
+        "description": "Επιλέξτε blocks τομέα 0 Classic (κλειδιά στην επόμενη οθόνη).",
+        "data": {
+          "block_0": "Ανάγνωση block 0",
+          "block_1": "Ανάγνωση block 1",
+          "block_2": "Ανάγνωση block 2",
+          "block_3": "Ανάγνωση block 3"
+        }
+      },
+      "keys": {
+        "title": "Κλειδιά Classic",
+        "description": "Τα κλειδιά δοκιμάζονται με τη σειρά μέχρι να πετύχει η ανάγνωση.",
+        "data": {
+          "key_ff": "Κλειδί ffffffffffff (εργοστασιακό)",
+          "key_mad": "Κλειδί a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Κλειδί d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Κλειδί 000000000000 (μηδενικό)",
+          "custom_key": "Προσαρμοσμένο κλειδί (12 hex χαρακτήρες)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Αποτυχία σύνδεσης με Proxmark3. Ελέγξτε ότι η συσκευή είναι συνδεδεμένη.",
+      "invalid_key": "Το προσαρμοσμένο κλειδί πρέπει να έχει ακριβώς 12 hex χαρακτήρες.",
+      "no_keys": "Επιλέξτε τουλάχιστον ένα κλειδί όταν είναι ενεργή η ανάγνωση blocks.",
+      "single_instance_allowed": "Επιτρέπεται μόνο μία ενσωμάτωση Proxmark3."
+    },
+    "abort": {
+      "single_instance_allowed": "Επιτρέπεται μόνο μία ενσωμάτωση Proxmark3."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Επιλογές Proxmark3",
+        "description": "Το UID διαβάζεται πάντα. Ενεργοποιήστε μόνο ό,τι χρειάζεστε — Classic NDEF και ακατέργαστα blocks είναι αργά.",
+        "data": {
+          "read_ntag": "Ανάγνωση NDEF (Ultralight / NTAG)",
+          "read_ntag_classic": "Ανάγνωση NDEF σε Classic (αργά)",
+          "read_raw_blocks": "Ανάγνωση ακατέργαστων blocks σε Classic",
+          "poll_interval": "Διάστημα polling (δευτερόλεπτα)",
+          "reconnect_interval": "Διάστημα επανασύνδεσης (δευτερόλεπτα)"
+        }
+      },
+      "blocks": {
+        "title": "Ακατέργαστα blocks",
+        "description": "Επιλέξτε blocks τομέα 0 Classic (κλειδιά στην επόμενη οθόνη).",
+        "data": {
+          "block_0": "Ανάγνωση block 0",
+          "block_1": "Ανάγνωση block 1",
+          "block_2": "Ανάγνωση block 2",
+          "block_3": "Ανάγνωση block 3"
+        }
+      },
+      "keys": {
+        "title": "Κλειδιά Classic",
+        "description": "Τα κλειδιά δοκιμάζονται με τη σειρά μέχρι να πετύχει η ανάγνωση.",
+        "data": {
+          "key_ff": "Κλειδί ffffffffffff (εργοστασιακό)",
+          "key_mad": "Κλειδί a0a1a2a3a4a5 (MAD key A)",
+          "key_ndef": "Κλειδί d3f7d3f7d3f7 (NDEF)",
+          "key_null": "Κλειδί 000000000000 (μηδενικό)",
+          "custom_key": "Προσαρμοσμένο κλειδί (12 hex χαρακτήρες)"
+        }
+      }
+    },
+    "error": {
+      "invalid_key": "Το προσαρμοσμένο κλειδί πρέπει να έχει ακριβώς 12 hex χαρακτήρες.",
+      "no_keys": "Επιλέξτε τουλάχιστον ένα κλειδί όταν είναι ενεργή η ανάγνωση blocks."
+    }
+  }
+}
