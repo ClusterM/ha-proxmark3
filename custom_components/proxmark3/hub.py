@@ -21,12 +21,14 @@ from .const import (
     DEFAULT_BAUD,
     DEVICE_INFO_STORAGE_VERSION,
     DOMAIN,
+    build_block0_key_list,
     build_block_list,
     build_key_list,
     merged_options,
 )
 from .pm3_client import (
     CardInfo,
+    MagicUidError,
     Pm3DeviceInfo,
     Proxmark3Adapter,
     close_adapter,
@@ -39,6 +41,7 @@ from .pm3_client import (
     poll_card,
     read_first_blocks,
     read_ndef,
+    write_magic_uid,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -127,6 +130,7 @@ class Proxmark3Hub:
         self._task: asyncio.Task | None = None
         self._adapter: Proxmark3Adapter | None = None
         self._stop_event = asyncio.Event()
+        self._io_lock = asyncio.Lock()
 
     @property
     def state(self) -> TagState:
@@ -185,12 +189,40 @@ class Proxmark3Hub:
                 pass
             self._task = None
 
-        adapter = self._adapter
-        self._adapter = None
-        if adapter is not None:
-            await self.hass.async_add_executor_job(close_adapter, adapter)
+        async with self._io_lock:
+            adapter = self._adapter
+            self._adapter = None
+            if adapter is not None:
+                await self.hass.async_add_executor_job(close_adapter, adapter)
 
         await self._set_state(_empty_tag_state(False))
+
+    async def async_write_magic_uid(self, uid: bytes | None = None) -> dict[str, str]:
+        """Write a new UID to a Magic tag block 0; returns uid and block_0."""
+        async with self._io_lock:
+            adapter = self._adapter
+            if adapter is None:
+                raise MagicUidError("not_connected")
+
+            options = merged_options(self.entry)
+            keys = build_block0_key_list(options)
+            result = await self.hass.async_add_executor_job(
+                write_magic_uid,
+                adapter,
+                keys,
+                uid,
+            )
+
+        await self._set_state(
+            TagState(
+                connected=True,
+                uid=result["uid"],
+                tag_type=result.get("tag_type"),
+                blocks={0: result["block_0"]} if result.get("block_0") else {},
+                ntag=self._state.ntag,
+            )
+        )
+        return result
 
     async def _run(self) -> None:
         while not self._stop_event.is_set():
@@ -290,7 +322,24 @@ class Proxmark3Hub:
         absent_hits = 0
 
         while not self._stop_event.is_set() and self._adapter is adapter:
-            card = await self.hass.async_add_executor_job(poll_card, adapter)
+            card = None
+            block_data: dict[int, str] = {}
+            ntag_json: str | None = None
+
+            async with self._io_lock:
+                if self._adapter is not adapter:
+                    break
+                card = await self.hass.async_add_executor_job(poll_card, adapter)
+                if card is not None and active_uid != card.uid_hex:
+                    block_data, ntag_json = await self.hass.async_add_executor_job(
+                        _read_tag_sync,
+                        adapter,
+                        card,
+                        blocks,
+                        keys,
+                        read_ntag,
+                        read_ntag_classic,
+                    )
 
             if card is None:
                 if active_uid is not None:
@@ -320,15 +369,6 @@ class Proxmark3Hub:
                 await asyncio.sleep(max(poll_interval, 0.1))
                 continue
 
-            block_data, ntag_json = await self.hass.async_add_executor_job(
-                _read_tag_sync,
-                adapter,
-                card,
-                blocks,
-                keys,
-                read_ntag,
-                read_ntag_classic,
-            )
             active_uid = current_uid
             await self._set_state(
                 TagState(

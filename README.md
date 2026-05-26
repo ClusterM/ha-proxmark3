@@ -10,6 +10,7 @@ Home Assistant custom integration for [Proxmark3](https://github.com/RfidResearc
 - Device info (MCU, firmware, memory) cached while offline
 - Automatic reconnect when the device is unplugged
 - Options flow to tune keys, blocks, and poll intervals without re-adding the integration
+- **Write Magic tag UID** action — change the UID on writable MIFARE Classic Magic tags (block 0) from automations, with optional fixed UID or random generation
 
 ## Installation
 
@@ -130,7 +131,7 @@ The integration reads **blocks 0–3** (sector 0 on MIFARE Classic 1K). Block re
 
 Disable unused blocks to speed up polling (each block is a separate read).
 
-**Block 0** on MIFARE Classic holds manufacturer bytes and UID-related data (often only part of the block is writable). Writing garbage there can corrupt the tag identity or make it unreadable. On Ultralight/NTAG, page 0 is similarly reserved (UID, lock bits). Treat block/page 0 as **read-only** unless you know exactly what you are changing.
+**Block 0** on MIFARE Classic holds manufacturer bytes and UID-related data (often only part of the block is writable). Writing garbage there can corrupt the tag identity or make it unreadable. On Ultralight/NTAG, page 0 is similarly reserved (UID, lock bits). Treat block/page 0 as **read-only** unless you know exactly what you are changing — or use the **`write_magic_uid`** action below for **writable Magic MIFARE Classic** tags.
 
 **Block 3** on MIFARE Classic is the sector trailer (keys and access bits) — see warnings in the writing section below.
 
@@ -183,7 +184,58 @@ hf mf wrbl --blk 1 -k FFFFFFFFFFFF -d 4841FFFFFFFFFFFFFFFFFFFFFFFFFFFF
 hf mf wrbl --blk 4 -d 0102030405060708090a0b0c0d0e0f
 ```
 
-Do **not** write **block 0** or **block 3** on MIFARE Classic unless you understand the data layout. Block 0 carries manufacturer/UID-related data; block 3 is the sector trailer (keys and access conditions). A bad write to either can brick the tag or the whole sector. On Ultralight/NTAG, avoid writing pages 0–2 for the same reason — use page 4+ for user data, or prefer **NDEF via NFC Tools** instead of raw page writes.
+Do **not** write **block 0** or **block 3** on MIFARE Classic unless you understand the data layout. Block 0 carries manufacturer/UID-related data; block 3 is the sector trailer (keys and access conditions). A bad write to either can brick the tag or the whole sector. For **writable Magic MIFARE Classic** tags, prefer the **`write_magic_uid`** action instead of raw `hf mf wrbl` on block 0. On Ultralight/NTAG, avoid writing pages 0–2 for the same reason — use page 4+ for user data, or prefer **NDEF via NFC Tools** instead of raw page writes.
+
+## Write Magic tag UID (action)
+
+Changes the **UID** on a **writable Magic MIFARE Classic** tag by updating block 0 (UID bytes + BCC only). SAK, ATQA, and manufacturer data are **preserved** from the current tag. Works with common Magic tags (Gen1, Gen2, CUID, etc.) that allow block 0 writes — **not** with normal (non-Magic) Classic tags or Ultralight/NTAG.
+
+| Item | Details |
+|------|---------|
+| Action | `proxmark3.write_magic_uid` |
+| Target | None (single Proxmark3 instance) |
+| Tag on reader | Required — place the Magic tag before calling |
+| Optional `uid` | Hex string: **8** chars for 4-byte UID, **14** for 7-byte. Spaces/colons allowed. Random UID if omitted. |
+| Response | `uid`, `block_0`, `tag_type` |
+| Keys | Your integration keys plus common fallbacks (factory, MAD, NDEF, null) |
+
+After a successful write, the **NFC Tag** sensor updates with the new UID.
+
+**Random UID:**
+
+```yaml
+action: proxmark3.write_magic_uid
+response_variable: tag
+```
+
+**Fixed UID:**
+
+```yaml
+action: proxmark3.write_magic_uid
+data:
+  uid: "76343115"
+response_variable: tag
+```
+
+**Example — notify with the new UID:**
+
+```yaml
+alias: NFC rewrite Magic UID
+triggers:
+  - trigger: event
+    event_type: rewrite_nfc_uid
+actions:
+  - action: proxmark3.write_magic_uid
+    response_variable: tag
+  - action: notify.persistent_notification
+    data:
+      title: NFC UID written
+      message: "New UID: {{ tag.uid }}, type: {{ tag.tag_type }}"
+```
+
+**Errors** (shown as action failure): no tag, not MIFARE Classic, block 0 read/write failed (check keys / tag is Magic), verify failed.
+
+Place the tag on the reader **before** calling the action. Polling pauses briefly while the write runs (serial lock).
 
 ## Example automations
 

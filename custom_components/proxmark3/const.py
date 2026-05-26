@@ -50,6 +50,16 @@ PRESET_KEY_MAD = "a0a1a2a3a4a5"
 PRESET_KEY_NDEF = "d3f7d3f7d3f7"
 PRESET_KEY_NULL = "000000000000"
 
+SERVICE_WRITE_MAGIC_UID = "write_magic_uid"
+
+# Extra keys tried for Magic tag block 0 even when not enabled for raw block reads.
+BLOCK0_FALLBACK_KEYS: tuple[str, ...] = (
+    PRESET_KEY_MAD,
+    PRESET_KEY_FF,
+    PRESET_KEY_NDEF,
+    PRESET_KEY_NULL,
+)
+
 BLOCK_OPTIONS = (
     CONF_BLOCK_0,
     CONF_BLOCK_1,
@@ -132,6 +142,20 @@ def build_key_list(options: dict[str, Any]) -> tuple[bytes, ...]:
     if custom:
         keys.append(bytes.fromhex(custom))
     return tuple(keys)
+
+
+def build_block0_key_list(options: dict[str, Any]) -> tuple[bytes, ...]:
+    """Keys for Magic tag block 0 read/write: user keys plus common fallbacks."""
+    configured = build_key_list(options)
+    fallbacks = tuple(bytes.fromhex(key) for key in BLOCK0_FALLBACK_KEYS)
+    seen: set[bytes] = set()
+    ordered: list[bytes] = []
+    for key in (*configured, *fallbacks):
+        if key in seen:
+            continue
+        seen.add(key)
+        ordered.append(key)
+    return tuple(ordered)
 
 
 def build_block_list(options: dict[str, Any]) -> tuple[int, ...]:

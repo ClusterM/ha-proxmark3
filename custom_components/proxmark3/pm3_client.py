@@ -17,6 +17,7 @@ CMD_PING = 0x0109
 CMD_HF_ISO14443A_READER = 0x0385
 CMD_HF_DROPFIELD = 0x0430
 CMD_HF_MIFARE_READBL = 0x0620
+CMD_HF_MIFARE_WRITEBL = 0x0622
 CMD_HF_MIFARE_READBL_EX = 0x0628
 
 ISO14A_CONNECT = 1 << 0
@@ -455,9 +456,106 @@ def read_classic_block(
             resp = send_command_ng(adapter, CMD_HF_MIFARE_READBL, payload, timeout=1.5)
         except RuntimeError:
             continue
-        if resp["cmd"] == CMD_HF_MIFARE_READBL and resp["status"] == PM3_SUCCESS and len(resp["data"]) >= 16:
-            return resp["data"][:16]
+        data = resp["data"]
+        if (
+            resp["cmd"] == CMD_HF_MIFARE_READBL
+            and resp["status"] == PM3_SUCCESS
+            and len(data) >= 16
+            and not data.startswith(b"\x01\x00Au")
+        ):
+            return data[:16]
     return None
+
+
+def write_classic_block(
+    adapter: Proxmark3Adapter,
+    block_no: int,
+    block_data: bytes,
+    keys: tuple[bytes, ...],
+    *,
+    key_type: int = MF_KEY_A,
+) -> bool:
+    """Write one MIFARE Classic block; try keys in order."""
+    if len(block_data) != 16:
+        raise ValueError("block_data must be 16 bytes")
+
+    for key in keys:
+        payload = bytearray(26)
+        payload[0:6] = key
+        payload[10:26] = block_data
+        try:
+            resp = send_command_mix(
+                adapter,
+                CMD_HF_MIFARE_WRITEBL,
+                block_no,
+                key_type,
+                0,
+                bytes(payload),
+                timeout=2.0,
+            )
+        except RuntimeError:
+            continue
+        if resp["cmd"] == CMD_ACK and resp["oldarg"][0] > 0:
+            return True
+    return False
+
+
+def write_magic_uid(
+    adapter: Proxmark3Adapter,
+    keys: tuple[bytes, ...],
+    uid: bytes | None = None,
+) -> dict[str, str]:
+    """Write a random (or given) UID to a Magic MIFARE Classic block 0."""
+    from .magic_block0 import build_block0_from_uid, validate_block0
+
+    card = poll_card(adapter, keep_field=True)
+    if card is None:
+        raise MagicUidError("no_card")
+    if not is_mifare_classic(card):
+        raise MagicUidError("not_classic")
+    if card.uidlen not in (4, 7):
+        raise MagicUidError("unsupported_uid_len")
+
+    block_before = read_classic_block(adapter, 0, keys)
+    if block_before is None:
+        raise MagicUidError("block0_read_failed")
+
+    try:
+        plan = build_block0_from_uid(block_before, uid, uid_len=card.uidlen)
+    except ValueError:
+        raise MagicUidError("invalid_uid_len") from None
+
+    if block_before != plan.block and not write_classic_block(adapter, 0, plan.block, keys):
+        drop_field(adapter)
+        raise MagicUidError("block0_write_failed")
+
+    drop_field(adapter)
+    time.sleep(0.15)
+
+    card_after = poll_card(adapter, keep_field=True)
+    block_after = read_classic_block(adapter, 0, keys)
+    drop_field(adapter)
+
+    if card_after is None or block_after is None:
+        raise MagicUidError("verify_failed")
+    if block_after != plan.block or not validate_block0(block_after, card.uidlen):
+        raise MagicUidError("verify_failed")
+    if card_after.uid_hex != plan.uid.hex().upper():
+        raise MagicUidError("verify_failed")
+
+    return {
+        "uid": plan.uid.hex().upper(),
+        "block_0": block_after.hex().upper(),
+        "tag_type": card_after.card_type,
+    }
+
+
+class MagicUidError(Exception):
+    """Magic tag block 0 write failed."""
+
+    def __init__(self, code: str) -> None:
+        super().__init__(code)
+        self.code = code
 
 
 def read_classic_sector(

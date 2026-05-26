@@ -1,0 +1,7 @@
+write_magic_uid:
+  fields:
+    uid:
+      required: false
+      example: "76343115"
+      selector:
+        text:

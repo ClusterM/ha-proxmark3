@@ -83,5 +83,17 @@
       "invalid_key": "Custom key must be exactly 12 hexadecimal characters.",
       "no_keys": "Select at least one key when block reading is enabled."
     }
+  },
+  "services": {
+    "write_magic_uid": {
+      "name": "Write Magic tag UID",
+      "description": "Write a random UID to block 0 of a writable Magic MIFARE Classic tag and return the new UID.",
+      "fields": {
+        "uid": {
+          "name": "UID",
+          "description": "Optional UID in hex (8 characters for 4-byte, 14 for 7-byte). Random if omitted."
+        }
+      }
+    }
   }
 }
